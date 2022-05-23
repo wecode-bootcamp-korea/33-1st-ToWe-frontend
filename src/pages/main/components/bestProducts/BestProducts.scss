@@ -1,0 +1,80 @@
+@import '../../../../styles/variables.scss';
+$darkGray: #3a3a3a;
+$lightGray: #888888;
+
+// $smallFont: 13px;
+// $middleFont: 16px;
+// $largeFont: 20px;
+
+.bestProducts {
+  @include flexCenter;
+  flex-direction: column;
+  padding: 0 50px;
+
+  .title {
+    margin: 160px 0 50px;
+    font-size: calc($largeFont) * 2.3;
+    font-weight: 700;
+    color: $darkGray;
+  }
+
+  .description {
+    font-size: $largeFont;
+    margin-bottom: 60px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  .itemContainer {
+    max-width: 70%;
+    .items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      .itemList {
+        display: flex;
+        flex-direction: column;
+        width: calc(33.3% - 35px);
+        margin-bottom: 60px;
+        img {
+          object-position: center;
+          object-fit: cover;
+          cursor: pointer;
+        }
+        .itemDesc {
+          @include flexCenter;
+          flex-direction: column;
+          span {
+            &:first-child {
+              margin: 20px 0;
+              font-size: calc($smallFont) * 1.1;
+            }
+            &:last-child {
+              color: $lightGray;
+              font-size: calc($largeFont) * 0.9;
+            }
+          }
+        }
+      }
+    }
+  }
+  .more {
+    padding: 14px 22px;
+    color: $darkGray;
+    border: 3px solid $darkGray;
+    border-radius: 24px;
+    font-size: $smallFont;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $darkGray;
+      color: white;
+    }
+  }
+  .line {
+    margin: 60px 0 0 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+}
