@@ -1,0 +1,11 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$smallFont: 13px;
+$middleFont: 16px;
+$largeFont: 20px;
+$lineColor: #8a8a8a;
+$hoverColor: #adadad;
