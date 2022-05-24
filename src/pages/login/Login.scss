@@ -5,34 +5,34 @@
   justify-content: center;
 
   .loginWrapper {
-    width: 400px;
+    width: 25rem;
 
     .loginField {
       width: 100%;
 
       .loginHeader {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
 
         .loginTitle {
-          font-size: 20px;
+          font-size: 1.25rem;
           font-weight: bold;
         }
       }
 
       .contentBox {
         .row {
-          margin-bottom: 20px;
+          margin-bottom: 1.25rem;
 
           .inputTitle {
             display: block;
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-size: 0.875rem;
+            margin-bottom: 0.047rem;
           }
 
           .loginInputBox {
             width: 100%;
-            height: 45px;
-            padding: 10px 15px;
+            height: 2.813rem;
+            padding: 0.625rem 0.938rem;
 
             &:focus {
               outline: none;
@@ -43,34 +43,34 @@
         .findPw {
           display: flex;
           justify-content: center;
-          margin: 20px 0 30px;
+          margin: 1.25rem 0 1.875rem;
 
           .textLink1 {
             text-decoration: none;
             color: black;
-            font-size: 14px;
+            font-size: 0.875rem;
           }
 
           .textLink2 {
             text-decoration: none;
             color: black;
-            font-size: 14px;
-            margin-left: 20px;
+            font-size: 0.875rem;
+            margin-left: 1.25rem;
           }
         }
 
         .btnWrapper {
-          margin-top: 20px;
+          margin-top: 1.25rem;
           display: flex;
           justify-content: center;
 
           .loginBtn {
-            width: 240px;
-            height: 54px;
-            padding: 12px 20px;
-            border-radius: 50px;
+            width: 15rem;
+            height: 3.375rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 3.125rem;
             background: white;
-            border: 1px solid black;
+            border: 0.063rem solid black;
 
             &:hover {
               background: black;
@@ -79,11 +79,11 @@
           }
 
           .signUpBtn {
-            width: 240px;
-            height: 54px;
-            padding: 12px 20px;
-            border-radius: 50px;
-            border: 1px solid #919191;
+            width: 15rem;
+            height: 3.375rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 3.125rem;
+            border: 0.063rem solid #919191;
             background: white;
             color: #919191;
 
