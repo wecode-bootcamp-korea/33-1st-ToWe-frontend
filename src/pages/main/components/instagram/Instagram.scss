@@ -1,0 +1,64 @@
+@import '../../../../styles/variables.scss';
+// $smallFont: 13px;
+// $middleFont: 16px;
+// $largeFont: 20px;
+$darkGray: #3a3a3a;
+$lightGray: #888888;
+
+.instagram {
+  @include flexCenter;
+  flex-direction: column;
+  padding: 0 50px;
+  max-width: 1500px;
+
+  .title {
+    margin: 160px 0 50px;
+    color: $darkGray;
+    font-size: calc($largeFont) * 2.5;
+    font-weight: 700;
+  }
+
+  .description {
+    margin-bottom: 60px;
+    color: $lightGray;
+    font-size: calc($largeFont) * 1.15;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    // overflow: hidden;
+
+    .slide {
+      display: flex;
+      align-content: center;
+      width: 100%;
+
+      .slideImg {
+        width: 300px;
+        object-fit: cover;
+        margin: 0 20px;
+      }
+    }
+    .arrowLeft {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      transform: translateY(-50%);
+      color: aqua;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .arrowRight {
+      position: absolute;
+      top: 50%;
+      right: 40px;
+      transform: translateY(-50%);
+      color: aqua;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
+}
