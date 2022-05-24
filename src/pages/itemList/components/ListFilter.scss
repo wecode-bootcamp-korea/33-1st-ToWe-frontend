@@ -12,7 +12,7 @@
     }
 
     .ageFilter {
-      display: none;
+      // display: none;
       background-color: white;
       width: 5.5rem;
       position: absolute;
@@ -36,7 +36,7 @@
       margin-right: 0.3rem;
     }
     .priceFilter {
-      display: none;
+      // display: none;
       background-color: white;
       position: absolute;
       width: 5.5rem;
@@ -55,4 +55,7 @@
 }
 .icon {
   padding-top: 0.1rem;
+}
+.toggle {
+  display: none;
 }

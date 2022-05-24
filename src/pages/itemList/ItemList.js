@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductCategory from './components/ProductCategory.js';
 import ListItem from './components/ListItem.js';
-import LitsFilter from './components/ListFilter.js';
 import './ItemList.scss';
 
 const ItemList = () => {
@@ -26,13 +25,10 @@ const ItemList = () => {
   );
 
   return (
-    <div>
-      <div className="listContainer">
-        <div className="listTitle">전체상품</div>
-        <ProductCategory filter={filter} />
-        <LitsFilter />
-        <ListItem listItems={categoeyFilter} />
-      </div>
+    <div className="listContainer">
+      <div className="listTitle">전체상품</div>
+      <ProductCategory filter={filter} />
+      <ListItem listItems={categoeyFilter} />
     </div>
   );
 };
