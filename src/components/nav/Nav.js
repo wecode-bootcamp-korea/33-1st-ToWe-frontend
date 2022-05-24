@@ -6,7 +6,7 @@ const Nav = () => {
     <div className="Nav">
       <div className="title">
         <div className="bigTitle">To We</div>
-        <div className="smallTitle">ㅡㅡㅡㅡㅡㅡstudioㅡㅡㅡㅡㅡㅡ</div>
+        <div className="smallTitle">ㅡㅡㅡㅡㅡㅡ studio ㅡㅡㅡㅡㅡㅡ</div>
       </div>
       <div className="category">
         <span className="teamInfor">팀이름</span>
