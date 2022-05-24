@@ -9,7 +9,10 @@
     position: relative;
 
     img {
-      width: 100%;
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      object-position: bottom;
     }
 
     .itemDesc {
@@ -24,7 +27,7 @@
         padding: 5px;
         text-align: center;
         background-color: yellow;
-        font-size: calc($largeFont) * 1.2;
+        font-size: calc($largeFont) * 1.15;
         font-weight: 600;
       }
       .title,

@@ -10,19 +10,20 @@ $lightGray: #888888;
   @include flexCenter;
   flex-direction: column;
   padding: 0 50px;
-
+  width: 100%;
   .title {
     margin: 160px 0 50px;
-    font-size: calc($largeFont) * 2.3;
-    font-weight: 700;
     color: $darkGray;
+    font-size: calc($largeFont) * 2.5;
+    font-weight: 700;
   }
 
   .description {
-    font-size: $largeFont;
     margin-bottom: 60px;
+    font-size: calc($largeFont) * 1.15;
+    color: $lightGray;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
   }
 
   .itemContainer {
@@ -73,7 +74,7 @@ $lightGray: #888888;
     }
   }
   .line {
-    margin: 60px 0 0 0;
+    margin: 80px 0 0 0;
     width: 100%;
     border-bottom: 1px solid black;
   }
