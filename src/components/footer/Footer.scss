@@ -1,19 +1,24 @@
 .Footer {
   text-align: center;
   width: 100%;
+
   .footerIcons {
     display: flex;
     justify-content: center;
+
     i {
       padding: 25px;
     }
   }
+
   span {
     padding: 20px;
   }
+
   .pageDetails {
     padding: 20px;
   }
+
   .reserved {
     font-weight: bold;
     padding: 20px;
