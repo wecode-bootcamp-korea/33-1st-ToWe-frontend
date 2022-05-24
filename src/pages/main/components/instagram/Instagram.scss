@@ -8,22 +8,22 @@ $lightGray: #888888;
 .instagram {
   @include flexCenter;
   flex-direction: column;
-  padding: 0 50px;
+  padding: 0 3rem;
   max-width: 1500px;
 
   .title {
-    margin: 160px 0 50px;
+    margin: 10rem 0 3rem;
     color: $darkGray;
     font-size: calc($largeFont) * 2.5;
     font-weight: 700;
   }
 
   .description {
-    margin-bottom: 60px;
+    margin-bottom: 3.7rem;
     color: $lightGray;
     font-size: calc($largeFont) * 1.15;
     text-align: center;
-    line-height: 40px;
+    line-height: 2.5rem;
   }
 
   .slider {
@@ -37,28 +37,32 @@ $lightGray: #888888;
       width: 100%;
 
       .slideImg {
-        width: 300px;
+        width: 18rem;
         object-fit: cover;
-        margin: 0 20px;
+        margin: 0 1.2rem;
       }
     }
     .arrowLeft {
       position: absolute;
       top: 50%;
-      left: 40px;
+      left: 2.5rem;
       transform: translateY(-50%);
       color: aqua;
-      font-size: 30px;
+      font-size: 1.8rem;
       cursor: pointer;
     }
     .arrowRight {
       position: absolute;
       top: 50%;
-      right: 40px;
+      right: 2.5rem;
+
       transform: translateY(-50%);
       color: aqua;
-      font-size: 30px;
+      font-size: 1.8rem;
       cursor: pointer;
     }
+  }
+  .space {
+    margin-bottom: 10rem;
   }
 }

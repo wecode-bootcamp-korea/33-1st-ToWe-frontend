@@ -9,21 +9,21 @@ $lightGray: #888888;
 .bestProducts {
   @include flexCenter;
   flex-direction: column;
-  padding: 0 50px;
+  padding: 0 3rem;
   width: 100%;
   .title {
-    margin: 160px 0 50px;
+    margin: 10rem 0 3rem;
     color: $darkGray;
     font-size: calc($largeFont) * 2.5;
     font-weight: 700;
   }
 
   .description {
-    margin-bottom: 60px;
+    margin-bottom: 3.7rem;
     font-size: calc($largeFont) * 1.15;
     color: $lightGray;
     text-align: center;
-    line-height: 40px;
+    line-height: 2.5rem;
   }
 
   .itemContainer {
@@ -32,12 +32,12 @@ $lightGray: #888888;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-bottom: 0.08rem;
       .itemList {
         display: flex;
         flex-direction: column;
         width: calc(33.3% - 35px);
-        margin-bottom: 60px;
+        margin-bottom: 3.7rem;
         img {
           object-position: center;
           object-fit: cover;
@@ -48,7 +48,7 @@ $lightGray: #888888;
           flex-direction: column;
           span {
             &:first-child {
-              margin: 20px 0;
+              margin: 1.25rem 0;
               font-size: calc($smallFont) * 1.1;
             }
             &:last-child {
@@ -61,10 +61,10 @@ $lightGray: #888888;
     }
   }
   .more {
-    padding: 14px 22px;
+    padding: 0.8rem 1.3rem;
     color: $darkGray;
     border: 3px solid $darkGray;
-    border-radius: 24px;
+    border-radius: 1.5rem;
     font-size: $smallFont;
     cursor: pointer;
     transition: all 0.3s;
@@ -74,7 +74,7 @@ $lightGray: #888888;
     }
   }
   .line {
-    margin: 80px 0 0 0;
+    margin: 5rem 0 0 0;
     width: 100%;
     border-bottom: 1px solid black;
   }
