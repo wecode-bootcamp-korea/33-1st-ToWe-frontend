@@ -1,14 +1,58 @@
-.listCategory {
+.listFilter {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
-  margin: auto;
+  margin-bottom: 1rem;
 
-  .listCategorys {
-    flex: 1;
-    padding: 10px;
-    color: #3d3d3d;
+  .filterAge {
+    font-size: 0.9rem;
     cursor: pointer;
+    span {
+      margin-right: 0.3rem;
+    }
+
+    .ageFilter {
+      display: none;
+      background-color: white;
+      width: 5.5rem;
+      position: absolute;
+      margin-top: 0.5rem;
+      border: 1px solid black;
+
+      p {
+        padding: 0.8rem 0;
+        cursor: pointer;
+      }
+      p:hover {
+        background-color: #eeee;
+      }
+    }
   }
+  .filterPrice {
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    span {
+      margin-right: 0.3rem;
+    }
+    .priceFilter {
+      display: none;
+      background-color: white;
+      position: absolute;
+      width: 5.5rem;
+      border: 1px solid black;
+      margin-top: 0.5rem;
+
+      p {
+        padding: 0.8rem 0;
+        cursor: pointer;
+      }
+      p:hover {
+        background-color: #eeee;
+      }
+    }
+  }
+}
+.icon {
+  padding-top: 0.1rem;
 }

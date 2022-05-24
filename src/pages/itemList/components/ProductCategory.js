@@ -1,19 +1,50 @@
-import React, { useState } from 'react';
 import './ProductCategory.scss';
 
-const ProductCategory = () => {
-  // const [filterNum, setFilterNum] = useState(0);
-  // const [listCategory, setListCategory] = useState(true);
-
-  // const filterChange = () => {};
+const ProductCategory = ({ filter }) => {
+  const check = categoey => {
+    filter(categoey);
+  };
 
   return (
-    <ul className="listCategory">
+    <ul
+      // onClick={() => {
+      //   check('레고', '인형', '퍼즐', '자동차');
+      // }}
+      className="listCategory"
+    >
       <li className="listCategorys">전체</li>
-      <li className="listCategorys">레고</li>
-      <li className="listCategorys">인형</li>
-      <li className="listCategorys">퍼즐</li>
-      <li className="listCategorys">자동차</li>
+      <li
+        onClick={() => {
+          check('레고');
+        }}
+        className="listCategorys"
+      >
+        레고
+      </li>
+      <li
+        onClick={() => {
+          check('인형');
+        }}
+        className="listCategorys"
+      >
+        인형
+      </li>
+      <li
+        onClick={() => {
+          check('퍼즐');
+        }}
+        className="listCategorys"
+      >
+        퍼즐
+      </li>
+      <li
+        onClick={() => {
+          check('자동차');
+        }}
+        className="listCategorys"
+      >
+        자동차
+      </li>
     </ul>
   );
 };

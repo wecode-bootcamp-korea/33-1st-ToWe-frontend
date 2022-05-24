@@ -15,9 +15,9 @@ const Nav = () => {
         <span>나중에 추가</span>
       </div>
       <div className="navIcons">
-        <i class="fa-solid fa-magnifying-glass" />
-        <i class="fa-solid fa-user" />
-        <i class="fa-solid fa-cart-shopping" />
+        <i className="fa-solid fa-magnifying-glass" />
+        <i className="fa-solid fa-user" />
+        <i className="fa-solid fa-cart-shopping" />
       </div>
     </div>
   );

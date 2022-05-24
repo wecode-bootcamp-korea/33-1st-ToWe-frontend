@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import './ListItemContenst.scss';
 
-const ListItemContenst = ({ listItem }) => {
-  const { name, price, itemImg, hoverImg } = listItem;
+const ListItemContenst = ({
+  id,
+  name,
+  price,
+  categoey,
+  itemImg,
+  hoverImg,
+  age,
+}) => {
   const [changeImg, setChangeImg] = useState(true);
 
   const mouseOver = () => {
@@ -14,12 +21,11 @@ const ListItemContenst = ({ listItem }) => {
 
   return (
     <div className="listItems" onMouseOver={mouseOver} onMouseOut={mouseOut}>
-      {changeImg ? (
-        <img className="listItemsImg" alt="Items" src={itemImg} />
-      ) : (
-        <img className="listItemsImg" alt="Items" src={hoverImg} />
-      )}
-
+      <img
+        className="listItemsImg"
+        alt="Items"
+        src={changeImg ? itemImg : hoverImg}
+      />
       <p className="listItemName">{name}</p>
       <p className="listItemPrice">{price}</p>
     </div>
