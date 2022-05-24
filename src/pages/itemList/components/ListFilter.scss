@@ -1,0 +1,14 @@
+.listCategory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+
+  .listCategorys {
+    flex: 1;
+    padding: 10px;
+    color: #3d3d3d;
+    cursor: pointer;
+  }
+}

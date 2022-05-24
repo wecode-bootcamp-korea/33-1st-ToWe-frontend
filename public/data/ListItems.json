@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "name": "철푸덕랑",
+    "price": "40,000",
+    "categoey": "퍼즐",
+    "itemImg": "./images/image1.jpeg"
+  },
+  {
+    "id": 1,
+    "name": "실리콘 참",
+    "price": "3,000",
+    "categoey": "레고",
+    "itemImg": "./images/image2.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "뚱랑이",
+    "price": "13,500",
+    "categoey": "인형",
+    "itemImg": "./images/image3.png"
+  },
+  {
+    "id": 3,
+    "name": "타이커 노트",
+    "price": "4,000",
+    "categoey": "자동차",
+    "itemImg": "./images/image4.jpeg"
+  }
+]
