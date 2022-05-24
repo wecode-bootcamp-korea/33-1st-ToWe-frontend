@@ -6,13 +6,15 @@ const ProductCategory = ({ filter }) => {
   };
 
   return (
-    <ul
-      // onClick={() => {
-      //   check('레고', '인형', '퍼즐', '자동차');
-      // }}
-      className="listCategory"
-    >
-      <li className="listCategorys">전체</li>
+    <ul className="listCategory">
+      <li
+        onClick={() => {
+          check('');
+        }}
+        className="listCategorys"
+      >
+        전체
+      </li>
       <li
         onClick={() => {
           check('레고');
