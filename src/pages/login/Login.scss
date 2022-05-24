@@ -1,10 +1,5 @@
-// * {
-//   margin: 0;
-//   padding: 0;
-// }
-
 .Login {
-  height: 2000px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +22,7 @@
       .contentBox {
         .row {
           margin-bottom: 20px;
+
           .inputTitle {
             display: block;
             font-size: 14px;
@@ -43,6 +39,7 @@
             }
           }
         }
+
         .findPw {
           display: flex;
           justify-content: center;
