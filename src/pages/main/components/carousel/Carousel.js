@@ -5,7 +5,6 @@ import './Carousel.scss';
 const Carousel = () => {
   const [imgList, setImgList] = useState([]);
   const [curImg, setCurImg] = useState(0);
-  const [fadeIn, setFadeIn] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/CAROUSEL_DATA.json', {
@@ -18,24 +17,26 @@ const Carousel = () => {
   }, []);
 
   const moveToImg = targetNum => {
-    setFadeIn(prev => !prev);
-    setTimeout(() => {
-      setFadeIn(prev => !prev);
-      setCurImg(targetNum);
-    }, 400);
+    setCurImg(targetNum);
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (curImg < imgList.length - 1) {
+        return setCurImg(curImg => curImg + 1);
+      } else if (curImg === imgList.length - 1) {
+        return setCurImg(0);
+      }
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [curImg]);
 
   return (
     <section className="carousel">
       <div className="carouselWrapper">
         {imgList.map(imgData => {
           return (
-            <CarouselImg
-              key={imgData.id}
-              imgData={imgData}
-              curImg={curImg}
-              fadeIn={fadeIn}
-            />
+            <CarouselImg key={imgData.id} imgData={imgData} curImg={curImg} />
           );
         })}
       </div>

@@ -7,13 +7,13 @@
   .carouselWrapper {
     .carouselImg {
       &.hidden {
-        opacity: 0.3;
-        transition: opacity 800ms ease-out;
+        opacity: 0;
+        transition: opacity 800ms ease-in;
       }
 
       &.active {
         opacity: 1;
-        transition: opacity 1000ms ease-in;
+        transition: opacity 800ms ease-out;
       }
 
       img {

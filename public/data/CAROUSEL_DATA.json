@@ -1,25 +1,25 @@
 [
   {
     "id": 0,
-    "image": "/images/mainImg.jpg",
+    "url": "/images/mainImg.jpg",
     "name": "레고 비틀즈",
     "price": "30,000"
   },
   {
     "id": 1,
-    "image": "/images/batduckToy.jpg",
+    "url": "/images/batduckToy.jpg",
     "name": "배트덕",
     "price": "12,000"
   },
   {
     "id": 2,
-    "image": "/images/cartoy.jpg",
+    "url": "/images/cartoy.jpg",
     "name": "자동차",
     "price": "8,000"
   },
   {
     "id": 3,
-    "image": "/images/minionToy.jpg",
+    "url": "/images/minionToy.jpg",
     "name": "미니언 미니어쳐",
     "price": "15,000"
   }

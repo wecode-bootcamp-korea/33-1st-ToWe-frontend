@@ -1,18 +1,16 @@
 import React from 'react';
 
-const CarouselImg = ({ imgData, curImg, fadeIn }) => {
+const CarouselImg = ({ imgData, curImg }) => {
   return (
-    <div className={`carouselImg ${fadeIn === true ? 'active' : 'hidden'}`}>
-      {imgData.id === curImg ? (
-        <>
-          <img src={`${imgData.image}`} alt="mainToyImg" className="active" />
-          <div className="itemDesc">
-            <h3>BEST</h3>
-            <span className="title">{imgData.name}</span>
-            <span className="titleEn">{imgData.price}</span>
-          </div>
-        </>
-      ) : null}
+    <div
+      className={`carouselImg ${imgData.id === curImg ? 'active' : 'hidden'}`}
+    >
+      <img src={`${imgData.url}`} alt="mainToyImg" className="active" />
+      <div className="itemDesc">
+        <h3>BEST</h3>
+        <span className="title">{imgData.name}</span>
+        <span className="titleEn">{imgData.price}</span>
+      </div>
     </div>
   );
 };
