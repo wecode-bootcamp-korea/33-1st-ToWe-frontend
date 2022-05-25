@@ -7,7 +7,7 @@ const Carousel = () => {
   const [curImg, setCurImg] = useState(0);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/CAROUSEL_DATA.json', {
+    fetch('/data/CAROUSEL_DATA.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -27,18 +27,15 @@ const Carousel = () => {
       } else if (curImg === imgList.length - 1) {
         return setCurImg(0);
       }
-    }, 3000);
+    }, 5000);
     return () => clearInterval(timer);
-  }, [curImg]);
-
+  }, [curImg]); // [] or [curImg] ??
   return (
     <section className="carousel">
       <div className="carouselWrapper">
-        {imgList.map(imgData => {
-          return (
-            <CarouselImg key={imgData.id} imgData={imgData} curImg={curImg} />
-          );
-        })}
+        {imgList.map(imgData => (
+          <CarouselImg key={imgData.id} imgData={imgData} curImg={curImg} />
+        ))}
       </div>
       <div className="carouselBtns">
         <CarouselImgBtn curImg={curImg} moveToImg={moveToImg} />
@@ -50,24 +47,14 @@ const Carousel = () => {
 const CarouselImgBtn = ({ curImg, moveToImg }) => {
   return (
     <>
-      <span
-        className={`btn ${curImg === 0 ? 'active' : null}`}
-        onClick={() => moveToImg(0)}
-      />
-      <span
-        className={`btn ${curImg === 1 ? 'active' : null}`}
-        onClick={() => moveToImg(1)}
-      />
-      <span
-        className={`btn ${curImg === 2 ? 'active' : null}`}
-        onClick={() => moveToImg(2)}
-      />
-      <span
-        className={`btn ${curImg === 3 ? 'active' : null}`}
-        onClick={() => moveToImg(3)}
-      />
+      {new Array(4).fill().map((_, i) => (
+        <span
+          key={i}
+          className={`btn ${curImg === i ? 'active' : null}`}
+          onClick={() => moveToImg(i)}
+        />
+      ))}
     </>
   );
 };
-
 export default Carousel;
