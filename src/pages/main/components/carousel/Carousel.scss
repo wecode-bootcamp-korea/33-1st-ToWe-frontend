@@ -1,8 +1,5 @@
 @import '../../../../styles/variables.scss';
 
-// $smallFont: 13px;
-// $middleFont: 16px;
-// $largeFont: 20px;
 .carousel {
   .carouselWrapper {
     .carouselImg {
@@ -31,6 +28,7 @@
         @include flexCenter;
         flex-direction: column;
         position: absolute;
+        align-items: flex-start;
         padding: 1.2rem 1.4rem 1.6rem 1.4rem;
         border-radius: 10px;
         top: 12.5rem;
@@ -38,23 +36,34 @@
 
         h3 {
           margin-bottom: 0.6rem;
-          padding: 0.5rem 1.2rem 0.35rem 1.2rem;
+          padding: 0.65rem 1rem 0.35rem 1rem;
           color: rgb(34, 34, 34);
           background-color: rgb(255, 238, 51);
-          border-radius: 1.4rem;
-          font-size: calc($largeFont) * 1.15;
+          font-size: calc($largeFont) * 1.2;
           font-weight: 600;
-          text-align: center;
         }
 
-        .title,
-        .titleEn {
-          color: white;
-          font-size: $middleFont;
-        }
         .title {
-          margin-bottom: 0.6rem;
-          margin-top: 0.8rem;
+          font-size: 1.1rem;
+        }
+
+        .title {
+          margin: 0.4rem 0 0.4rem 0;
+          font-weight: 600;
+        }
+
+        .titleEn {
+          font-size: 0.9rem;
+        }
+
+        .line {
+          margin: 0.3rem 0 0.4rem 0;
+          width: 10rem;
+          border-bottom: 1px solid black;
+        }
+
+        .titlePrice {
+          font-size: 1rem;
         }
       }
     }

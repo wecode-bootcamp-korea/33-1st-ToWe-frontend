@@ -30,6 +30,7 @@ const Carousel = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, [curImg]); // [] or [curImg] ??
+
   return (
     <section className="carousel">
       <div className="carouselWrapper">

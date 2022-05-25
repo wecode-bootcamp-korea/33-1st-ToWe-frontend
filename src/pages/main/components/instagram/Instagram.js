@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Instagram.scss';
 import SliderImg from './SliderImg';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+
 // import './data/SLIDER_DATA.json';
 
 const Instagram = () => {
@@ -16,6 +18,10 @@ const Instagram = () => {
       });
   }, []);
 
+  const slideHandler = () => {
+    console.log('h');
+  };
+
   return (
     <div className="instagram">
       <h2 className="title">INSTAGRAM</h2>
@@ -26,8 +32,12 @@ const Instagram = () => {
             return <SliderImg key={imgData.id} imgData={imgData} />;
           })}
         </div>
-        <div className="arrowLeft">A</div>
-        <div className="arrowRight">B</div>
+        <div className="arrowLeft" onClick={slideHandler}>
+          <FaAngleLeft />
+        </div>
+        <div className="arrowRight" onClick={slideHandler}>
+          <FaAngleRight />
+        </div>
       </div>
       <div className="space" />
     </div>
