@@ -7,7 +7,7 @@ const Instagram = () => {
   const [imgList, setImgList] = useState([]);
   const [curIndex, setCurIndex] = useState(4);
 
-  const TATAL_SLIDES = 3; // 실제 슬라이드 개수
+  const TOTAL_SLIDES = 4; // 실제 슬라이드 개수
   const transitionTime = 500;
   const transitionStyle = `transform ${transitionTime}ms ease-in-out`;
   const [transition, setTransition] = useState(transitionStyle);
@@ -31,10 +31,10 @@ const Instagram = () => {
   const slideRef = useRef('');
 
   const replaceSlide = () => {
-    setCurIndex(8);
+    setCurIndex(TOTAL_SLIDES * 2);
     setTimeout(() => {
       setTransition('');
-      setCurIndex(4);
+      setCurIndex(TOTAL_SLIDES);
     }, transitionTime);
   };
 
@@ -42,13 +42,13 @@ const Instagram = () => {
     setCurIndex(0);
     setTimeout(() => {
       setTransition('');
-      setCurIndex(4);
+      setCurIndex(TOTAL_SLIDES);
     }, transitionTime);
   };
 
   // 정방향 이동함수
   const moveToNextSlide = () => {
-    if (curIndex > TATAL_SLIDES * 2) {
+    if (curIndex > TOTAL_SLIDES * 2 - 2) {
       replaceSlide();
     } else {
       setCurIndex(curIndex => curIndex + 1);
@@ -65,6 +65,7 @@ const Instagram = () => {
       setTransition(transitionStyle);
     }
   };
+  console.log(curIndex);
 
   return (
     <div className="instagram">
