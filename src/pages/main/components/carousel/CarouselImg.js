@@ -1,9 +1,11 @@
 import React from 'react';
 
-const CarouselImg = ({ imgData, curImg }) => {
+const CarouselImg = ({ imgData, currentImage }) => {
   return (
     <div
-      className={`carouselImg ${imgData.id === curImg ? 'active' : 'hidden'}`}
+      className={`carouselImg ${
+        imgData.id === currentImage ? 'active' : 'hidden'
+      }`}
     >
       <img src={`${imgData.url}`} alt="mainToyImg" className="active" />
       <div className="itemDesc">

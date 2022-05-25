@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './Instagram.scss';
-import SliderImg from './SliderImg';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import SliderImg from './SliderImg';
+import './Instagram.scss';
 
 const Instagram = () => {
   const [imgList, setImgList] = useState([]);
