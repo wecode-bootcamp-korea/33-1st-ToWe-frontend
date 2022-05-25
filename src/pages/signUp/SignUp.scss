@@ -73,22 +73,22 @@
       }
       .checkboxWrapper {
         display: flex;
-        // align-items: center;
-        background-color: skyblue;
         margin: 10px 0;
 
         .checkbox {
         }
+        .agreeBox {
+          .agreeText {
+            width: 100%;
+            font-size: 14px;
+            padding-left: 10px;
+            line-height: 1.5em;
+          }
 
-        .agreeText {
-          width: 100%;
-          font-size: 14px;
-          padding-left: 10px;
-          background-color: yellow;
-        }
-
-        .agreeSubText {
-          font-size: 12px;
+          .agreeSubText {
+            font-size: 12px;
+            padding-left: 10px;
+          }
         }
       }
       .btnWrapper {
