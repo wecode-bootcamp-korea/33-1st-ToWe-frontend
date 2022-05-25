@@ -65,7 +65,6 @@ const Instagram = () => {
       setTransition(transitionStyle);
     }
   };
-  console.log(curIndex);
 
   return (
     <div className="instagram">
