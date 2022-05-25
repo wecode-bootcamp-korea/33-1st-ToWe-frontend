@@ -1,13 +1,14 @@
 import React from 'react';
 import './Footer.scss';
+import { FaBold, FaRegEnvelope, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <div className="Footer">
       <div className="footerIcons">
-        <i class="fa-solid fa-envelope fa-lg" />
-        <i class="fa-brands fa-instagram fa-lg" />
-        <i class="fa-solid fa-b fa-lg" />
+        <FaRegEnvelope className="footerIcon" size={24} />
+        <FaInstagram className="footerIcon" size={24} />
+        <FaBold className="footerIcon" size={24} />
       </div>
       <span>이용약관</span>
       <span>개인정보처리방침</span>
