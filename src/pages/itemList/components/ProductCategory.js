@@ -5,14 +5,19 @@ import ProductCategoryMap from './ProductCategoryMap.js';
 
 const ProductCategory = ({ filter }) => {
   const [firterValue, setFirterValue] = useState('');
+  const [filterColor, setFilterColor] = useState(0);
 
-  const filterMenus = [
+  const FILTER_MENU = [
     { id: 0, name: '전체', option: '' },
     { id: 1, name: '레고', option: '레고' },
     { id: 2, name: '인형', option: '인형' },
     { id: 3, name: '퍼즐', option: '퍼즐' },
     { id: 4, name: '자동차', option: '자동차' },
   ];
+
+  const filterColorClick = e => {
+    setFilterColor(e);
+  };
 
   const filterClick = e => {
     setFirterValue(e);
@@ -24,10 +29,12 @@ const ProductCategory = ({ filter }) => {
   return (
     <div>
       <div className="filterTap">
-        {filterMenus.map(filterMenu => (
+        {FILTER_MENU.map(filterMenu => (
           <ProductCategoryMap
             filterMenus={filterMenu}
             filterClick={filterClick}
+            filterColor={filterColor}
+            filterColorClick={filterColorClick}
             key={filterMenu.id}
           />
         ))}

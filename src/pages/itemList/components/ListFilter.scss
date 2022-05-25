@@ -3,13 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  margin-bottom: 1rem;
-
-  .filterAge {
-    margin-right: 0.5rem;
+  margin: 1rem 0;
+  .filterBtn {
+    margin: 0 0.5rem;
+    font-size: 0.75rem;
+    cursor: pointer;
   }
-
-  select:focus {
-    outline: none;
+  .filterBtn:hover {
+    color: #707070;
   }
 }

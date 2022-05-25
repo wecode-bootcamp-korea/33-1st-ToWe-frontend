@@ -8,7 +8,7 @@ const ItemList = () => {
   const [filterCategory, setFilterCategory] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/ListItems.json', {
+    fetch('http://localhost:3000/data/LIST_ITEMS.json', {
       method: 'GET',
     })
       .then(res => res.json())

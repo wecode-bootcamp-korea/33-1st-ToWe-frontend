@@ -1,7 +1,12 @@
 import './ProductCategoryMap.scss';
 
-const ProductCategoryMap = ({ filterMenus, filterClick }) => {
-  const { name, option } = filterMenus;
+const ProductCategoryMap = ({
+  filterMenus,
+  filterClick,
+  filterColor,
+  filterColorClick,
+}) => {
+  const { id, name, option } = filterMenus;
   return (
     <ul
       className="listCategory"
@@ -9,7 +14,14 @@ const ProductCategoryMap = ({ filterMenus, filterClick }) => {
         filterClick(option);
       }}
     >
-      <li>{name}</li>
+      <li
+        onClick={() => {
+          filterColorClick(id);
+        }}
+        className={filterColor === id ? `filterName` : null}
+      >
+        {name}
+      </li>
     </ul>
   );
 };

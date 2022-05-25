@@ -1,7 +1,12 @@
 .listCategory {
   margin: 0 2rem;
   cursor: pointer;
-  .listCategory:hover {
+
+  .filterName {
+    color: #707070;
+  }
+
+  .filterName:hover {
     color: #707070;
   }
 }
