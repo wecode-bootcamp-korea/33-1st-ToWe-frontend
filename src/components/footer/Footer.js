@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <div className="Footer">
       <div className="footerIcons">
-        <i class="fa-solid fa-envelope fa-lg" />
-        <i class="fa-brands fa-instagram fa-lg" />
-        <i class="fa-solid fa-b fa-lg" />
+        <i className="fa-solid fa-envelope fa-lg" />
+        <i className="fa-brands fa-instagram fa-lg" />
+        <i className="fa-solid fa-b fa-lg" />
       </div>
       <span>이용약관</span>
       <span>개인정보처리방침</span>

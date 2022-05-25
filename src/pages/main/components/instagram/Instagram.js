@@ -29,7 +29,7 @@ const Instagram = () => {
         <div className="arrowLeft">A</div>
         <div className="arrowRight">B</div>
       </div>
-      <div className="space"></div>
+      <div className="space" />
     </div>
   );
 };

@@ -7,6 +7,7 @@ $lightGray: #888888;
 // $largeFont: 20px;
 
 .bestProducts {
+  margin-top: 1000px;
   @include flexCenter;
   flex-direction: column;
   padding: 0 3rem;
