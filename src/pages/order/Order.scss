@@ -1,0 +1,306 @@
+@import '../../styles/variables.scss';
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto;
+  margin-top: 6.25rem;
+  margin-bottom: 6.25rem;
+  max-width: 30rem;
+
+  input:focus {
+    outline: none;
+  }
+
+  // 타이틀
+  .mainTitle {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .boldLine {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    height: 0.9rem;
+  }
+
+  .itemImg {
+    width: 10rem;
+  }
+
+  .line {
+    width: 100%;
+    border: 1px solid rgb(222, 222, 222);
+  }
+
+  .title {
+    margin: 1.6rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  // 주문상품 컨테이너
+  .orderItemContainer {
+    width: 100%;
+
+    .itemList {
+      display: flex;
+      flex-direction: column;
+
+      .item {
+        display: flex;
+        margin-bottom: 1.5rem;
+
+        .itemImg {
+          margin-right: 1.2rem;
+          width: 6rem;
+          height: 6rem;
+          object-fit: cover;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .itemDetail {
+            padding: 0.2rem 0 0 0;
+            margin-bottom: 1rem;
+            color: gray;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .totalPrice {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+
+      .price {
+        color: rgb(52, 89, 255);
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // 주문자
+  .ordererContainer {
+    justify-content: space-between;
+    width: 100%;
+
+    .ordererBox {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .orderer {
+      margin-right: 2.5rem;
+      color: rgb(52, 89, 255);
+      font-size: 1.1rem;
+    }
+
+    .more {
+      position: absolute;
+      top: 1.3rem;
+      right: 0;
+      margin: 0 0.5rem;
+      font-size: 1.4rem;
+      color: rgb(165, 165, 165);
+    }
+  }
+
+  // 배송지
+  .addressContainer {
+    .addressCheckbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+
+      .addressDefault {
+        margin-right: 0.5rem;
+
+        input {
+          border: 2px solid #bcbcbc;
+        }
+        span {
+          color: gray;
+        }
+      }
+
+      .addressNew {
+        input {
+          border: 2px solid #bcbcbc;
+        }
+
+        span {
+          color: rgb(0, 0, 0);
+        }
+      }
+    }
+
+    .nameBox {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+      input {
+        margin-bottom: 1.4rem;
+        padding: 0 0.8rem;
+        height: 2.5rem;
+        border: 1px solid lightgray;
+        border-radius: 0.4rem;
+      }
+    }
+
+    .postBox {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+      input {
+        margin-bottom: 1.4rem;
+        padding: 0 0.8rem;
+        height: 2.5rem;
+        border: 1px solid lightgray;
+        border-radius: 0.4rem;
+      }
+    }
+    .addressBox {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+      input {
+        margin-bottom: 1.4rem;
+        padding: 0 0.8rem;
+        height: 2.5rem;
+        border: 1px solid lightgray;
+        border-radius: 0.4rem;
+      }
+    }
+    .tellBox {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+      input {
+        margin-bottom: 1.4rem;
+        padding: 0 0.8rem;
+        height: 2.5rem;
+        border: 1px solid lightgray;
+        border-radius: 0.4rem;
+        width: 31.2%;
+      }
+    }
+  }
+  // 결제정보
+  .payContainer {
+    width: 100%;
+    .pointBox {
+      display: flex;
+
+      flex-direction: column;
+
+      span {
+        margin: 0 1rem 0.3rem 0;
+        font-size: 0.9rem;
+      }
+
+      .pointForm {
+        display: flex;
+
+        input {
+          flex: 8;
+          border: 1px solid lightgray;
+          border-radius: 0.3rem;
+        }
+        button {
+          flex: 2;
+          margin-left: 0.5rem;
+          height: 3rem;
+          border: 1px solid rgb(52, 89, 255);
+          border-radius: 0.3rem;
+          color: rgb(52, 89, 255);
+          background-color: transparent;
+
+          &:hover {
+            color: white;
+            background-color: rgb(52, 89, 255);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .line {
+      margin: 1rem 0;
+    }
+
+    .totalBox {
+      display: flex;
+      flex-direction: column;
+
+      .totalProduct {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        span {
+        }
+      }
+      .totalDiscount {
+        display: flex;
+        justify-content: space-between;
+        span {
+        }
+      }
+    }
+    .amountPaymentBox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .amountPayment {
+        margin: 2rem 0;
+      }
+      .amount {
+        color: rgb(52, 89, 255);
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .payment {
+    position: fixed;
+    bottom: 0.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 30rem;
+    padding: 1.3rem 0;
+    width: 100%;
+    color: white;
+    background: black;
+    font-size: 1.1rem;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
