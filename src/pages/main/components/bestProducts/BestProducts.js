@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BestProduct from './BestProduct';
 import './BestProducts.scss';
 
 const BestProducts = () => {
   const [imgList, setImgList] = useState([]);
+  const navigate = useNavigate();
+
+  const goToBest10 = () => {
+    navigate(`/best10`);
+  };
 
   useEffect(() => {
     fetch('/data/BEST_PRODUCTS.json', {
@@ -26,7 +32,9 @@ const BestProducts = () => {
           ))}
         </ul>
       </div>
-      <div className="more">더 보러가기</div>
+      <div className="more" onClick={goToBest10}>
+        더 보러가기
+      </div>
       <div className="line" />
     </section>
   );
