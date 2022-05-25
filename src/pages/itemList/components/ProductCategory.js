@@ -1,55 +1,37 @@
+import { useEffect, useState } from 'react';
 import LitsFilter from './ListFilter.js';
 import './ProductCategory.scss';
+import ProductCategoryMap from './ProductCategoryMap.js';
 
 const ProductCategory = ({ filter }) => {
-  const check = categoey => {
-    filter(categoey);
+  const [firterValue, setFirterValue] = useState('');
+
+  const filterMenus = [
+    { id: 0, name: '전체', option: '' },
+    { id: 1, name: '레고', option: '레고' },
+    { id: 2, name: '인형', option: '인형' },
+    { id: 3, name: '퍼즐', option: '퍼즐' },
+    { id: 4, name: '자동차', option: '자동차' },
+  ];
+
+  const filterClick = e => {
+    setFirterValue(e);
   };
+  useEffect(() => {
+    filter(firterValue);
+  });
 
   return (
     <div>
-      <ul className="listCategory">
-        <li
-          onClick={() => {
-            check('');
-          }}
-          className="listCategorys"
-        >
-          전체
-        </li>
-        <li
-          onClick={() => {
-            check('레고');
-          }}
-          className="listCategorys"
-        >
-          레고
-        </li>
-        <li
-          onClick={() => {
-            check('인형');
-          }}
-          className="listCategorys"
-        >
-          인형
-        </li>
-        <li
-          onClick={() => {
-            check('퍼즐');
-          }}
-          className="listCategorys"
-        >
-          퍼즐
-        </li>
-        <li
-          onClick={() => {
-            check('자동차');
-          }}
-          className="listCategorys"
-        >
-          자동차
-        </li>
-      </ul>
+      <div className="filterTap">
+        {filterMenus.map(filterMenu => (
+          <ProductCategoryMap
+            filterMenus={filterMenu}
+            filterClick={filterClick}
+            key={filterMenu.id}
+          />
+        ))}
+      </div>
       <LitsFilter />
     </div>
   );

@@ -1,39 +1,25 @@
-import React, { useState } from 'react';
 import './ListFilter.scss';
-import { FiSliders } from 'react-icons/fi';
 
 const LitsFilter = () => {
-  const [age, setAge] = useState(false);
-  const [price, setPrice] = useState(false);
-
-  const ageToggle = () => {
-    setAge(!age);
-  };
-  const prriceToggle = () => {
-    setPrice(!price);
-  };
-
   return (
     <div className="listFilter">
-      <div onClick={ageToggle} className="filterAge">
-        <span>연령별보기</span>
-        <FiSliders className="filterIcon" />
-        <div className={age ? `ageFilter` : `toggle`}>
-          <p>1.5+</p>
-          <p>4+</p>
-          <p>6+</p>
-          <p>13+</p>
-        </div>
+      <div className="filterAge">
+        <select className="select">
+          <option>연령별보기</option>
+          <option>1.5+</option>
+          <option>4+</option>
+          <option>6+</option>
+          <option>13+</option>
+        </select>
       </div>
-      <div onClick={prriceToggle} className="filterPrice">
-        <span>가격별보기</span>
-        <FiSliders className="filterIcon" />
-        <div className={price ? `priceFilter` : `toggle`}>
-          <p>1만원 이상</p>
-          <p>1만원~3만원</p>
-          <p>3만원~5만원</p>
-          <p>5만원 이상</p>
-        </div>
+      <div className="filterPrice">
+        <select className="select">
+          <option>가격별보기</option>
+          <option>1만원이하</option>
+          <option>1~3만원</option>
+          <option>3~5만원</option>
+          <option>5만원이상</option>
+        </select>
       </div>
     </div>
   );
