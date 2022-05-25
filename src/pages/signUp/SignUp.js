@@ -1,11 +1,92 @@
 import React from 'react';
+import './SignUp.scss';
 
 const SignUp = () => {
   return (
     <div className="SignUp">
       <div className="signUpWrapper">
         <div className="signUpField">
-          <div className="signUpHeader"></div>
+          <div className="signUpHeader">
+            <span className="signUpTitle">회원가입</span>
+          </div>
+          <div className="contentBox">
+            <div className="row">
+              <span className="inputTitle">아이디 *</span>
+              <input
+                className="signUpInputBox"
+                placeholder="영문, 숫자 5자 이상 입력해주세요."
+              />
+            </div>
+            <div className="row">
+              <span className="inputTitle">이메일 *</span>
+              <input className="signUpInputBox" />
+            </div>
+            <div className="row">
+              <span className="inputTitle">이름 *</span>
+              <input className="signUpInputBox" />
+            </div>
+            <div className="row">
+              <span className="inputTitle">비밀번호 *</span>
+              <input
+                className="signUpInputBox"
+                placeholder="6자 이상 입력해주세요."
+              />
+            </div>
+            <div className="row">
+              <span className="inputTitle">비밀번호 확인 *</span>
+              <input className="signUpInputBox" />
+            </div>
+            <div className="row">
+              <span className="inputTitle">휴대폰 번호 *</span>
+              <div className="contentBox">
+                <input className="customerPhone1" />
+                <div className="element">-</div>
+                <input className="customerPhone2" />
+                <div className="element">-</div>
+                <input className="customerPhone3" />
+              </div>
+            </div>
+          </div>
+          <div className="checkboxWrapper">
+            <div className="checkbox">
+              <input type="checkbox" />
+            </div>
+            <span className="agreeText">모두 동의합니다.</span>
+          </div>
+          <div className="checkboxWrapper">
+            <div className="checkbox">
+              <input type="checkbox" />
+            </div>
+            <span className="agreeText">
+              (필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.
+            </span>
+          </div>
+          <div className="checkboxWrapper">
+            <div className="checkbox">
+              <input type="checkbox" />
+            </div>
+            <label className="agreeText">(필수) 만 14세 이상입니다.</label>
+            <br />
+            <span className="agreeSubText">
+              만 19세 미만의 미성년자가 결제 시 법정대리인이 거래를 취소할 수
+              있습니다.
+            </span>
+          </div>
+          <div className="checkboxWrapper">
+            <div className="checkbox">
+              <input type="checkbox" />
+            </div>
+            <label className="agreeText">
+              (선택) 이메일 및 SMS 마케팅 정보 수신에 동의합니다.
+            </label>
+            <br />
+            <label className="agreeSubText">
+              회원은 언제든지 회원 정보에서 수신 거부로 변경할 수 있습니다.
+            </label>
+          </div>
+          <div className="btnWrapper">
+            <button className="signUpBtn">가입하기</button>
+          </div>
         </div>
       </div>
     </div>
