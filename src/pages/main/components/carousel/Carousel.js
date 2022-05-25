@@ -22,14 +22,10 @@ const Carousel = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (curImg < imgList.length - 1) {
-        return setCurImg(curImg => curImg + 1);
-      } else if (curImg === imgList.length - 1) {
-        return setCurImg(0);
-      }
+      setCurImg(curImg => (curImg < imgList.length - 1 ? curImg + 1 : 0));
     }, 5000);
     return () => clearInterval(timer);
-  }, [curImg]); // [] or [curImg] ??
+  }, [curImg, imgList]);
 
   return (
     <section className="carousel">
