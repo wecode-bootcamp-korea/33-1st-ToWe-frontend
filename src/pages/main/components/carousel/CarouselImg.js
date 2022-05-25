@@ -13,6 +13,7 @@ const CarouselImg = ({ imgData, currentImage }) => {
         <span className="title">{imgData.name}</span>
         <span className="titleEn">{imgData.NameEn}</span>
         <div className="line" />
+
         <span className="titlePrice">{imgData.price}</span>
       </div>
     </div>

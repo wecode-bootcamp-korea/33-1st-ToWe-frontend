@@ -13,7 +13,7 @@ $lightGray: #888888;
     margin: 10rem 0 3rem;
     color: $darkGray;
     font-size: calc($largeFont) * 2.5;
-    font-weight: 700;
+    font-family: $boldFont;
   }
 
   .description {
@@ -22,7 +22,8 @@ $lightGray: #888888;
     font-size: calc($largeFont) * 1.15;
     text-align: center;
     line-height: 2.5rem;
-    padding: 0 50px;
+    padding: 0 3.125rem;
+    font-family: $regularFont;
   }
 
   .slider {
@@ -44,9 +45,11 @@ $lightGray: #888888;
     .arrowLeft {
       position: absolute;
       top: 50%;
-      left: 3rem;
+      left: 1.92rem;
       transform: translateY(-40%);
+      padding: 0.4rem 0.32rem 0.2rem 0.28rem;
       color: white;
+      background-color: rgba(0, 0, 0, 0.3);
       font-size: 1.8rem;
       cursor: pointer;
     }
@@ -54,9 +57,11 @@ $lightGray: #888888;
     .arrowRight {
       position: absolute;
       top: 50%;
-      right: 3rem;
+      right: 1.92rem;
       transform: translateY(-40%);
+      padding: 0.4rem 0.28rem 0.2rem 0.35rem;
       color: white;
+      background-color: rgba(0, 0, 0, 0.3);
       font-size: 1.8rem;
       cursor: pointer;
     }

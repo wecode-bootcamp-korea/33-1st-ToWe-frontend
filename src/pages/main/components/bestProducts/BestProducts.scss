@@ -14,6 +14,7 @@ $lightGray: #888888;
     color: $darkGray;
     font-size: calc($largeFont) * 2.5;
     font-weight: 700;
+    font-family: $boldFont;
   }
 
   .description {
@@ -22,6 +23,7 @@ $lightGray: #888888;
     color: $lightGray;
     text-align: center;
     line-height: 2.5rem;
+    font-family: $regularFont;
   }
 
   .itemContainer {
@@ -34,17 +36,42 @@ $lightGray: #888888;
       margin-bottom: 0.08rem;
 
       .itemList {
+        position: relative;
         display: flex;
         flex-direction: column;
-        width: calc(33.3% - 35px);
+        width: calc(33.3% - 2rem);
         margin-bottom: 3.7rem;
 
         .item {
-          width: 100%;
           height: 100%;
           object-position: center;
           object-fit: cover;
           cursor: pointer;
+          transition: all 300ms ease-in-out;
+        }
+
+        .item:hover {
+          animation: 0.5s ease-in ani2;
+          @keyframes ani2 {
+            from {
+              opacity: 0.8;
+            }
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .item:not(hover) {
+          animation: 0.5s ease-out ani;
+          @keyframes ani {
+            from {
+              opacity: 0.8;
+            }
+          }
+          to {
+            opacity: 1;
+          }
         }
 
         .itemDesc {
@@ -54,12 +81,14 @@ $lightGray: #888888;
           span {
             &:first-child {
               margin: 1.25rem 0;
-              font-size: calc($smallFont) * 1.1;
+              font-size: calc($smallFont) * 1.3;
+              font-family: $regularFont;
             }
 
             &:last-child {
               color: $lightGray;
-              font-size: calc($largeFont) * 0.9;
+              font-size: calc($smallFont) * 1.2;
+              font-family: $regularFont;
             }
           }
         }
@@ -67,13 +96,14 @@ $lightGray: #888888;
     }
   }
   .more {
-    padding: 0.8rem 1.3rem;
+    padding: 0.8rem 1.3rem 0.94rem 1.3rem;
     color: $darkGray;
     border: 3px solid $darkGray;
     border-radius: 1.5rem;
     font-size: $smallFont;
-    cursor: pointer;
     transition: all 0.3s;
+    font-family: $regularFont;
+    cursor: pointer;
 
     &:hover {
       background-color: $darkGray;

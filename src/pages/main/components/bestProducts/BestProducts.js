@@ -22,7 +22,7 @@ const BestProducts = () => {
       <div className="itemContainer">
         <ul className="items">
           {imgList.map(imgData => (
-            <BestProduct imgData={imgData} key={imgData.id} />
+            <BestProduct imgData={imgData} key={imgData.id} id={imgData.id} />
           ))}
         </ul>
       </div>
