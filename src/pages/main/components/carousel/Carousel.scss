@@ -1,6 +1,7 @@
 @import '../../../../styles/variables.scss';
 
 .carousel {
+  z-index: 1;
   .carouselWrapper {
     .carouselImg {
       &.hidden {
@@ -15,7 +16,7 @@
 
       img {
         position: absolute;
-        top: 0;
+        // top: 100px;
         left: 0;
         height: 100vh;
         width: 100vw;
@@ -72,12 +73,12 @@
   .carouselBtns {
     display: flex;
     position: absolute;
-    bottom: 1.2rem;
+    bottom: 0;
 
     .btn {
       width: 0.8rem;
       height: 0.8rem;
-      margin: 0 0.6rem;
+      margin: 0 1.2rem 1.5rem 0rem;
       background-color: transparent;
       border: 3px solid white;
       border-radius: 50%;
