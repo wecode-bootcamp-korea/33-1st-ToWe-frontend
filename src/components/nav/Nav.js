@@ -4,7 +4,7 @@ import { FaSearch, FaShoppingCart, FaUserAlt } from 'react-icons/fa';
 
 const Nav = () => {
   return (
-    <div className="Nav">
+    <div className="nav">
       <div className="navBar">
         <div className="navBasic">
           <div className="title">

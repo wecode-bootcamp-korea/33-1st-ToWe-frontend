@@ -4,7 +4,7 @@ import { FaBold, FaRegEnvelope, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <div className="Footer">
+    <div className="footer">
       <div className="footerIcons">
         <FaRegEnvelope className="footerIcon" size={24} />
         <FaInstagram className="footerIcon" size={24} />

@@ -1,4 +1,4 @@
-.Nav {
+.nav {
   .navBar {
     display: flex;
     position: fixed;
@@ -46,15 +46,20 @@
         .store {
           font-weight: bold;
 
+          &:hover {
+            border-bottom: 0.2rem solid black;
+            background-color: lightblue;
+          }
+
           .navDetailBar {
-            visibility: hidden;
+            // visibility: hidden;
             display: flex;
             justify-content: center;
             position: absolute;
-            padding-top: 5rem;
+            margin-top: 2rem;
             width: 100vw;
             left: 0;
-            background-color: white;
+            background-color: lightblue;
 
             .storeCategory {
               width: 15%;
