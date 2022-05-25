@@ -9,7 +9,7 @@ const CarouselImg = ({ imgData, curImg }) => {
       <div className="itemDesc">
         <h3>BEST</h3>
         <span className="title">{imgData.name}</span>
-        <span className="titleEn">영문명</span>
+        <span className="titleEn">{imgData.NameEn}</span>
         <div className="line" />
         <span className="titlePrice">{imgData.price}</span>
       </div>

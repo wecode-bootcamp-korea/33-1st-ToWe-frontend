@@ -7,13 +7,13 @@ const Instagram = () => {
   const [imgList, setImgList] = useState([]);
   const [curIndex, setCurIndex] = useState(4);
 
-  const TATAL_SLIDES = 3;
+  const TATAL_SLIDES = 3; // 실제 슬라이드 개수
   const transitionTime = 500;
   const transitionStyle = `transform ${transitionTime}ms ease-in-out`;
   const [transition, setTransition] = useState(transitionStyle);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/SLIDER_DATA.json', {
+    fetch('/data/SLIDER_DATA.json', {
       method: 'GET',
     })
       .then(res => res.json())
@@ -22,7 +22,14 @@ const Instagram = () => {
       });
   }, []);
 
+  useEffect(() => {
+    slideRef.current.style.transition = transition;
+    slideRef.current.style.transform = `translateX(-${curIndex * 25}%)`;
+  }, [curIndex]);
+
+  // 슬라이드 함수 transition과 translateX 제어
   const slideRef = useRef('');
+
   const replaceSlide = () => {
     setCurIndex(8);
     setTimeout(() => {
@@ -31,13 +38,13 @@ const Instagram = () => {
     }, transitionTime);
   };
 
-  // console.log('transition>>', transition);
-
-  useEffect(() => {
-    slideRef.current.style.transition = transition;
-    slideRef.current.style.transform = `translateX(-${curIndex * 25}%)`;
-    // console.log(slideRef.current.style.transition);
-  }, [curIndex]);
+  const replaceReverseSlide = () => {
+    setCurIndex(0);
+    setTimeout(() => {
+      setTransition('');
+      setCurIndex(4);
+    }, transitionTime);
+  };
 
   // 정방향 이동함수
   const moveToNextSlide = () => {
@@ -49,22 +56,23 @@ const Instagram = () => {
     }
   };
 
+  // 반대방향 이동함수
   const moveToPrevSlide = () => {
-    if (curIndex === 0) {
-      setCurIndex(TATAL_SLIDES);
+    if (curIndex === 1) {
+      replaceReverseSlide();
     } else {
       setCurIndex(curIndex => curIndex - 1);
+      setTransition(transitionStyle);
     }
   };
 
-  // console.log(curIndex);
   return (
     <div className="instagram">
       <h2 className="title">INSTAGRAM</h2>
       <div className="description">#토위 #TOWE STORY #TOWE #TOY SHOP #REGO</div>
       <div className="slider">
         <div className="slide" ref={slideRef}>
-          {imgList.map((imgData, i) => {
+          {imgList.map(imgData => {
             return <SliderImg key={imgData.id} imgData={imgData} />;
           })}
         </div>
