@@ -82,13 +82,13 @@ $lightGray: #888888;
             &:first-child {
               margin: 1.25rem 0;
               font-size: calc($smallFont) * 1.3;
-              font-family: $regularFont;
+              font-family: 'Montserrat', sans-serif;
             }
 
             &:last-child {
               color: $lightGray;
               font-size: calc($smallFont) * 1.2;
-              font-family: $regularFont;
+              font-family: 'Montserrat', sans-serif;
             }
           }
         }
@@ -96,18 +96,26 @@ $lightGray: #888888;
     }
   }
   .more {
-    padding: 0.8rem 1.3rem 0.94rem 1.3rem;
+    position: relative;
+    padding: 0.8rem 2.2rem 0.94rem 1.3rem;
     color: $darkGray;
     border: 3px solid $darkGray;
     border-radius: 1.5rem;
     font-size: $smallFont;
     transition: all 0.3s;
-    font-family: $regularFont;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
 
     &:hover {
       background-color: $darkGray;
       color: white;
+    }
+
+    .arrowRightBtn {
+      position: absolute;
+      top: 0.66rem;
+      right: 0.8rem;
+      font-size: 1.1rem;
     }
   }
 

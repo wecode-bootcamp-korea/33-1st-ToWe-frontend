@@ -1,28 +1,28 @@
 [
   {
     "id": 0,
-    "url": "/images/mainImg.jpg",
+    "url": "/images/01.jpeg",
     "name": "레고 비틀즈",
     "price": "30,000",
     "NameEn": "lego beatles"
   },
   {
     "id": 1,
-    "url": "/images/batduckToy.jpg",
+    "url": "/images/02.jpeg",
     "name": "배트덕",
     "price": "12,000",
     "NameEn": "bat duck"
   },
   {
     "id": 2,
-    "url": "/images/cartoy.jpg",
+    "url": "/images/03.jpeg",
     "name": "자동차",
     "price": "8,000",
     "NameEn": "towestory car"
   },
   {
     "id": 3,
-    "url": "/images/minionToy.jpg",
+    "url": "/images/04.jpeg",
     "name": "미니언 미니어쳐",
     "price": "15,000",
     "NameEn": "minion miniature"

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaAngleRight } from 'react-icons/fa';
 import BestProduct from './BestProduct';
 import './BestProducts.scss';
 
@@ -26,7 +27,9 @@ const BestProducts = () => {
           ))}
         </ul>
       </div>
-      <div className="more">더 보러가기</div>
+      <div className="more">
+        more <FaAngleRight className="arrowRightBtn" />
+      </div>
       <div className="line" />
     </section>
   );
