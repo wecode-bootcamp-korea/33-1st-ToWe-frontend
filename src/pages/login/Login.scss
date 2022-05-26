@@ -71,10 +71,21 @@
             border-radius: 3.125rem;
             background: white;
             border: 0.063rem solid black;
+            color: black;
 
             &:hover {
               background: black;
               color: white;
+            }
+
+            &:disabled {
+              width: 15rem;
+              height: 3.375rem;
+              padding: 0.75rem 1.25rem;
+              border-radius: 3.125rem;
+              background: white;
+              border: 0.063rem solid black;
+              color: red;
             }
           }
 
