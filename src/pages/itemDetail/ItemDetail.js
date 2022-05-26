@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../../components/nav/Nav';
 import './ItemDetail.scss';
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineClose } from 'react-icons/ai';
+import {
+  AiOutlineMinus,
+  AiOutlinePlus,
+  AiOutlineClose,
+  AiOutlineDown,
+} from 'react-icons/ai';
+
 const ItemDetail = () => {
+  const [prodCount, setProdCount] = useState(1);
+
+  const upProdCount = () => {
+    setProdCount(prodCount + 1);
+  };
+
+  const downProdCount = () => {
+    if (prodCount >= 2) setProdCount(prodCount - 1);
+  };
   return (
     <>
       <Nav />
@@ -61,16 +76,31 @@ const ItemDetail = () => {
               <span>4세 이상</span>
             </div>
 
-            <div className="ageSelect">
-              <span className="age">색상</span>
+            {/* 백엔드에서 색상 정보 받아옴 */}
+            {/* <div className="colorSelect">
+              <span className="colorText">색상</span>
               <br />
               <select>
-                {/* 아래 화살표랑 오른쪽 테두리 공간 만들기 */}
                 <option value="null">선택하세요.</option>
                 <option value="red">빨강</option>
                 <option value="blue">파랑</option>
                 <option value="green">초록</option>
               </select>
+            </div> */}
+            {/* 이거로 바꿀거 */}
+            <div className="colorSelect">
+              <div className="colorText">색상</div>
+              <div className="colorOptions">
+                <div className="optionShown">
+                  선택하세요. <AiOutlineDown />
+                </div>
+                <div className="options">
+                  <div className="null">선택하세요.</div>
+                  <div className="red">빨강</div>
+                  <div className="blue">파랑</div>
+                  <div className="green">초록</div>
+                </div>
+              </div>
             </div>
             {/* 구매할 상품 개수 */}
 
@@ -85,11 +115,11 @@ const ItemDetail = () => {
               {/* onClick 이벤트랑 이모티콘으로 해야할듯 */}
               <div className="calculator">
                 <div className="numButton">
-                  <div className="minus">
+                  <div className="minus" onClick={downProdCount}>
                     <AiOutlineMinus />
                   </div>
-                  <div className="number">1</div>
-                  <div className="plus">
+                  <div className="number">{prodCount}</div>
+                  <div className="plus" onClick={upProdCount}>
                     <AiOutlinePlus />
                   </div>
                 </div>

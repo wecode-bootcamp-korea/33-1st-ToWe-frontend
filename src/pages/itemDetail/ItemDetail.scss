@@ -1,5 +1,6 @@
 $darkGray: #3a3a3a;
-$lightGray: #888888;
+$lightGray: #adadad;
+$gray: #7c7c7c;
 
 @mixin flexCenterSort {
   display: flex;
@@ -8,7 +9,7 @@ $lightGray: #888888;
 }
 
 @mixin hoverBlack {
-  background-color: black;
+  background-color: $darkGray;
   color: white;
 }
 
@@ -74,23 +75,60 @@ $lightGray: #888888;
         }
       }
 
-      .ageSelect {
+      // .colorSelect {
+      //   margin: 3rem 1rem;
+
+      //   .colorText {
+      //     font-size: 0.9rem;
+      //     margin-bottom: 0.5rem;
+      //   }
+
+      //   select {
+      //     cursor: pointer;
+      //     margin-top: 1rem;
+      //     padding: 0.6rem 1rem;
+
+      //     .option {
+      //       width: 5rem;
+      //     }
+      //   }
+      // }
+
+      // 추가부분
+      .colorSelect {
+        display: flex;
+        flex-direction: column;
         margin: 3rem 1rem;
 
-        .age {
+        .colorText {
           font-size: 0.9rem;
+          margin-bottom: 0.5rem;
         }
 
-        select {
-          cursor: pointer;
-          margin-top: 1rem;
-          padding: 0.6rem 1rem;
+        .colorOptions {
+          .optionShown {
+            border: 1px solid $darkGray;
+            width: 7rem;
+            font-size: 0.9rem;
+            text-align: center;
+            cursor: pointer;
+          }
+          .options {
+            border: 1px solid $darkGray;
+            display: none;
+          }
+          .options div {
+            padding-left: 2rem;
+            padding-bottom: 1rem;
+          }
         }
       }
 
+      //여기까지
+
       .prodBuyNum {
         margin: 1rem;
-        border-top: 1px solid black;
+        border-top: 1px solid $darkGray;
         display: flex;
         flex-direction: column;
 
@@ -117,7 +155,7 @@ $lightGray: #888888;
               width: 2rem;
               height: 2rem;
               @include flexCenterSort();
-              border: 1px solid black;
+              border: 1px solid $darkGray;
               border-right: 0px;
               cursor: pointer;
             }
@@ -126,7 +164,7 @@ $lightGray: #888888;
               width: 2rem;
               height: 2rem;
               @include flexCenterSort();
-              border: 1px solid black;
+              border: 1px solid $darkGray;
               border-right: 0px;
             }
 
@@ -134,7 +172,7 @@ $lightGray: #888888;
               width: 2rem;
               height: 2rem;
               @include flexCenterSort();
-              border: 1px solid black;
+              border: 1px solid $darkGray;
               cursor: pointer;
             }
           }
@@ -144,7 +182,7 @@ $lightGray: #888888;
       .endOrder {
         display: flex;
         flex-direction: column;
-        border-top: 1px solid black;
+        border-top: 1px solid $darkGray;
         margin: 1rem;
         padding-top: 3rem;
         font-size: 0.8rem;
@@ -195,7 +233,7 @@ $lightGray: #888888;
 
   .midNavBar {
     @include flexCenterSort();
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $darkGray;
     width: 40%;
     min-width: 29.5rem;
     margin: 5rem auto;
@@ -205,7 +243,7 @@ $lightGray: #888888;
 
     a {
       text-decoration: none;
-      color: black;
+      color: $darkGray;
       margin: 0 2rem;
       font-size: 0.9rem;
     }
@@ -217,7 +255,7 @@ $lightGray: #888888;
     align-items: center;
     width: 100%;
     min-width: 55rem;
-    // border: 1px solid black;
+    // border: 1px solid $darkGray;
 
     .prodDesc {
       margin: 4rem;
@@ -229,7 +267,7 @@ $lightGray: #888888;
 
       .reviewTitle {
         padding: 2rem 0 1.5rem;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $darkGray;
         display: flex;
         flex-direction: column;
 
@@ -273,7 +311,7 @@ $lightGray: #888888;
 
       .review {
         padding: 2rem 0;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $darkGray;
       }
 
       .reviewButtonDiv {
@@ -283,7 +321,7 @@ $lightGray: #888888;
 
         .reviewButton {
           border-radius: 1.5rem;
-          border: 0.1rem solid black;
+          border: 0.1rem solid $darkGray;
           padding: 1rem 1.5rem;
           cursor: pointer;
         }
@@ -315,7 +353,7 @@ $lightGray: #888888;
         display: flex;
         margin-top: 1.5rem;
         padding: 0 0 1rem;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $darkGray;
 
         .questionNumber {
           display: flex;
@@ -344,7 +382,7 @@ $lightGray: #888888;
 
       .questionList {
         display: flex;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $darkGray;
         padding: 1rem 0;
         .questionNumber {
           display: flex;
@@ -379,7 +417,7 @@ $lightGray: #888888;
         button {
           padding: 0.8rem 1.6rem;
           border-radius: 1.4rem;
-          border: 0.1rem solid black;
+          border: 0.1rem solid $darkGray;
         }
       }
 
