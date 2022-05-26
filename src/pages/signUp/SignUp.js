@@ -11,13 +11,6 @@ const SignUp = () => {
           </div>
           <div className="contentBox">
             <div className="row">
-              <span className="inputTitle">아이디 *</span>
-              <input
-                className="signUpInputBox"
-                placeholder="영문, 숫자 5자 이상 입력해주세요."
-              />
-            </div>
-            <div className="row">
               <span className="inputTitle">이메일 *</span>
               <input className="signUpInputBox" />
             </div>
@@ -45,6 +38,10 @@ const SignUp = () => {
                 <div className="element">-</div>
                 <input className="customerPhone3" />
               </div>
+            </div>
+            <div className="row">
+              <span className="inputTitle">주소 *</span>
+              <input className="signUpInputBox" />
             </div>
           </div>
           <div className="checkboxWrapper">
