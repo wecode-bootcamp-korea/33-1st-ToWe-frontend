@@ -4,6 +4,8 @@ import '../../styles/variables.scss';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const MAPTEST = [{}];
+
   const [inputValue, setInputValue] = useState({
     id: '',
     pw: '',
