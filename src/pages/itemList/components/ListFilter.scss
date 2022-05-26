@@ -1,14 +1,25 @@
+@import '../components/../../../styles/variables.scss';
+
 .listFilter {
   width: 95%;
   display: flex;
   align-items: center;
   justify-content: end;
   margin: 1rem 0;
+
   .filterBtn {
     margin: 0 0.5rem;
     font-size: 0.75rem;
     cursor: pointer;
   }
+
+  .filterBtnActive {
+    margin: 0 0.5rem;
+    font-size: 0.78rem;
+    color: $gray;
+    cursor: pointer;
+  }
+
   .filterBtn:hover {
     color: #707070;
   }

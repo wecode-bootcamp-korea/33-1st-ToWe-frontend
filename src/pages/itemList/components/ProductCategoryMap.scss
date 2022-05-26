@@ -1,12 +1,15 @@
+@import '../components/../../../styles/variables.scss';
+
 .listCategory {
   margin: 0 2rem;
   cursor: pointer;
 
   .filterName {
-    color: #707070;
+    font-size: 1.1rem;
+    color: $gray;
   }
 
   .filterName:hover {
-    color: #707070;
+    color: $gray;
   }
 }
