@@ -3,28 +3,28 @@ import './Login.scss';
 import '../../styles/variables.scss';
 
 const Login = () => {
-  const [inputId, setInputId] = useState('');
-  const [inputPw, setInputPw] = useState('');
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    pw: '',
+  });
+
+  const { id, pw } = inputValue;
 
   const LoginTest = () => {
     fetch('', {
       method: 'POST',
       body: JSON.stringify({
-        email: inputId,
-        password: inputPw,
+        email: id,
+        password: pw,
       }),
     })
       .then(response => response.json())
-      .then(result => {
-        console.log();
-      });
+      .then(result => {});
   };
 
-  const handleIdInput = event => {
-    setInputId(event.target.value);
-  };
-  const handlePwInput = event => {
-    setInputPw(event.target.value);
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
   };
 
   return (
@@ -41,7 +41,7 @@ const Login = () => {
                 className="loginInputBox"
                 type="text"
                 placeholder="이메일을 입력해주세요."
-                onChange={handleIdInput}
+                onChange={handleInput}
               />
             </div>
             <div className="row">
@@ -50,7 +50,7 @@ const Login = () => {
                 className="loginInputBox"
                 type="password"
                 placeholder="비밀번호를 입력해주세요."
-                onChange={handlePwInput}
+                onChange={handleInput}
               />
             </div>
             <div className="findPw">
