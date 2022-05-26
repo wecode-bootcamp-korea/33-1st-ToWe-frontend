@@ -1,7 +1,30 @@
 import React from 'react';
 import './SignUp.scss';
+import SignUpComponent from './component/SignUpComponent';
 
 const SignUp = () => {
+  const TEST = [
+    {
+      id: 0,
+      title: '이메일',
+    },
+    {
+      id: 1,
+      title: '이름',
+    },
+    {
+      id: 2,
+      title: '비밀번호',
+    },
+    {
+      id: 3,
+      title: '비밀번호 확인',
+    },
+    {
+      id: 4,
+      title: '주소',
+    },
+  ];
   return (
     <div className="SignUp">
       <div className="signUpWrapper">
@@ -10,25 +33,9 @@ const SignUp = () => {
             <span className="signUpTitle">회원가입</span>
           </div>
           <div className="contentBox">
-            <div className="row">
-              <span className="inputTitle">이메일 *</span>
-              <input className="signUpInputBox" />
-            </div>
-            <div className="row">
-              <span className="inputTitle">이름 *</span>
-              <input className="signUpInputBox" />
-            </div>
-            <div className="row">
-              <span className="inputTitle">비밀번호 *</span>
-              <input
-                className="signUpInputBox"
-                placeholder="6자 이상 입력해주세요."
-              />
-            </div>
-            <div className="row">
-              <span className="inputTitle">비밀번호 확인 *</span>
-              <input className="signUpInputBox" />
-            </div>
+            {TEST.map(test => (
+              <SignUpComponent test={test} />
+            ))}
             <div className="row">
               <span className="inputTitle">휴대폰 번호 *</span>
               <div className="contentBox">
@@ -38,10 +45,6 @@ const SignUp = () => {
                 <div className="element">-</div>
                 <input className="customerPhone3" />
               </div>
-            </div>
-            <div className="row">
-              <span className="inputTitle">주소 *</span>
-              <input className="signUpInputBox" />
             </div>
           </div>
           <div className="checkboxWrapper">
