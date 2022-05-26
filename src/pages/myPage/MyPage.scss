@@ -1,0 +1,154 @@
+@import '../../styles/variables.scss';
+
+.myPage {
+  display: flex;
+  justify-content: center;
+
+  .myPageContainer {
+    display: flex;
+    padding: 3rem 0.5rem;
+
+    .components {
+      margin-right: 10rem;
+
+      .breakDown {
+        width: 45vh;
+
+        .componentTitle {
+          margin-top: 5rem;
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 2.5rem;
+        }
+
+        .nothing {
+          padding: 5rem 0rem;
+          font-size: 0.9rem;
+          text-align: center;
+        }
+      }
+    }
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profileTitle {
+        display: flex;
+        justify-content: space-between;
+        width: 45vh;
+        margin-top: 5rem;
+
+        .title {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+
+        .logOut {
+          padding-top: 5rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .profileImage {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        width: 40vh;
+        height: 40vh;
+        max-width: 40vh;
+        overflow: hidden;
+      }
+
+      .userInformation {
+        width: 45vh;
+        height: 50vh;
+
+        .userInfor {
+          margin-top: 3rem;
+
+          .contentBox {
+            width: 100%;
+
+            .row {
+              margin-bottom: 1.25rem;
+
+              .inputTitle {
+                display: block;
+                font-size: 0.875rem;
+                margin-bottom: 0.75rem;
+              }
+
+              .userInforInputBox {
+                width: 100%;
+                height: 2.5rem;
+                padding: 0.625rem 15px;
+              }
+            }
+          }
+
+          .phoneBox {
+            display: flex;
+            justify-content: space-between;
+
+            .customerPhone {
+              width: 25%;
+              height: 2rem;
+              margin-top: 0.5rem;
+            }
+
+            .element {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding-top: 0.25rem;
+            }
+          }
+
+          .agree {
+            padding-top: 2rem;
+
+            .checkBox {
+              padding-top: 1rem;
+
+              .email {
+                margin-right: 0.5rem;
+              }
+
+              .message {
+                margin-left: 1rem;
+                margin-right: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      .exit {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        border: 0;
+        background-color: white;
+
+        &:hover {
+          cursor: pointer;
+          color: $hoverColor;
+        }
+      }
+
+      .save {
+        width: 240px;
+        height: 54px;
+        border-radius: 50px;
+        background: white;
+        border: 1px solid black;
+
+        &:hover {
+          cursor: pointer;
+          background: black;
+          color: white;
+        }
+      }
+    }
+  }
+}
