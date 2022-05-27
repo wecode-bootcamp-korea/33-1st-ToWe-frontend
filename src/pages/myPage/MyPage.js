@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from '../../components/nav/Nav.js';
-import './components/Component.js';
-import Component from './components/Component.js';
+import UserActivity from './components/UserActivity.js';
 import Input from './components/Input.js';
 import './MyPage.scss';
 
@@ -12,7 +11,7 @@ const MyPage = () => {
       <div className="myPageContainer">
         <div className="components">
           {USER_ACTIVITY.map(id => (
-            <Component id={id} key={id.id} />
+            <UserActivity id={id} key={id.id} />
           ))}
         </div>
         <div className="profile">

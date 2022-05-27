@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Component = ({ id }) => {
+const UserActivity = ({ id }) => {
   return (
     <div className="breakDown">
       <div className="componentTitle">{id.content}</div>
@@ -9,4 +9,4 @@ const Component = ({ id }) => {
   );
 };
 
-export default Component;
+export default UserActivity;
