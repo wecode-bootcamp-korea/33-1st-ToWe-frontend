@@ -1,12 +1,12 @@
 import React from 'react';
 
-const SignUpComponent = ({ test }) => {
-  // const { id, title } = test;
+const SignUpComponent = ({ input }) => {
+  // const { id, title } = input;
 
   return (
     <div className="row">
-      <span className="inputTitle">{test.title} *</span>
-      <input className="signUpInputBox" type="text" />
+      <span className="inputTitle">{input.title} *</span>
+      <input className="signUpInputBox" type={input.type} />
     </div>
   );
 };

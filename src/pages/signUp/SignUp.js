@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignUp.scss';
 import SignUpComponent from './component/SignUpComponent';
 import Nav from '../../components/nav/Nav';
@@ -50,26 +50,36 @@ const SignUp = () => {
     setInputValue({ ...inputValue, [name]: value });
   };
 
-  const TEST = [
+  const INPUT = [
     {
       id: 0,
       title: '이메일',
+      type: 'text',
     },
     {
       id: 1,
       title: '이름',
+      type: 'text',
     },
     {
       id: 2,
       title: '비밀번호',
+      type: 'password',
     },
     {
       id: 3,
       title: '비밀번호 확인',
+      type: 'password',
     },
     {
       id: 4,
+      title: '휴대폰번호',
+      type: 'text',
+    },
+    {
+      id: 5,
       title: '주소',
+      type: 'text',
     },
   ];
   return (
@@ -80,19 +90,9 @@ const SignUp = () => {
             <span className="signUpTitle">회원가입</span>
           </div>
           <div className="contentBox">
-            {TEST.map(test => (
-              <SignUpComponent test={test} key={test.id} />
+            {INPUT.map(input => (
+              <SignUpComponent input={input} key={input.id} />
             ))}
-            <div className="row">
-              <span className="inputTitle">휴대폰 번호 *</span>
-              <div className="contentBox">
-                <input className="customerPhone1" />
-                <div className="element">-</div>
-                <input className="customerPhone2" />
-                <div className="element">-</div>
-                <input className="customerPhone3" />
-              </div>
-            </div>
           </div>
           <div className="checkboxWrapper">
             <div className="checkbox">
