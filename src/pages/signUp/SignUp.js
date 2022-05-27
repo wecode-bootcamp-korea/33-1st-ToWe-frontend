@@ -5,6 +5,51 @@ import Nav from '../../components/nav/Nav';
 import Footer from '../../components/footer/Footer';
 
 const SignUp = () => {
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    name: '',
+    pw: '',
+    address: '',
+    phone: '',
+  });
+
+  const { id, name, pw, address, phone } = inputValue;
+
+  const GoSignUp = () => {
+    fetch('', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        name: name,
+        password: pw,
+        address: address,
+        phone: phone,
+      }),
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          alert('이메일과 비밀번호를 다시 한번 확인해주세요!');
+        }
+      })
+      .then(result => {
+        navigator('/main');
+        localStorage.setItem('TOKEN', result.access_token);
+      });
+  };
+
+  const passwordCondition = /^[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.]+$/;
+  const emailCondition =
+    id.includes('@') &&
+    id.includes('.') &&
+    passwordCondition.test(inputValue.pw);
+
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
+  };
+
   const TEST = [
     {
       id: 0,

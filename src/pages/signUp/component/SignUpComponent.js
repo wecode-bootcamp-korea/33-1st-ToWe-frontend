@@ -6,7 +6,7 @@ const SignUpComponent = ({ test }) => {
   return (
     <div className="row">
       <span className="inputTitle">{test.title} *</span>
-      <input className="signUpInputBox" />
+      <input className="signUpInputBox" type="text" />
     </div>
   );
 };
