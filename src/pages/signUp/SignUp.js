@@ -39,11 +39,15 @@ const SignUp = () => {
       });
   };
 
-  const passwordCondition = /^[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.]+$/;
-  const signUpCondition =
-    id.includes('@') &&
-    id.includes('.') &&
-    passwordCondition.test(inputValue.pw);
+  // const passwordCondition = /^[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.]+$/;
+  // const signUpCondition =
+  //   id.includes('@') &&
+  //   id.includes('.') &&
+  //   passwordCondition.test(inputValue.pw);
+
+  const passwordCondition = e => {
+    const { email } = e.target;
+  };
 
   const handleInput = e => {
     const { name, value } = e.target;
