@@ -30,8 +30,7 @@ const Login = () => {
         }
       })
       .then(result => {
-        console.log(result);
-        navigator('/signup');
+        navigator('/main');
         localStorage.setItem('TOKEN', result.TOKEN);
       });
   };
