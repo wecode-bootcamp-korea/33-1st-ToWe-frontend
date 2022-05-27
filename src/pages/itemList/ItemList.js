@@ -8,7 +8,7 @@ const ItemList = () => {
   const [listItems, setListItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/LIST_ITEMS.json', {
+    fetch('/data/LIST_ITEMS.json', {
       method: 'GET',
     })
       .then(res => res.json())

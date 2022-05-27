@@ -4,15 +4,8 @@ import './ListFilter.scss';
 const LitsFilter = () => {
   const [sortColor, setSortColor] = useState();
 
-  const SORT_MENU = [
-    { id: 0, name: '낮은가격' },
-    { id: 1, name: '높은가격' },
-    { id: 2, name: '낮은연령' },
-    { id: 3, name: '높은연령' },
-  ];
-
-  const sortColorClick = e => {
-    setSortColor(e);
+  const sortColorClick = filterNum => {
+    setSortColor(filterNum);
   };
 
   return (
@@ -37,3 +30,10 @@ const LitsFilter = () => {
 };
 
 export default LitsFilter;
+
+const SORT_MENU = [
+  { id: 0, name: '낮은가격' },
+  { id: 1, name: '높은가격' },
+  { id: 2, name: '낮은연령' },
+  { id: 3, name: '높은연령' },
+];
