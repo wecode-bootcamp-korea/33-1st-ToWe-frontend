@@ -15,7 +15,7 @@ const Login = () => {
   const navigator = useNavigate();
 
   const LoginTest = () => {
-    fetch('http://10.58.2.209:8000/users/login', {
+    fetch('http://10.58.5.168:8000/users/login', {
       method: 'POST',
       body: JSON.stringify({
         email: id,
@@ -30,8 +30,9 @@ const Login = () => {
         }
       })
       .then(result => {
+        console.log(result);
         navigator('/signup');
-        localStorage.setItem('TOKEN', result.access_token);
+        localStorage.setItem('TOKEN', result.TOKEN);
       });
   };
 
@@ -41,7 +42,8 @@ const Login = () => {
   // const idV = passwordRegex.test(inputValue.pw);
   // const va = idV && pwV;
 
-  const passwordCondition = /^[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.]+$/;
+  const passwordCondition =
+    /^(?=.*[a-zA-Z])(?=.*[!@#$%^~*+=-])(?=.*[0-9]).{8,}$/;
   const isValidLogin =
     id.includes('@') &&
     id.includes('.') &&
