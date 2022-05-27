@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
 import './SignUp.scss';
 import SignUpComponent from './component/SignUpComponent';
-import Nav from '../../components/nav/Nav';
-import Footer from '../../components/footer/Footer';
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
     id: '',
+    email: '',
     name: '',
     pw: '',
     address: '',
     phone: '',
   });
 
-  const { id, name, pw, address, phone } = inputValue;
+  const { id, email, name, pw, address, phone } = inputValue;
 
   const GoSignUp = () => {
-    fetch('', {
+    fetch('http://10.58.5.168:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
-        email: id,
+        email: email,
         name: name,
         password: pw,
         address: address,
-        phone: phone,
+        phone_number: phone,
       }),
     })
       .then(res => {
@@ -34,13 +33,14 @@ const SignUp = () => {
         }
       })
       .then(result => {
-        navigator('/main');
-        localStorage.setItem('TOKEN', result.access_token);
+        navigator('/login');
+        // localStorage.setItem('TOKEN', result.access_token);
+        console.log(result);
       });
   };
 
   const passwordCondition = /^[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.]+$/;
-  const emailCondition =
+  const signUpCondition =
     id.includes('@') &&
     id.includes('.') &&
     passwordCondition.test(inputValue.pw);
@@ -55,16 +55,22 @@ const SignUp = () => {
       id: 0,
       title: '이메일',
       type: 'text',
+      name: 'email',
+      value: email,
     },
     {
       id: 1,
       title: '이름',
       type: 'text',
+      name: 'name',
+      value: name,
     },
     {
       id: 2,
       title: '비밀번호',
       type: 'password',
+      name: 'pw',
+      value: pw,
     },
     {
       id: 3,
@@ -75,13 +81,18 @@ const SignUp = () => {
       id: 4,
       title: '휴대폰번호',
       type: 'text',
+      name: 'phone',
+      value: phone,
     },
     {
       id: 5,
       title: '주소',
       type: 'text',
+      name: 'address',
+      value: address,
     },
   ];
+
   return (
     <div className="SignUp">
       <div className="signUpWrapper">
@@ -91,7 +102,13 @@ const SignUp = () => {
           </div>
           <div className="contentBox">
             {INPUT.map(input => (
-              <SignUpComponent input={input} key={input.id} />
+              <SignUpComponent
+                input={input}
+                key={input.id}
+                name={input.name}
+                value={input.value}
+                handleInput={handleInput}
+              />
             ))}
           </div>
           <div className="checkboxWrapper">
@@ -142,7 +159,9 @@ const SignUp = () => {
             </div>
           </div>
           <div className="btnWrapper">
-            <button className="signUpBtn">가입하기</button>
+            <button className="signUpBtn" type="button" onClick={GoSignUp}>
+              가입하기
+            </button>
           </div>
         </div>
       </div>
