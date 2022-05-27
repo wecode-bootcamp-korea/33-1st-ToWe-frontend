@@ -1,8 +1,7 @@
 import './Dropbox.scss';
 
-const Dropbox = ({ dropBox }) => {
-  const { id, title } = dropBox;
-  return <div className="dropbox">{id}</div>;
+const Dropbox = ({ category }) => {
+  return <li className="dropCategory">{category}</li>;
 };
 
 export default Dropbox;

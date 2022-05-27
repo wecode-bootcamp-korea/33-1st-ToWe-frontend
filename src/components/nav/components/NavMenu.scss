@@ -1,0 +1,12 @@
+.navbarMenuItem {
+  position: relative;
+  padding: 0.5rem 2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.dropBoxs {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+}
