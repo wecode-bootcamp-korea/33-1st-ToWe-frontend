@@ -88,24 +88,6 @@
             }
           }
 
-          .phoneBox {
-            display: flex;
-            justify-content: space-between;
-
-            .customerPhone {
-              width: 25%;
-              height: 2rem;
-              margin-top: 0.5rem;
-            }
-
-            .element {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding-top: 0.25rem;
-            }
-          }
-
           .agree {
             padding-top: 2rem;
 
@@ -126,7 +108,7 @@
       }
 
       .exit {
-        margin-top: 3rem;
+        margin-top: 5rem;
         margin-bottom: 3rem;
         border: 0;
         background-color: white;

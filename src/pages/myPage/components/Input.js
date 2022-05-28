@@ -1,10 +1,15 @@
 import React from 'react';
 
-const Input = ({ id }) => {
+const Input = ({ userData, inputValue }) => {
+  const { name, title } = userData;
   return (
     <div className="row">
-      <span className="inputTitle">{id.title} </span>
-      <input className="userInforInputBox" />
+      <span className="inputTitle">{title}</span>
+      <input
+        className="userInforInputBox"
+        defaultValue={inputValue ? inputValue?.[name] : ''} // mockdata 사용할때
+        // defaultValue={inputValue ? inputValue?.result[name] : ''}  백과 통신할때
+      />
     </div>
   );
 };

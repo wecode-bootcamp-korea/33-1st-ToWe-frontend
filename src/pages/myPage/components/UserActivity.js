@@ -1,10 +1,10 @@
 import React from 'react';
 
-const UserActivity = ({ id }) => {
+const UserActivity = ({ activity }) => {
   return (
     <div className="breakDown">
-      <div className="componentTitle">{id.content}</div>
-      <div className="nothing">{id.content}이 없습니다.</div>
+      <div className="componentTitle">{activity.content}</div>
+      <div className="nothing">{activity.content}이 없습니다.</div>
     </div>
   );
 };
