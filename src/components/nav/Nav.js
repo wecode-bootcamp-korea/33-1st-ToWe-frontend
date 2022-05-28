@@ -6,7 +6,6 @@ import { FaSearch, FaShoppingCart, FaUserAlt, FaBars } from 'react-icons/fa';
 const Nav = () => {
   const [navId, setNavId] = useState('');
   const [inputToggle, setInputToggle] = useState(true);
-  const [titleMenu, setTitleMenu] = useState(false);
 
   const hoverOn = idNav => {
     setNavId(idNav);
@@ -24,21 +23,12 @@ const Nav = () => {
     setInputToggle(!inputToggle);
   };
 
-  const toggle2 = () => {
-    setTitleMenu(!titleMenu);
-  };
-
   return (
     <nav>
       <div className="navbar" onMouseLeave={hoverOff}>
         <div className="navbarMenu">
-          <h1 className="navbarTitle" onClick={toggle2}>
-            ToWeStory
-          </h1>
-          <ul
-            className="navbarMenuItems"
-            // {titleMenu ? `navbarMenuItems` : `navbarMenuItemsOn`}
-          >
+          <h1 className="navbarTitle">ToWeStory</h1>
+          <ul className="navbarMenuItems">
             {NAV_TITLES.map(navTitle => (
               <NavMenu
                 hoverOn={hoverOn}
