@@ -10,6 +10,7 @@ const MyPage = () => {
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/');
+    localStorage.clear();
   };
 
   const [inputValue, setInputValue] = useState();
