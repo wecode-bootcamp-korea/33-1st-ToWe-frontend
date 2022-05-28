@@ -1,21 +1,24 @@
+@import '../../styles/variables.scss';
+
 body {
   background-color: bisque;
   height: 1500px;
 }
+
 nav {
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   position: fixed;
 }
 
 .navbar {
-  width: 95%;
+  width: 100%;
   margin: auto;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: transparent;
   padding: 2rem 2rem;
   transition: all 1s ease-in-out;
 
@@ -23,13 +26,19 @@ nav {
     display: flex;
     margin: 0 0.5rem;
   }
-  .navbarTiele {
+
+  .navbarTitle {
     font-size: 2rem;
-    margin-right: 3rem;
+    font-family: $regularFont;
   }
+
   .navbarMenuItems {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     display: flex;
+  }
+
+  .navarIconbox {
+    transition: all 0.5s;
   }
 
   .navarIcon {
@@ -39,41 +48,80 @@ nav {
   }
 
   .navbarInput {
-    padding: 0.5rem 2rem;
-    line-height: 0.5rem;
-    border: 2px solid black;
-    border-radius: 5px;
+    line-height: 1rem;
+    font-size: 1.1rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     outline: none;
     display: none;
   }
 
-  .navbarToggleBtn {
-    position: absolute;
-    right: 2rem;
+  .navbarInputOn {
+    background-color: transparent;
+    line-height: 1rem;
     font-size: 1.1rem;
-    top: 1.7rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+  }
+
+  .navbarToggleBtn {
+    font-size: 1.4rem;
     cursor: pointer;
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .navbar {
+    display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 
-  .navbarMenuItem {
-    display: none;
+  .navbarMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
+
+  .navbarMenuItems {
+    margin-top: 1rem;
+  }
+
+  // .navbarMenu {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+
+  // .navbarMenuItems {
+  //   display: none;
+  //   flex-direction: column;
+  //   margin-top: 1rem;
+  // }
+
+  // .navbarMenuItemsOn {
+  //   display: none;
+  // }
+
+  // .navbarMenuItem {
+  //   margin-top: 1rem;
+  // }
+
+  // .navbarMenuItem:hover {
+  //   color: $lightGray;
+  // }
 
   .navarIconbox {
     display: none;
   }
 
   .navbarToggleBtn {
+    font-size: 1.4rem;
+    cursor: pointer;
     display: block;
-    position: absolute;
-    right: 2rem;
-    top: 1.7rem;
   }
 }

@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import NavMenu from './components/NavMenu';
 import './Nav.scss';
 import { FaSearch, FaShoppingCart, FaUserAlt, FaBars } from 'react-icons/fa';
 
 const Nav = () => {
   const [navId, setNavId] = useState('');
+  const [inputToggle, setInputToggle] = useState(true);
+  const [titleMenu, setTitleMenu] = useState(false);
 
   const hoverOn = idNav => {
     setNavId(idNav);
@@ -13,12 +15,30 @@ const Nav = () => {
     setNavId('');
   };
 
+  const inputRef = useRef();
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+
+  const toggle = () => {
+    setInputToggle(!inputToggle);
+  };
+
+  const toggle2 = () => {
+    setTitleMenu(!titleMenu);
+  };
+
   return (
     <nav>
       <div className="navbar" onMouseLeave={hoverOff}>
         <div className="navbarMenu">
-          <h1 className="navbarTiele">ToWeStory</h1>
-          <ul className="navbarMenuItems">
+          <h1 className="navbarTitle" onClick={toggle2}>
+            ToWeStory
+          </h1>
+          <ul
+            className="navbarMenuItems"
+            // {titleMenu ? `navbarMenuItems` : `navbarMenuItemsOn`}
+          >
             {NAV_TITLES.map(navTitle => (
               <NavMenu
                 hoverOn={hoverOn}
@@ -30,8 +50,12 @@ const Nav = () => {
           </ul>
         </div>
         <div className="navarIconbox">
-          <input className="navbarInput" />
-          <FaSearch className="navarIcon" />
+          <FaSearch className="navarIcon" onClick={toggle} />
+          <input
+            type="text"
+            ref={inputRef}
+            className={inputToggle ? `navbarInput` : `navbarInputOn`}
+          />
           <FaUserAlt className="navarIcon" />
           <FaShoppingCart className="navarIcon" />
         </div>
@@ -48,8 +72,8 @@ const NAV_TITLES = [
   {
     id: 1,
     title: '스토어',
-    category: ['전체상품', '레고', '인형', '퍼즐', '자동차', '베스트30'],
+    category: ['레고', '인형', '퍼즐', '자동차', '베스트30', '전체상품'],
   },
-  { id: 2, title: '게시판', category: ['공지사항', 'Q&A'] },
+  { id: 2, title: '게시판', category: ['Q&A', '공지사항'] },
   { id: 3, title: '겔러리', category: [] },
 ];
