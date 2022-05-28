@@ -112,7 +112,8 @@
           }
 
           &:disabled {
-            color: red;
+            color: #adadad;
+            border: 1px solid #adadad;
           }
         }
       }

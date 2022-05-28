@@ -14,7 +14,6 @@ const SignUpComponent = ({ input, handleInput }) => {
         name={name}
         onChange={handleInput}
       />
-      <div className="description" />
     </div>
   );
 };

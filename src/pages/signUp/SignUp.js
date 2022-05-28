@@ -4,23 +4,36 @@ import SignUpComponent from './component/SignUpComponent';
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
-    id: '',
     email: '',
     name: '',
-    pw: '',
+    pw1: '',
+    pw2: '',
     address: '',
     phone: '',
   });
 
-  const { id, email, name, pw, address, phone } = inputValue;
+  const { email, name, pw1, pw2, address, phone } = inputValue;
 
+  const handleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({ ...inputValue, [name]: value });
+  };
+
+  // 이메일, 비밀번호, 비밀번호 확인,
+  const emailCheck = email => {
+    if (email === '') {
+      alert('이메일을 입력해주세요.');
+    }
+  };
+
+  // 여기는 백엔드 통신
   const GoSignUp = () => {
     fetch('http://10.58.5.168:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
         name: name,
-        password: pw,
+        password: pw1,
         address: address,
         phone_number: phone,
       }),
@@ -39,20 +52,11 @@ const SignUp = () => {
       });
   };
 
-  // const passwordCondition = /^[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.]+$/;
-  // const signUpCondition =
-  //   id.includes('@') &&
-  //   id.includes('.') &&
-  //   passwordCondition.test(inputValue.pw);
+  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^~*+=-])(?=.*[0-9]).{8,}$/;
+  const passwordCondition = passwordRegex.test(inputValue.pw1) && pw1 === pw2;
+  const emailCondition = email.includes('@') && email.includes('.');
 
-  const passwordCondition = e => {
-    const { email } = e.target;
-  };
-
-  const handleInput = e => {
-    const { name, value } = e.target;
-    setInputValue({ ...inputValue, [name]: value });
-  };
+  const isValid = passwordCondition && emailCondition;
 
   const INPUT = [
     {
@@ -73,13 +77,15 @@ const SignUp = () => {
       id: 2,
       title: '비밀번호',
       type: 'password',
-      name: 'pw',
-      value: pw,
+      name: 'pw1',
+      value: pw1,
     },
     {
       id: 3,
       title: '비밀번호 확인',
       type: 'password',
+      name: 'pw2',
+      value: pw2,
     },
     {
       id: 4,
@@ -163,7 +169,12 @@ const SignUp = () => {
             </div>
           </div>
           <div className="btnWrapper">
-            <button className="signUpBtn" type="button" onClick={GoSignUp}>
+            <button
+              className="signUpBtn"
+              type="button"
+              onClick={GoSignUp}
+              disabled={!isValid}
+            >
               가입하기
             </button>
           </div>
