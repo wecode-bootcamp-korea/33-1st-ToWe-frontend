@@ -23,14 +23,14 @@ const ListItemContenst = ({
     setChangeImg(true);
   };
 
-  // const navigate = useNavigate();
-  // const goToDetail = () => {
-  //   navigate(`/itemdetail/${id}`);
-  // };
+  const navigate = useNavigate();
+  const goToDetail = () => {
+    navigate(`/itemdetail/${id}`);
+  };
 
   return (
     <div
-      // onClick={goToDetail}
+      onClick={goToDetail}
       className="listItems"
       onMouseOver={mouseOver}
       onMouseOut={mouseOut}
@@ -55,7 +55,7 @@ const ListItemContenst = ({
           className="likeIcon"
         />
       )}
-      <div className="likeBack"></div>
+      <div className="likeBack" />
       <p className="listItemName">{name}</p>
       <p className="listItemPrice">{price}원</p>
     </div>
