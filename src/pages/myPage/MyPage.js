@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Nav from '../../components/nav/Nav.js';
 import Footer from '../../components/footer/Footer.js';
 import UserActivity from './components/UserActivity.js';
@@ -6,6 +7,11 @@ import Input from './components/Input.js';
 import './MyPage.scss';
 
 const MyPage = () => {
+  const navigate = useNavigate();
+  const goToMain = () => {
+    navigate('/');
+  };
+
   const [inputValue, setInputValue] = useState();
 
   useEffect(() => {
@@ -21,8 +27,8 @@ const MyPage = () => {
 
   return (
     <>
+      <Nav />
       <div className="myPage">
-        <Nav />
         <div className="myPageContainer">
           <div className="components">
             {USER_ACTIVITY.map(activity => (
@@ -32,7 +38,9 @@ const MyPage = () => {
           <div className="profile">
             <div className="profileTitle">
               <div className="title">회원정보</div>
-              <div className="logOut">로그아웃</div>
+              <div className="logOut" onClick={goToMain}>
+                로그아웃
+              </div>
             </div>
             <div className="profileImage">
               <img src="/images/profile.jpg" alt="프로필사진" />
