@@ -6,7 +6,8 @@
     "categoey": "퍼즐",
     "itemImg": "./images/image1.jpeg",
     "hoverImg": "./images/image2.jpeg",
-    "age": 1.5
+    "age": 1.5,
+    "like": true
   },
   {
     "id": 1,
@@ -15,7 +16,8 @@
     "categoey": "레고",
     "itemImg": "./images/image2.jpeg",
     "hoverImg": "./images/image1.jpeg",
-    "age": 4
+    "age": 4,
+    "like": false
   },
   {
     "id": 2,
@@ -24,7 +26,8 @@
     "categoey": "인형",
     "itemImg": "./images/image3.png",
     "hoverImg": "./images/image1.jpeg",
-    "age": 6
+    "age": 6,
+    "like": false
   },
   {
     "id": 3,
@@ -33,7 +36,8 @@
     "categoey": "자동차",
     "itemImg": "./images/image4.jpeg",
     "hoverImg": "./images/image1.jpeg",
-    "age": 13
+    "age": 13,
+    "like": false
   },
   {
     "id": 4,
@@ -51,7 +55,8 @@
     "categoey": "레고",
     "itemImg": "./images/image2.jpeg",
     "hoverImg": "./images/image1.jpeg",
-    "age": 4
+    "age": 4,
+    "like": false
   },
   {
     "id": 6,
@@ -60,7 +65,8 @@
     "categoey": "인형",
     "itemImg": "./images/image3.png",
     "hoverImg": "./images/image1.jpeg",
-    "age": 6
+    "age": 6,
+    "like": false
   },
   {
     "id": 7,
@@ -69,6 +75,7 @@
     "categoey": "자동차",
     "itemImg": "./images/image4.jpeg",
     "hoverImg": "./images/image1.jpeg",
-    "age": 13
+    "age": 13,
+    "like": false
   }
 ]

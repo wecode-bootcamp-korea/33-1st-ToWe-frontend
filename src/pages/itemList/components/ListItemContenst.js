@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import './ListItemContenst.scss';
 
 const ListItemContenst = ({
@@ -10,6 +11,8 @@ const ListItemContenst = ({
   itemImg,
   hoverImg,
   age,
+  like,
+  onLike,
 }) => {
   const [changeImg, setChangeImg] = useState(true);
 
@@ -20,19 +23,39 @@ const ListItemContenst = ({
     setChangeImg(true);
   };
 
-  const navigate = useNavigate();
-  const goToDetail = () => {
-    navigate(`/itemdetail/${id}`);
-  };
+  // const navigate = useNavigate();
+  // const goToDetail = () => {
+  //   navigate(`/itemdetail/${id}`);
+  // };
 
   return (
-    <div className="listItems" onMouseOver={mouseOver} onMouseOut={mouseOut}>
+    <div
+      // onClick={goToDetail}
+      className="listItems"
+      onMouseOver={mouseOver}
+      onMouseOut={mouseOut}
+    >
       <img
         className={changeImg ? `listItemsImg` : `listItemsImg2`}
         alt="Items"
         src={changeImg ? itemImg : hoverImg}
-        onClick={goToDetail}
       />
+      {like ? (
+        <FaHeart
+          onClick={() => {
+            onLike(id);
+          }}
+          className="likeIcon"
+        />
+      ) : (
+        <FaRegHeart
+          onClick={() => {
+            onLike(id);
+          }}
+          className="likeIcon"
+        />
+      )}
+      <div className="likeBack"></div>
       <p className="listItemName">{name}</p>
       <p className="listItemPrice">{price}원</p>
     </div>

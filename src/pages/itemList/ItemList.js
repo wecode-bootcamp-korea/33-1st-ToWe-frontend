@@ -17,12 +17,20 @@ const ItemList = () => {
       });
   }, []);
 
+  const onLike = id => {
+    setListItems(
+      listItems.map(listItem =>
+        listItem.id === id ? { ...listItem, like: !listItem.like } : listItem
+      )
+    );
+  };
+
   return (
     <div className="listContainer">
       <div className="listTitle">전체상품</div>
       <ProductCategory />
       <LitsFilter />
-      <ListItem listItems={listItems} />
+      <ListItem listItems={listItems} onLike={onLike} />
     </div>
   );
 };
