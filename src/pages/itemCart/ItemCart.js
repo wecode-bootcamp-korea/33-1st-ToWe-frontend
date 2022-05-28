@@ -51,25 +51,8 @@ const ItemCart = () => {
                 </div>
               </div>
             </div>
-            <div className="tbTotal">
-              <div className="priceInfoDiv">
-                <div className="totalPrice">
-                  <span className="totalTitle">상품 합계</span>
-                  <span className="priceContent">15,000원</span>
-                </div>
-                <div className="shippingPrice">
-                  <span className="shippingTitle">배송비</span>
-                  <span className="shippingContent">3,000원</span>
-                </div>
-              </div>
-              <div className="cartTotalDiv">
-                <span className="totalTitle2">합계</span>
-              </div>
-            </div>
           </div>
-          <div className="btnWrapper">
-            <button className="orderBtn">주문하기</button>
-          </div>
+          <div className=""></div>
         </div>
       </div>
     </div>
