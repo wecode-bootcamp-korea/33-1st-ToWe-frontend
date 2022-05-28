@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'CookieRun-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CookieRunOTF-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @mixin flexCenter {
   display: flex;
   align-items: center;
@@ -7,3 +23,5 @@
 $lightGray: #adadad;
 $darkGray: #3a3a3a;
 $gray: #7c7c7c;
+$regularFont: 'CookieRun-Regular';
+$boldFont: 'CookieRunOTF-Bold';
