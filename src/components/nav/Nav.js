@@ -27,7 +27,8 @@ const Nav = () => {
     <nav>
       <div className="navbar" onMouseLeave={hoverOff}>
         <div className="navbarMenu">
-          <h1 className="navbarTitle">ToWeStory</h1>
+          <img className="navLogo" src="images/logoImg.png" />
+          {/* <h1 className="navbarTitle">ToWeStory</h1> */}
           <ul className="navbarMenuItems">
             {NAV_TITLES.map(navTitle => (
               <NavMenu
@@ -58,12 +59,12 @@ const Nav = () => {
 export default Nav;
 
 const NAV_TITLES = [
-  { id: 0, title: '토위스토리', category: ['브랜드', '캐릭터', 'ToWeStory'] },
+  { id: 0, title: 'TOWESTORY', category: ['BRAND', 'CHARICTOR', 'OURSTORY'] },
   {
     id: 1,
-    title: '스토어',
+    title: 'STORE',
     category: ['레고', '인형', '퍼즐', '자동차', '베스트30', '전체상품'],
   },
-  { id: 2, title: '게시판', category: ['Q&A', '공지사항'] },
-  { id: 3, title: '겔러리', category: [] },
+  { id: 2, title: 'BOARD', category: ['Q&A', '공지사항'] },
+  { id: 3, title: 'GALLERY', category: [] },
 ];

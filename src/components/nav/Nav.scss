@@ -1,10 +1,16 @@
 @import '../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
 nav {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   background-color: transparent;
   position: fixed;
   z-index: 2;
+}
+
+.navLogo {
+  width: 10rem;
 }
 
 .navbar {
@@ -15,7 +21,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  padding: 2rem 2rem;
+  padding: 0.5rem 2rem;
   transition: all 1s ease-in-out;
 
   .navbarMenu {
@@ -25,7 +31,7 @@ nav {
 
   .navbarTitle {
     font-size: 2rem;
-    font-family: $regularFont;
+    // font-family: $regularFont;
   }
 
   .navbarMenuItems {
@@ -39,13 +45,13 @@ nav {
   }
 
   .navarIcon {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin: 0 0.8rem;
     cursor: pointer;
   }
 
   .navarIcon:hover {
-    color: #ffee33;
+    opacity: 0.5;
   }
 
   .navbarInput {
