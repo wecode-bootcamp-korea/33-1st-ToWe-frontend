@@ -7,6 +7,7 @@ import ItemList from './pages/itemList/ItemList.js';
 import Login from './pages/login/Login.js';
 import Main from './pages/main/Main.js';
 import SignUp from './pages/signUp/SignUp.js';
+import MyPage from './pages/myPage/MyPage.js';
 import Nav from './components/nav/Nav.js';
 import Footer from './components/footer/Footer.js';
 
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/itemlist" element={<ItemList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/mypage" element={<MyPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

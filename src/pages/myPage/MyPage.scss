@@ -1,0 +1,143 @@
+@import '../../styles/variables.scss';
+
+.myPage {
+  display: flex;
+  justify-content: center;
+
+  .myPageContainer {
+    display: flex;
+    padding: 3rem 0.5rem;
+
+    .components {
+      margin-right: 10rem;
+
+      .breakDown {
+        width: 45vh;
+
+        .componentTitle {
+          margin: 5rem 0 2.5rem 0;
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+
+        .nothing {
+          height: 40vh;
+          padding: 9rem 0rem;
+          font-size: 0.9rem;
+          border-bottom: 0.163rem solid black;
+          text-align: center;
+        }
+      }
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profileTitle {
+        display: flex;
+        justify-content: space-between;
+        width: 45vh;
+        margin-top: 5rem;
+
+        .title {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+
+        .logOut {
+          margin-top: 5rem;
+          font-size: 0.9rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .profileImage {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        width: 40vh;
+        height: 40vh;
+        max-width: 40vh;
+        overflow: hidden;
+      }
+
+      .userInformation {
+        width: 45vh;
+        height: 50vh;
+
+        .userInfor {
+          margin-top: 3rem;
+
+          .contentBox {
+            width: 100%;
+
+            .row {
+              margin-bottom: 1.25rem;
+
+              .inputTitle {
+                display: block;
+                margin-bottom: 0.75rem;
+                font-size: 0.875rem;
+              }
+
+              .userInforInputBox {
+                padding: 0.625rem 1rem;
+                width: 100%;
+                height: 2.5rem;
+                border-radius: 1rem;
+                border: 0.163rem solid lightblue;
+              }
+            }
+          }
+
+          .agree {
+            padding-top: 2rem;
+
+            .checkBox {
+              padding-top: 1rem;
+
+              .email {
+                margin-right: 0.5rem;
+              }
+
+              .message {
+                margin: 0 0.5rem 0 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      .exit {
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        border: 0;
+        background-color: white;
+
+        &:hover {
+          cursor: pointer;
+          color: $hoverColor;
+        }
+      }
+
+      .save {
+        width: 15rem;
+        height: 3.375rem;
+        border: 0.063rem solid black;
+        border-radius: 3.125rem;
+        background: white;
+
+        &:hover {
+          cursor: pointer;
+          background: black;
+          color: white;
+        }
+      }
+    }
+  }
+}
