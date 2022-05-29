@@ -1,0 +1,18 @@
+@import '../components/../../../styles/variables.scss';
+
+.listCategory {
+  margin: 0 2rem;
+  cursor: pointer;
+
+  .filterName {
+    padding: 0.3rem;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    background-color: #ffee33;
+  }
+
+  .filterHover:hover {
+    border-radius: 1rem;
+    background-color: #ffee33;
+  }
+}
