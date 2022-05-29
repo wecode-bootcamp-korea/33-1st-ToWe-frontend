@@ -1,0 +1,91 @@
+@import '../../../../styles/variables.scss';
+
+.carousel {
+  .carouselWrapper {
+    .carouselImg {
+      &.hidden {
+        opacity: 0;
+        transition: opacity 800ms ease-in;
+      }
+
+      &.active {
+        opacity: 1;
+        transition: opacity 800ms ease-out;
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+      }
+
+      .itemDesc {
+        @include flexCenter;
+        flex-direction: column;
+        position: absolute;
+        align-items: flex-start;
+        padding: 1.2rem 1.4rem 1.6rem 1.4rem;
+        border-radius: 10px;
+        top: 12.5rem;
+        left: 12.5rem;
+
+        h3 {
+          margin-bottom: 0.6rem;
+          padding: 0.65rem 1rem 0.35rem 1rem;
+          color: rgb(34, 34, 34);
+          background-color: rgb(255, 238, 51);
+          border-radius: 4px;
+          font-size: calc($largeFont) * 1.2;
+          font-weight: 600;
+        }
+
+        .title {
+          font-size: 1.1rem;
+        }
+
+        .title {
+          margin: 0.4rem 0 0.4rem 0;
+          font-weight: 600;
+        }
+
+        .titleEn {
+          font-size: 0.9rem;
+        }
+
+        .line {
+          margin: 0.3rem 0 0.4rem 0;
+          width: 10rem;
+          border-bottom: 1px solid black;
+        }
+
+        .titlePrice {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .carouselBtns {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+
+    .btn {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin: 0 1.2rem 2rem 0rem;
+      background-color: transparent;
+      border: 3px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: white;
+    }
+  }
+}

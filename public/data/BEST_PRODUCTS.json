@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "url": "/images/mainImg.jpg",
+    "hoverUrl": "/images/batduckToy.jpg",
+    "name": "레고 비틀즈",
+    "price": "30,000"
+  },
+  {
+    "id": 1,
+    "url": "/images/batduckToy.jpg",
+    "hoverUrl": "/images/batduckToy.jpg",
+    "name": "배트덕",
+    "price": "12,000"
+  },
+  {
+    "id": 2,
+    "url": "/images/mainImg.jpg",
+    "hoverUrl": "/images/batduckToy.jpg",
+    "name": "자동차",
+    "price": "8,000"
+  },
+  {
+    "id": 3,
+    "url": "/images/minionToy.jpg",
+    "hoverUrl": "/images/batduckToy.jpg",
+    "name": "미니언 미니어쳐",
+    "price": "15,000"
+  },
+  {
+    "id": 4,
+    "url": "/images/cartoy.jpg",
+    "hoverUrl": "/images/batduckToy.jpg",
+    "name": "자동차",
+    "price": "8,000"
+  },
+  {
+    "id": 5,
+    "url": "/images/minionToy.jpg",
+    "hoverUrl": "/images/batduckToy.jpg",
+    "name": "미니언 미니어쳐",
+    "price": "15,000"
+  }
+]

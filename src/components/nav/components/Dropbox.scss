@@ -1,14 +1,16 @@
 @import '../../../styles/variables.scss';
 
 .dropCategory {
-  width: 100%;
   font-size: 1rem;
   margin-top: 2.5rem;
+  padding: 0.5rem 0.2rem 0.5rem 0;
   display: flex;
+  border-radius: 1rem;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .dropCategory:hover {
-  color: $lightGray;
+  background-color: #ffee33;
 }

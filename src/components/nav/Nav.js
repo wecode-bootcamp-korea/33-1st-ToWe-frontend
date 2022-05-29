@@ -58,7 +58,7 @@ const Nav = () => {
 export default Nav;
 
 const NAV_TITLES = [
-  { id: 0, title: 'ToWe', category: ['브랜드', '캐릭터', 'ToWeStory'] },
+  { id: 0, title: '토위스토리', category: ['브랜드', '캐릭터', 'ToWeStory'] },
   {
     id: 1,
     title: '스토어',
