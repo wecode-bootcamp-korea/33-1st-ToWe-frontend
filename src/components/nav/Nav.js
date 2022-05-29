@@ -21,7 +21,7 @@ const Nav = () => {
               스토어
               <CategoryBar />
             </span>
-            <span className="board">
+            <span className="boardTab">
               게시판
               <CategoryBar />
             </span>
