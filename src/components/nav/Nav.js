@@ -6,6 +6,7 @@ import { FaSearch, FaShoppingCart, FaUserAlt, FaBars } from 'react-icons/fa';
 const Nav = () => {
   const [navId, setNavId] = useState('');
   const [inputToggle, setInputToggle] = useState(true);
+  const [logo, setLogo] = useState(true);
 
   const hoverOn = idNav => {
     setNavId(idNav);
@@ -23,12 +24,21 @@ const Nav = () => {
     setInputToggle(!inputToggle);
   };
 
+  const logoToggle = () => {
+    setLogo(!logo);
+  };
+
   return (
     <nav>
       <div className="navbar" onMouseLeave={hoverOff}>
         <div className="navbarMenu">
-          <img className="navLogo" src="images/logoImg.png" />
-          {/* <h1 className="navbarTitle">ToWeStory</h1> */}
+          <img
+            onMouseEnter={logoToggle}
+            onMouseLeave={logoToggle}
+            className="navLogo"
+            src={logo ? `images/logo3.png` : `images/logoImg.png`}
+            alt="logoImg"
+          />
           <ul className="navbarMenuItems">
             {NAV_TITLES.map(navTitle => (
               <NavMenu
@@ -59,12 +69,12 @@ const Nav = () => {
 export default Nav;
 
 const NAV_TITLES = [
-  { id: 0, title: 'TOWESTORY', category: ['BRAND', 'CHARICTOR', 'OURSTORY'] },
+  { id: 0, title: 'TOWE STORY', category: ['BRAND', 'CHARICTOR', 'OURSTORY'] },
   {
     id: 1,
     title: 'STORE',
-    category: ['레고', '인형', '퍼즐', '자동차', '베스트30', '전체상품'],
+    category: ['CAR', 'LOGO', 'DOLL', 'PUZZLE', 'ALL', 'BEST 10'],
   },
-  { id: 2, title: 'BOARD', category: ['Q&A', '공지사항'] },
+  { id: 2, title: 'BOARD', category: ['Q&A', 'NOTICE'] },
   { id: 3, title: 'GALLERY', category: [] },
 ];

@@ -11,6 +11,7 @@ const ProductCategoryMap = ({ filterMenus, filterColor, filterColorClick }) => {
         className={filterColor === id ? `filterName` : `filterHover`}
       >
         {name}
+        <div className="filterLine" />
       </li>
     </ul>
   );

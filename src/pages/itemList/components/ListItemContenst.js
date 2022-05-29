@@ -56,7 +56,7 @@ const ListItemContenst = ({
         {name}
       </p>
       <p onClick={goToDetail} className="listItemPrice">
-        {price}원
+        {price}₩
       </p>
     </div>
   );

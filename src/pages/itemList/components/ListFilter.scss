@@ -9,20 +9,23 @@
 
   .filterBtn {
     margin: 0 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     cursor: pointer;
   }
 
   .filterBtnActive {
     margin: 0 0.5rem;
-    font-size: 0.78rem;
-    padding: 0.1rem;
-    border-radius: 1rem;
-    background-color: #ffee33;
+    font-size: 0.5rem;
+    color: $darkGray;
     cursor: pointer;
+    border-bottom: 1px solid black;
   }
 
   .filterBtn:hover {
-    background-color: #ffee33;
+    color: $darkGray;
+
+    .sortLine {
+      border-bottom: 1px solid black;
+    }
   }
 }

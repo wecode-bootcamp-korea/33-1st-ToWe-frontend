@@ -12,6 +12,7 @@ const NavMenu = ({ navTitle, navId, hoverOn }) => {
       }}
     >
       {title}
+      <div className="bottomLine" />
       <ul className="dropBoxs">
         {navId === id &&
           category.map((category, i) => (

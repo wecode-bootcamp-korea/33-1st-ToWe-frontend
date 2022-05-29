@@ -28,9 +28,9 @@ const ProductCategory = () => {
 export default ProductCategory;
 
 const FILTER_MENU = [
-  { id: 0, name: '전체' },
-  { id: 1, name: '레고' },
-  { id: 2, name: '인형' },
-  { id: 3, name: '퍼즐' },
-  { id: 4, name: '자동차' },
+  { id: 0, name: 'ALL' },
+  { id: 1, name: 'PUZZLE' },
+  { id: 2, name: 'DOLL' },
+  { id: 3, name: 'LEGO' },
+  { id: 4, name: 'CAR' },
 ];

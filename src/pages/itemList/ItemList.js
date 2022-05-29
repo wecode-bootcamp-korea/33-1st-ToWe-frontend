@@ -27,7 +27,7 @@ const ItemList = () => {
 
   return (
     <div className="listContainer">
-      <div className="listTitle">전체상품</div>
+      <div className="listTitle">ALL PRODUCTS</div>
       <ProductCategory />
       <LitsFilter />
       <ListItem listItems={listItems} onLike={onLike} />

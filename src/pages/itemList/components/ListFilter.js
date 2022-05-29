@@ -22,6 +22,7 @@ const LitsFilter = () => {
             }
           >
             {sortMenu.name}
+            <div className="sortLine" />
           </p>
         );
       })}
@@ -32,8 +33,8 @@ const LitsFilter = () => {
 export default LitsFilter;
 
 const SORT_MENU = [
-  { id: 0, name: '낮은가격' },
-  { id: 1, name: '높은가격' },
-  { id: 2, name: '낮은연령' },
-  { id: 3, name: '높은연령' },
+  { id: 0, name: 'LOW PRICE' },
+  { id: 1, name: 'HIGH PRICE' },
+  { id: 2, name: 'LOW AGE' },
+  { id: 3, name: 'HIGH AGE' },
 ];

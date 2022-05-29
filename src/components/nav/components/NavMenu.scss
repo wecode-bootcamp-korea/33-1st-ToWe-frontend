@@ -5,14 +5,18 @@
   padding: 0.5rem 1.5rem;
   margin: auto;
   // font-family: $regularFont;
-  border-radius: 1rem;
   cursor: pointer;
   font-weight: bold;
   letter-spacing: 0.05em;
 }
 
 .navbarMenuItem:hover {
+  .bottomLine {
+    border-bottom: 2px solid black;
+  }
+
   color: $darkGray;
+
   .dropBoxs {
     color: black;
   }
@@ -22,4 +26,23 @@
   position: absolute;
   display: flex;
   flex-direction: column-reverse;
+}
+
+.bottomLine {
+  margin-top: 0.5rem;
+  width: 95%;
+}
+
+.navbarMenuItem:hover .bottomLine {
+  animation: 0.5s ease-in-out bottomLine;
+  @keyframes bottomLine {
+    from {
+      opacity: 0;
+      width: 0;
+    }
+  }
+  to {
+    opacity: 1;
+    width: 95%;
+  }
 }

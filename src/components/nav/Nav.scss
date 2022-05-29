@@ -1,5 +1,4 @@
 @import '../../styles/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
 nav {
   font-family: 'Montserrat', sans-serif;
@@ -9,8 +8,20 @@ nav {
   z-index: 2;
 }
 
+.logoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .navLogo {
   width: 10rem;
+}
+
+.ligoBottom {
+  width: 10rem;
+  border: 1px solid black;
 }
 
 .navbar {
