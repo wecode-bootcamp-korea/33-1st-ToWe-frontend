@@ -20,8 +20,9 @@
             padding: 16px 0px 15px;
 
             .itemListHeader {
-              width: 80%;
+              width: 100%;
               font-size: 14px;
+              display: flex;
 
               .info {
                 width: 53%;
@@ -30,112 +31,152 @@
 
               .count {
                 width: 25%;
-                display: inline-block;
-                padding-left: calc(25% - 114px);
+                // display: inline-block;
+                text-align: center;
               }
 
               .price {
                 width: 20%;
-                display: inline-block;
+                // display: inline-block;
                 text-align: center;
               }
-            }
-
-            .deliveryCharge {
-              width: 20%;
-              display: inline-block;
-              font-size: 14px;
-              text-align: center;
+              .deliveryCharge {
+                width: 20%;
+                display: inline-block;
+                font-size: 14px;
+                text-align: center;
+              }
             }
           }
         }
         .cartListDiv {
           border-top: 1px solid black;
           border-bottom: 1px solid black;
+          // .deliveryGroupItemList {
+          //   width: 80%;
+          //   .cartInfoDiv {
+          //     // width: 100%;
+          //     // height: 122px;
+          //     padding: 20px 0;
+          //     display: flex;
+          //     flex-direction: row;
 
-          .deliveryGroupItemList {
+          //     .product {
+          //       width: 53%;
+          //       display: flex;
+
+          //       .img {
+          //         width: 83px;
+          //         height: 83px;
+          //         background-color: orange;
+          //         // display: inline;
+          //       }
+
+          //       .text {
+          //         // width: 100%;
+          //         // display: inline-block;
+          //         padding-left: 5%;
+          //         display: flex;
+          //         justify-content: center;
+          //         flex-direction: column;
+          //         .name {
+          //           font-size: 14px;
+          //           line-height: 18px;
+          //           margin: 5px 0;
+          //         }
+          //         .deleteBtnWrapper {
+          //           margin-top: 12px;
+          //           font-size: 14px;
+          //           color: black;
+          //         }
+          //       }
+          //     }
+          //     .quantityDiv {
+          //       width: 25%;
+          //       // display: inline-block;
+          //       padding-left: calc(25% - 114px);
+          //       .quantity {
+          //       }
+          //     }
+
+          //     .cartPrice {
+          //       width: 20%;
+          //       font-size: 14px;
+          //       text-align: center;
+          //       vertical-align: middle;
+          //       display: flex;
+          //       align-items: center;
+          //       justify-content: center;
+          //     }
+          //   }
+          // }
+        }
+        .tbTotal {
+          width: 50%;
+          float: right;
+          .priceInfoDiv {
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 20px 0;
+            .productPrice {
+              display: flex;
+              .priceTitle {
+                margin-right: 15px;
+                font-size: 14px;
+                display: inline-block;
+              }
+              .productPriceCount {
+                width: 40%;
+                text-align: right;
+                font-size: 14px;
+              }
+            }
+            .shippingPrice {
+              display: flex;
+              margin-top: 20px;
+              .shippingTitle {
+                margin-right: 15px;
+                font-size: 14px;
+              }
+              .shippingPriceCount {
+                width: 40%;
+                text-align: right;
+                font-size: 14px;
+              }
+            }
+          }
+          .cartTotalDiv {
+            padding: 20px 0;
             display: flex;
-            flex-direction: row;
-
-            .cartInfoDiv {
-              width: 100%;
-              // height: 122px;
-              padding: 20px 0;
-              display: flex;
-              // flex-direction: row;
-
-              .product {
-                width: 53%;
-                display: flex;
-                flex-direction: row;
-
-                .img {
-                  width: 83px;
-                  height: 83px;
-                  background-color: orange;
-                  // display: inline-block;
-                }
-
-                .text {
-                  width: 75%;
-                  background-color: yellow;
-                  // display: inline-block;
-                  padding-left: 5%;
-                  // display: flex;
-                  // align-items: center;
-                  // flex-direction: column;
-                  .name {
-                    font-size: 14px;
-                    line-height: 18px;
-                    margin: 5px 0;
-
-                    a {
-                      text-decoration: none;
-                      color: black;
-                    }
-                  }
-                  .deleteBtnWrapper {
-                    margin-top: 12px;
-                    span {
-                      font-size: 14px;
-                      color: black;
-                    }
-                  }
-                }
-              }
-              .quantityDiv {
-                width: 25%;
-                // display: inline-block;
-                padding-left: calc(25% - 114px);
-                background-color: yellowgreen;
-              }
-
-              .cartPrice {
-                width: 20%;
-                font-size: 14px;
-                text-align: center;
-                vertical-align: middle;
-                background-color: pink;
-              }
+            .cartTotalTitle {
+              margin-right: 15px;
+              font-size: 15px;
+              font-weight: bold;
             }
-            .deliveryPriceWrapper {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-
-              .deliveryPrice {
-                text-align: center;
-                font-size: 14px;
-              }
-
-              .deliveryConditional {
-                width: 240px;
-                margin-top: 4px;
-                font-size: 14px;
-                text-align: center;
-              }
+            .cartTotalPrice {
+              width: 40%;
+              text-align: right;
+              font-size: 15px;
+              font-weight: bold;
             }
+          }
+        }
+      }
+      .btnWrapper {
+        width: 100%;
+        display: inline-block;
+        margin-top: 40px;
+        text-align: right;
+        .orderBtn {
+          border-radius: 50px;
+          width: 160px;
+          height: 54px;
+          background-color: transparent;
+          border: 1px solid black;
+
+          &:hover {
+            background-color: black;
+            color: white;
           }
         }
       }
