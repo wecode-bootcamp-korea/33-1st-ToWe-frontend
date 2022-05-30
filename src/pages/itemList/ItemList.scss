@@ -2,15 +2,16 @@
 
 .listContainer {
   font-family: $regularFont;
-
   text-align: center;
   max-width: 110rem;
   margin: auto;
   padding-top: 6rem;
+  font-family: 'Montserrat', sans-serif;
 
   .listTitle {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }

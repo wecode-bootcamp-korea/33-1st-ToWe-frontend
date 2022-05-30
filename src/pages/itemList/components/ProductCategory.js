@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './ProductCategory.scss';
 import ProductCategoryMap from './ProductCategoryMap.js';
 
-const ProductCategory = () => {
+const ProductCategory = ({ FILTER_MENU, onCategory }) => {
   const [filterColor, setFilterColor] = useState(0);
 
   const filterColorClick = categoryFilter => {
@@ -17,6 +17,7 @@ const ProductCategory = () => {
             filterMenus={filterMenu}
             filterColor={filterColor}
             filterColorClick={filterColorClick}
+            onCategory={onCategory}
             key={filterMenu.id}
           />
         ))}
@@ -26,11 +27,3 @@ const ProductCategory = () => {
 };
 
 export default ProductCategory;
-
-const FILTER_MENU = [
-  { id: 0, name: '전체' },
-  { id: 1, name: '레고' },
-  { id: 2, name: '인형' },
-  { id: 3, name: '퍼즐' },
-  { id: 4, name: '자동차' },
-];

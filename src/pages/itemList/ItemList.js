@@ -6,6 +6,7 @@ import './ItemList.scss';
 
 const ItemList = () => {
   const [listItems, setListItems] = useState([]);
+  const [category, setCategory] = useState('ALL PRODUCTS');
 
   useEffect(() => {
     fetch('/data/LIST_ITEMS.json', {
@@ -17,6 +18,10 @@ const ItemList = () => {
       });
   }, []);
 
+  const onCategory = value => {
+    setCategory(value);
+  };
+
   const onLike = id => {
     setListItems(
       listItems.map(listItem =>
@@ -27,8 +32,8 @@ const ItemList = () => {
 
   return (
     <div className="listContainer">
-      <div className="listTitle">전체상품</div>
-      <ProductCategory />
+      <div className="listTitle">{category}</div>
+      <ProductCategory onCategory={onCategory} FILTER_MENU={FILTER_MENU} />
       <LitsFilter />
       <ListItem listItems={listItems} onLike={onLike} />
     </div>
@@ -36,3 +41,11 @@ const ItemList = () => {
 };
 
 export default ItemList;
+
+const FILTER_MENU = [
+  { id: 0, name: 'ALL' },
+  { id: 1, name: 'PUZZLE' },
+  { id: 2, name: 'DOLL' },
+  { id: 3, name: 'LEGO' },
+  { id: 4, name: 'CAR' },
+];
