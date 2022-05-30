@@ -6,8 +6,10 @@ $lightGray: #888888;
 .ourStory {
   @include flexCenter;
   flex-direction: column;
+  margin-top: 3rem;
   padding: 0 3rem;
   max-width: 1500px;
+  transform: translateY(-3rem);
 
   .title {
     margin: 10rem 0 3rem;
@@ -33,5 +35,20 @@ $lightGray: #888888;
     margin-top: 5rem;
     width: 100%;
     border-bottom: 1px solid black;
+  }
+
+  &.active {
+    animation: fadein 2s ease-out;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-3rem);
+    }
   }
 }
