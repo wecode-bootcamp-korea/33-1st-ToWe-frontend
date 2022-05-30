@@ -1,10 +1,10 @@
 {
-  "result": {
+  "results": {
     "product_id": 1,
     "name": "토이스토리 장난감",
     "price": "100000",
     "description": "토이스토리 장난감!!!",
     "image_url": ["/images/toy1.png", "/images/toy2.png", "/images/toy3.png"],
-    "color": ["null", "red", "blue"]
+    "color": ["null", "red", "blue", "white"]
   }
 }

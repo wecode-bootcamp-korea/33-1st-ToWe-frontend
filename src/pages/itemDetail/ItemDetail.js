@@ -10,15 +10,19 @@ import {
 
 const ItemDetail = () => {
   // //목데이터 가져오기
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
   useEffect(() => {
     fetch('/data/commentData.json')
       .then(res => res.json())
       .then(data => setData(data));
   }, []);
+  //console.log(data);
 
-  const [prodCount, setProdCount] = useState(1);
+  // 제품개수 .... 색상 선택시 1이 들어가서 [1] 이런 형태됨
+  // [1,1,1,1] => prodCount[i]가 각 색깔별 제품개수
+  const [prodCount, setProdCount] = useState([]);
+
   const [select, setSelect] = useState(false);
   const [color, setColor] = useState('선택하세요.'); // 색상 선택
 
@@ -26,7 +30,7 @@ const ItemDetail = () => {
 
   useEffect(() => {
     setMainImgURL(
-      Object.keys(data).length !== 0 ? data.result.image_url[0] : ''
+      Object.keys(data).length !== 0 ? data.results.image_url[0] : ''
     );
   }, [data]);
   // + 기호 클릭시 제품 개수 올라감
@@ -35,8 +39,12 @@ const ItemDetail = () => {
   };
 
   // - 기호 클릭시 제품 개수 내려감
-  const downProdCount = () => {
-    if (prodCount >= 2) setProdCount(prodCount - 1);
+  const downProdCount = i => {
+    if (prodCount[i] >= 2) {
+      let copy = [...prodCount];
+      copy[i]--;
+      setProdCount(copy);
+    }
   };
 
   // 색상 선택할 때 '선택하세요'누르면 밑에 display : none 이었던 창 띄우기
@@ -47,6 +55,13 @@ const ItemDetail = () => {
   // 색상 선택하면 prodBuy 배열에 색상 넣기
   // red 선택하면 ['red'] blue도 선택하면 ['red','blue']
   const [prodBuy, setProdBuy] = useState([]);
+
+  // 질문) 이거 왜 됨?
+  // 질문)이걸 return문 안에서 쓰는 건 불가능?
+  const totalProdNum = prodCount.reduce((acc, cur, i) => {
+    if (i < prodBuy.length) return acc + cur;
+    else return acc;
+  }, 0);
 
   return (
     <>
@@ -65,7 +80,7 @@ const ItemDetail = () => {
                 <img src={mainImgURL} alt="제품사진" />
               </div>
               <div className="smallPics">
-                {data.result.image_url.map((a, i) => {
+                {data.results.image_url.map((a, i) => {
                   return (
                     <div
                       key={i}
@@ -83,10 +98,10 @@ const ItemDetail = () => {
             {/* 제품정보 부분 */}
             <div className="description">
               {/* 받아올 상품명 */}
-              {data.result && <h1>{data.result.name}</h1>}
+              {data.results && <h1>{data.results.name}</h1>}
               {/* 받아올 상품가격 */}
-              {data.result && (
-                <span className="price">{data.result.price}원</span>
+              {data.results && (
+                <span className="price">{data.results.price}원</span>
               )}
 
               <div className="extraInfo">
@@ -104,21 +119,35 @@ const ItemDetail = () => {
                     <span>{color}</span> <AiOutlineDown />
                   </div>
                   <div className={select ? 'options' : 'options disappear'}>
-                    {data.result &&
-                      data.result.color.map((a, i) =>
+                    {data.results &&
+                      data.results.color.map((a, i) =>
                         a !== 'null' ? (
                           <div
                             key={i}
                             onClick={() => {
                               showSwitchClick();
+                              // 색상 선택창에 보일 {color}를 a로 설정
                               setColor(a);
                               setProdBuy(
                                 prodBuy.includes(a)
                                   ? prodBuy
                                   : prodBuy.concat([a])
                               );
-                              // 질문) 왜 처음에 빈배열?
+                              setProdCount(prodCount.concat([1]));
+                              // 질문)slice 쓰니까 왜 안됨?
+                              // setProdCount(prodCount.slice(0, prodBuy.length));
+
+                              // 질문) 아래 왜 안됨?
+                              // prodBuy.includes(a) ?(
+                              // setProdBuy(prodBuy)
+                              // setProdCount(prodCount) ):
+                              // setProdBuy(prodBuy.concat([a]))
+                              // setProdCount(prodCount.concat([1]))
+
+                              // 질문) 왜 처음에 빈배열? 한 박자씩 느리네
                               console.log(prodBuy);
+                              console.log(prodCount);
+                              //console.log(prodCount.slice(0, prodBuy.length));
                             }}
                           >
                             {a}
@@ -141,11 +170,14 @@ const ItemDetail = () => {
 
               {/* 구매할 상품 개수 */}
               <div className="totalBuyNum">
+                {/* prodBuy는 <색상>란에서 선택한 색들이 들어 있는 배열 */}
                 {prodBuy.map((prodColor, i) => {
                   return (
                     <div key={i} className="prodBuyNum">
                       <div className="prodNameX">
-                        <span>{data.result.name + ' (' + prodColor + ')'}</span>
+                        <span>
+                          {data.results.name + ' (' + prodColor + ')'}
+                        </span>
 
                         <span
                           className="xIcon"
@@ -154,6 +186,9 @@ const ItemDetail = () => {
                             let copy = [...prodBuy];
                             copy.splice(i, 1);
                             setProdBuy(copy);
+                            let copy1 = [...prodCount];
+                            copy1.splice(i, 1);
+                            setProdCount(copy1);
                           }}
                         >
                           <AiOutlineClose />
@@ -163,16 +198,31 @@ const ItemDetail = () => {
                       {/* onClick 이벤트랑 이모티콘으로 해야할듯 */}
                       <div className="calculator">
                         <div className="numButton">
-                          <div className="minus" onClick={downProdCount}>
+                          <div
+                            className="minus"
+                            onClick={() => {
+                              // 질문) onClick{()} 안에 (i) 로 인자 전달하면 왜 안됨?
+                              // 질문) 여기 3항 연산자 못씀?
+                              // prodCount[i] >= 2 ? (let ~ setProdCount(copy);) : setProdCount(prodCount) 쓰고 싶은데
+                              downProdCount(i);
+                            }}
+                          >
                             <AiOutlineMinus />
                           </div>
-                          <div className="number">{prodCount}</div>
-                          <div className="plus" onClick={upProdCount}>
+                          <div className="number">{prodCount[i]}</div>
+                          <div
+                            className="plus"
+                            onClick={() => {
+                              let copy = [...prodCount];
+                              copy[i]++;
+                              setProdCount(copy);
+                            }}
+                          >
                             <AiOutlinePlus />
                           </div>
                         </div>
                         <div className="totalPrice">
-                          {parseInt(data.result.price) * prodCount + '원'}
+                          {parseInt(data.results.price) * prodCount[i] + '원'}
                         </div>
                       </div>
                     </div>
@@ -183,11 +233,14 @@ const ItemDetail = () => {
               <div className="endOrder">
                 <div className="orderNumberPart">
                   <div>주문 수량</div>
-                  <div>1개</div>
+                  <div>
+                    {totalProdNum + '개'}
+                    {/* totalProdNum 넣기 */}
+                  </div>
                 </div>
                 <div className="totalAmountPart">
                   <div>총 상품 금액</div>
-                  <div>42,000원</div>
+                  <div>{totalProdNum * data.results.price + '원'}</div>
                 </div>
               </div>
 
@@ -215,7 +268,7 @@ const ItemDetail = () => {
           </div>
 
           <div className="prodDescReviewQuestion">
-            <div className="prodDesc">{data.result.description}</div>
+            <div className="prodDesc">{data.results.description}</div>
             <div className="reviews">
               <div className="reviewTitle">
                 <div className="reviewText">후기</div>
