@@ -29,17 +29,6 @@ const Order = () => {
             <OrderList key={orderData.id} orderData={orderData} />
           ))}
         </ul>
-        {/* <ul className="itemList">
-          <li className="item">
-            <img className="itemImg" src="./images/ducktoy.jpg" alt="" />
-            <div>
-              <span className="itemName">침착랑 빅 리무버블 스티커</span>
-              <span className="itemDetail">디자인:백호</span>
-              <span className="orderInfo">4개 / 14,000원</span>
-            </div>
-          </li>
-        </ul> */}
-
         <div className="line" />
 
         <div className="totalPrice">
