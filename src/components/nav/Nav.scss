@@ -1,104 +1,115 @@
 @import '../../styles/variables.scss';
 
-body {
-  background-color: bisque;
-  height: 1500px;
-}
-
 nav {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   background-color: transparent;
   position: fixed;
-}
+  z-index: 2;
 
-.navbar {
-  width: 100%;
-  margin: auto;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  padding: 2rem 2rem;
-  transition: all 1s ease-in-out;
+  .logoBox {
+    @include flexCenter;
+    flex-direction: column;
+  }
 
-  .navbarMenu {
+  .navLogo {
+    width: 10rem;
+  }
+
+  .navbar {
+    width: 100%;
+    margin: auto;
+    margin: auto;
     display: flex;
-    margin: 0 0.5rem;
-  }
-
-  .navbarTitle {
-    font-size: 2rem;
-    font-family: $regularFont;
-  }
-
-  .navbarMenuItems {
-    font-size: 1.2rem;
-    display: flex;
-  }
-
-  .navarIconbox {
-    transition: all 0.5s;
-  }
-
-  .navarIcon {
-    font-size: 1.4rem;
-    margin: 0 0.8rem;
-    cursor: pointer;
-  }
-
-  .navbarInput {
-    line-height: 1rem;
-    font-size: 1.1rem;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    display: none;
-  }
-
-  .navbarInputOn {
+    justify-content: space-between;
+    align-items: center;
     background-color: transparent;
-    line-height: 1rem;
-    font-size: 1.1rem;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-  }
+    padding: 0.5rem 2rem;
+    transition: all 1s ease-in-out;
 
-  .navbarToggleBtn {
-    font-size: 1.4rem;
-    cursor: pointer;
-    display: none;
+    .navbarMenu {
+      display: flex;
+      margin: 0 0.5rem;
+    }
+
+    .navbarTitle {
+      font-size: 2rem;
+    }
+
+    .navbarMenuItems {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      display: flex;
+    }
+
+    .navarIconbox {
+      transition: all 0.5s;
+    }
+
+    .navarIcon {
+      font-size: 1.2rem;
+      margin: 0 0.8rem;
+      cursor: pointer;
+    }
+
+    .navarIcon:hover {
+      opacity: 0.5;
+    }
+
+    .navbarInput {
+      line-height: 1rem;
+      font-size: 1.1rem;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+      display: none;
+    }
+
+    .navbarInputOn {
+      background-color: transparent;
+      line-height: 1rem;
+      font-size: 1.1rem;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+    }
+
+    .navbarToggleBtn {
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: none;
+    }
   }
 }
 
 @media screen and (max-width: 900px) {
   .navbar {
     display: flex;
+    position: fixed;
     justify-content: center;
     flex-direction: column;
-  }
 
-  .navbarMenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+    .navbarMenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-  .navbarMenuItems {
-    margin-top: 1rem;
-  }
+    .navbarMenuItems {
+      margin-top: 1rem;
+    }
 
-  .navarIconbox {
-    display: none;
-  }
+    .navarIconbox {
+      display: none;
+    }
 
-  .navbarToggleBtn {
-    font-size: 1.4rem;
-    cursor: pointer;
-    display: block;
+    .navbarToggleBtn {
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: none;
+    }
   }
 }

@@ -2,14 +2,46 @@
 
 .navbarMenuItem {
   position: relative;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.5rem;
   margin: auto;
-  font-family: $regularFont;
   cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+
+  .bottomLine {
+    margin-top: 0.5rem;
+    width: 95%;
+  }
+
+  .dropBoxs {
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
-.dropBoxs {
-  position: absolute;
-  display: flex;
-  flex-direction: column-reverse;
+.navbarMenuItem:hover {
+  .bottomLine {
+    border-bottom: 2px solid black;
+  }
+
+  color: $darkGray;
+
+  .dropBoxs {
+    color: black;
+  }
+}
+
+.navbarMenuItem:hover .bottomLine {
+  animation: 0.5s ease-in-out bottomLine;
+  @keyframes bottomLine {
+    from {
+      opacity: 0;
+      width: 0;
+    }
+  }
+  to {
+    opacity: 1;
+    width: 95%;
+  }
 }

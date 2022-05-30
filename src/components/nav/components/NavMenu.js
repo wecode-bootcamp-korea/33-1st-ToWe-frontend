@@ -3,6 +3,7 @@ import Dropbox from './Dropbox.js';
 
 const NavMenu = ({ navTitle, navId, hoverOn }) => {
   const { id, title, category } = navTitle;
+
   return (
     <li
       className="navbarMenuItem"
@@ -11,6 +12,7 @@ const NavMenu = ({ navTitle, navId, hoverOn }) => {
       }}
     >
       {title}
+      <div className="bottomLine" />
       <ul className="dropBoxs">
         {navId === id &&
           category.map((category, i) => (
