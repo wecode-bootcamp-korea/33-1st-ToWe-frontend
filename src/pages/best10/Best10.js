@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProductCategory from './components/ProductCategory.js';
 import ListItem from './components/ListItem.js';
-import LitsFilter from './components/ListFilter.js';
 import './Best10.scss';
 
 const Best10 = () => {
@@ -20,8 +18,6 @@ const Best10 = () => {
   return (
     <div className="listContainer">
       <div className="listTitle">Best 10</div>
-      <ProductCategory />
-      <LitsFilter />
       <ListItem listItems={listItems} />
     </div>
   );
