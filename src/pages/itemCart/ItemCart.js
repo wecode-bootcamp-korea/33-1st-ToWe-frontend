@@ -3,7 +3,6 @@ import './ItemCart.scss';
 import ItemComponent from './component/ItemComponent';
 
 const ItemCart = () => {
-  const [listValue, setListValue] = useState([]);
   useEffect(() => {
     fetch('/data/ItemList.json', {
       method: 'GET',
@@ -15,10 +14,18 @@ const ItemCart = () => {
       .then(result => setListValue(result));
     //result.result <- 객체 안의 배열로 들어가는 어쩌구
   }, []);
-
+  const [listValue, setListValue] = useState([]);
   const [amount, setAmount] = useState(1);
+  const [sum, setSum] = useState(0);
+
+  useEffect(() => {
+    const arr = listValue.map(list => list.price);
+    const result = 0;
+    const reduce2 = arr.reduce((a, b) => a + b, result);
+    setSum(reduce2);
+  }, [listValue]);
+
   // 수량
-  // console.log(amount);
   const increase = (id, quantity, price) => {
     setAmount(
       listValue.map(itemlist =>
@@ -30,11 +37,11 @@ const ItemCart = () => {
           : null
       )
     );
-    // console.log(quantity, price);
-    // setListValue({ ...listValue, quantity: quantity });
+    const a = sum + price;
+    setSum(a);
   };
 
-  const decrease = id => {
+  const decrease = (id, quantity, price) => {
     setAmount(
       listValue.map(itemlist =>
         itemlist.cart_id === id
@@ -45,11 +52,19 @@ const ItemCart = () => {
           : null
       )
     );
+    const a = quantity !== 1 ? sum - price : sum;
+    setSum(a);
   };
 
-  // 상품 가격 합계
-  // const [priceValue, setPriceValue] = useState();
-  // const productPrice = () => {};
+  //삭제기능
+  // const deleteItems = id => {
+  //   const deleteItems = listValue.filter(listValue.cart_id !== id);
+  //   setListValue(deleteItems);
+  // };
+  const onRemove = id => {
+    let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
+    setListValue(listRemove);
+  };
 
   //백엔드 데이터 통신
   // console.log('test', listValue.price);
@@ -81,6 +96,7 @@ const ItemCart = () => {
                   key={itemlist.cart_id}
                   decrease={decrease}
                   increase={increase}
+                  onRemove={onRemove}
                 />
               ))}
             </div>
@@ -88,7 +104,7 @@ const ItemCart = () => {
               <div className="priceInfoDiv">
                 <div className="productPrice">
                   <div className="priceTitle">상품 합계</div>
-                  <div className="productPriceCount">원</div>
+                  <div className="productPriceCount">{sum}원</div>
                 </div>
                 <div className="shippingPrice">
                   <div className="shippingTitle">배송비</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemComponent.scss';
 
-const ItemComponent = ({ itemlist, decrease, increase }) => {
+const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
   const { cart_id, product_name, price, quantity, thumbnail_url, product_id } =
     itemlist;
 
@@ -26,7 +26,14 @@ const ItemComponent = ({ itemlist, decrease, increase }) => {
           <img className="img" src={`${thumbnail_url}`}></img>
           <div className="text">
             <div className="name">{product_name}</div>
-            <div className="deleteBtnWrapper">삭제하기</div>
+            <div
+              className="deleteBtnWrapper"
+              onClick={() => {
+                onRemove(cart_id);
+              }}
+            >
+              삭제하기
+            </div>
           </div>
         </div>
         <div className="quantityDiv">
