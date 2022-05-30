@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './Login.scss';
 import '../../styles/variables.scss';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const MAPTEST = [{}];
-
   const [inputValue, setInputValue] = useState({
     id: '',
     pw: '',
@@ -35,20 +33,12 @@ const Login = () => {
       });
   };
 
-  // const emailRegex = /^[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.]+$/;
-  // const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^~*+=-])(?=.*[0-9]).{8,}$/;
-  // const pwV = emailRegex.test(inputValue.id);
-  // const idV = passwordRegex.test(inputValue.pw);
-  // const va = idV && pwV;
-
   const passwordCondition =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^~*+=-])(?=.*[0-9]).{8,}$/;
   const isValidLogin =
     id.includes('@') &&
     id.includes('.') &&
     passwordCondition.test(inputValue.pw);
-
-  console.log(isValidLogin);
 
   const handleInput = e => {
     const { name, value } = e.target;
