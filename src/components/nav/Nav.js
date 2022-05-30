@@ -7,6 +7,7 @@ const Nav = () => {
   const [navId, setNavId] = useState('');
   const [inputToggle, setInputToggle] = useState(true);
   const [logo, setLogo] = useState(true);
+  const [navbar, setNavber] = useState(false);
 
   const hoverOn = idNav => {
     setNavId(idNav);
@@ -28,9 +29,22 @@ const Nav = () => {
     setLogo(!logo);
   };
 
+  const changNavbar = () => {
+    if (window.scrollY >= 100) {
+      setNavber(true);
+    } else {
+      setNavber(false);
+    }
+  };
+
+  window.addEventListener('scroll', changNavbar);
+
   return (
     <nav>
-      <div className="navbar" onMouseLeave={hoverOff}>
+      <div
+        className={navbar ? `navbar active` : `navbar`}
+        onMouseLeave={hoverOff}
+      >
         <div className="navbarMenu">
           <img
             onMouseEnter={logoToggle}

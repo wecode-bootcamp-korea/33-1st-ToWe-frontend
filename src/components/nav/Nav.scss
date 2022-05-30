@@ -1,5 +1,10 @@
 @import '../../styles/variables.scss';
 
+.navbar.active {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 nav {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
@@ -42,7 +47,6 @@ nav {
 
   .navbarTitle {
     font-size: 2rem;
-    // font-family: $regularFont;
   }
 
   .navbarMenuItems {

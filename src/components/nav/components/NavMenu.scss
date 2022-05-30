@@ -11,11 +11,12 @@
 }
 
 .navbarMenuItem:hover {
+  border-radius: 1rem;
   .bottomLine {
     border-bottom: 2px solid black;
   }
 
-  color: $darkGray;
+  // color: $darkGray;
 
   .dropBoxs {
     color: black;
