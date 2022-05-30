@@ -3,38 +3,6 @@ import './ItemCart.scss';
 import ItemComponent from './component/ItemComponent';
 
 const ItemCart = () => {
-  const [amount, setAmount] = useState(1);
-
-  // 수량
-  const increase = id => {
-    setAmount(
-      listValue.map(itemlist =>
-        itemlist.id === id
-          ? { ...itemlist, amount: (itemlist.amount = itemlist.amount + 1) }
-          : null
-      )
-    );
-  };
-
-  const decrease = id => {
-    setAmount(
-      listValue.map(itemlist =>
-        itemlist.id === id
-          ? {
-              ...itemlist,
-              amount:
-                itemlist.amount !== 0
-                  ? (itemlist.amount = itemlist.amount - 1)
-                  : null,
-            }
-          : null
-      )
-    );
-  };
-
-  // 상품 가격 합계
-
-  //백엔드 데이터 통신
   const [listValue, setListValue] = useState([]);
   useEffect(() => {
     fetch('/data/ItemList.json', {
@@ -45,7 +13,46 @@ const ItemCart = () => {
     })
       .then(res => res.json())
       .then(result => setListValue(result));
+    //result.result <- 객체 안의 배열로 들어가는 어쩌구
   }, []);
+
+  const [amount, setAmount] = useState(1);
+  // 수량
+  // console.log(amount);
+  const increase = (id, quantity, price) => {
+    setAmount(
+      listValue.map(itemlist =>
+        itemlist.cart_id === id
+          ? {
+              ...itemlist,
+              quantity: itemlist.quantity++,
+            }
+          : null
+      )
+    );
+    // console.log(quantity, price);
+    // setListValue({ ...listValue, quantity: quantity });
+  };
+
+  const decrease = id => {
+    setAmount(
+      listValue.map(itemlist =>
+        itemlist.cart_id === id
+          ? {
+              ...itemlist,
+              quantity: itemlist.quantity !== 1 ? itemlist.quantity-- : null,
+            }
+          : null
+      )
+    );
+  };
+
+  // 상품 가격 합계
+  // const [priceValue, setPriceValue] = useState();
+  // const productPrice = () => {};
+
+  //백엔드 데이터 통신
+  // console.log('test', listValue.price);
 
   return (
     <div className="ItemCart">
@@ -71,7 +78,7 @@ const ItemCart = () => {
               {listValue.map(itemlist => (
                 <ItemComponent
                   itemlist={itemlist}
-                  key={itemlist.id}
+                  key={itemlist.cart_id}
                   decrease={decrease}
                   increase={increase}
                 />
