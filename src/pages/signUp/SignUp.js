@@ -20,11 +20,11 @@ const SignUp = () => {
   };
 
   // 이메일, 비밀번호, 비밀번호 확인,
-  const emailCheck = email => {
-    if (email === '') {
-      alert('이메일을 입력해주세요.');
-    }
-  };
+  // const emailCheck = email => {
+  //   if (email === '') {
+  //     alert('이메일을 입력해주세요.');
+  //   }
+  // };
 
   // 여기는 백엔드 통신
   const GoSignUp = () => {
@@ -48,7 +48,6 @@ const SignUp = () => {
       .then(result => {
         navigator('/login');
         // localStorage.setItem('TOKEN', result.access_token);
-        console.log(result);
       });
   };
 
