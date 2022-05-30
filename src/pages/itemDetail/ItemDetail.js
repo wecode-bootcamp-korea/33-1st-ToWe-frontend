@@ -44,6 +44,10 @@ const ItemDetail = () => {
     setSelect(!select);
   };
 
+  // 색상 선택하면 prodBuy 배열에 색상 넣기
+  // red 선택하면 ['red'] blue도 선택하면 ['red','blue']
+  const [prodBuy, setProdBuy] = useState([]);
+
   return (
     <>
       <Nav />
@@ -102,21 +106,19 @@ const ItemDetail = () => {
                   <div className={select ? 'options' : 'options disappear'}>
                     {data.result &&
                       data.result.color.map((a, i) =>
-                        // a에 {} 언제 붙임?
-                        // a에 {} 언제 붙임?
-                        // a에 {} 언제 붙임?
-                        // a에 {} 언제 붙임?
-                        // a에 {} 언제 붙임?
-                        // a에 {} 언제 붙임?
-                        // a에 {} 언제 붙임?
-                        // a에 {} 언제 붙임?
-
-                        a != 'null' ? (
+                        a !== 'null' ? (
                           <div
                             key={i}
                             onClick={() => {
                               showSwitchClick();
                               setColor(a);
+                              setProdBuy(
+                                prodBuy.includes(a)
+                                  ? prodBuy
+                                  : prodBuy.concat([a])
+                              );
+                              // 질문) 왜 처음에 빈배열?
+                              console.log(prodBuy);
                             }}
                           >
                             {a}
@@ -136,35 +138,46 @@ const ItemDetail = () => {
                   </div>
                 </div>
               </div>
+
               {/* 구매할 상품 개수 */}
+              <div className="totalBuyNum">
+                {prodBuy.map((prodColor, i) => {
+                  return (
+                    <div key={i} className="prodBuyNum">
+                      <div className="prodNameX">
+                        <span>{data.result.name + ' (' + prodColor + ')'}</span>
 
-              <div className="prodBuyNum">
-                <div className="prodNameX">
-                  {color !== '선택하세요.' ? (
-                    <span>{data.result.name + ' (' + color + ')'}</span>
-                  ) : (
-                    ''
-                  )}
-                  <span className="xIcon">
-                    <AiOutlineClose />
-                  </span>
-                </div>
+                        <span
+                          className="xIcon"
+                          // X아이콘 누르면 prodBuy 배열 바꿔서 삭제하는 기능 구현
+                          onClick={() => {
+                            let copy = [...prodBuy];
+                            copy.splice(i, 1);
+                            setProdBuy(copy);
+                          }}
+                        >
+                          <AiOutlineClose />
+                        </span>
+                      </div>
 
-                {/* onClick 이벤트랑 이모티콘으로 해야할듯 */}
-                <div className="calculator">
-                  <div className="numButton">
-                    <div className="minus" onClick={downProdCount}>
-                      <AiOutlineMinus />
+                      {/* onClick 이벤트랑 이모티콘으로 해야할듯 */}
+                      <div className="calculator">
+                        <div className="numButton">
+                          <div className="minus" onClick={downProdCount}>
+                            <AiOutlineMinus />
+                          </div>
+                          <div className="number">{prodCount}</div>
+                          <div className="plus" onClick={upProdCount}>
+                            <AiOutlinePlus />
+                          </div>
+                        </div>
+                        <div className="totalPrice">
+                          {parseInt(data.result.price) * prodCount + '원'}
+                        </div>
+                      </div>
                     </div>
-                    <div className="number">{prodCount}</div>
-                    <div className="plus" onClick={upProdCount}>
-                      <AiOutlinePlus />
-                    </div>
-                  </div>
-                  <div className="totalPrice">
-                    {parseInt(data.result.price) * prodCount + '원'}
-                  </div>
-                </div>
+                  );
+                })}
               </div>
 
               <div className="endOrder">

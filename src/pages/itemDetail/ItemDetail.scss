@@ -123,55 +123,56 @@ $gray: #7c7c7c;
       }
 
       //여기까지
-
-      .prodBuyNum {
-        margin: 1rem;
-        border-top: 1px solid $darkGray;
-        display: flex;
-        flex-direction: column;
-
-        .prodNameX {
-          margin-top: 3rem;
-          margin-bottom: 0.7rem;
+      .totalBuyNum {
+        .prodBuyNum {
+          margin: 1rem;
+          border-top: 1px solid $darkGray;
           display: flex;
-          justify-content: space-between;
+          flex-direction: column;
 
-          .xIcon {
-            cursor: pointer;
-          }
-        }
-
-        .calculator {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          .numButton {
+          .prodNameX {
+            margin-top: 3rem;
+            margin-bottom: 0.7rem;
             display: flex;
+            justify-content: space-between;
 
-            .minus {
-              width: 2rem;
-              height: 2rem;
-              @include flexCenterSort();
-              border: 1px solid $darkGray;
-              border-right: 0px;
+            .xIcon {
               cursor: pointer;
             }
+          }
 
-            .number {
-              width: 2rem;
-              height: 2rem;
-              @include flexCenterSort();
-              border: 1px solid $darkGray;
-              border-right: 0px;
-            }
+          .calculator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-            .plus {
-              width: 2rem;
-              height: 2rem;
-              @include flexCenterSort();
-              border: 1px solid $darkGray;
-              cursor: pointer;
+            .numButton {
+              display: flex;
+
+              .minus {
+                width: 2rem;
+                height: 2rem;
+                @include flexCenterSort();
+                border: 1px solid $darkGray;
+                border-right: 0px;
+                cursor: pointer;
+              }
+
+              .number {
+                width: 2rem;
+                height: 2rem;
+                @include flexCenterSort();
+                border: 1px solid $darkGray;
+                border-right: 0px;
+              }
+
+              .plus {
+                width: 2rem;
+                height: 2rem;
+                @include flexCenterSort();
+                border: 1px solid $darkGray;
+                cursor: pointer;
+              }
             }
           }
         }
