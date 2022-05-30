@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
 import './Order.scss';
+import OrderList from './OrderList';
 
 const Order = () => {
+  const [orderList, setOrderList] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/ORDER_LIST.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => {
+        setOrderList(data);
+      });
+  }, []);
+
   return (
     <section className="order">
       {/* 타이틀 */}
@@ -14,6 +25,11 @@ const Order = () => {
       <div className="orderItemContainer">
         <div className="title">주문 상품</div>
         <ul className="itemList">
+          {orderList.map(orderData => (
+            <OrderList key={orderData.id} orderData={orderData} />
+          ))}
+        </ul>
+        {/* <ul className="itemList">
           <li className="item">
             <img className="itemImg" src="./images/ducktoy.jpg" alt="" />
             <div>
@@ -22,17 +38,7 @@ const Order = () => {
               <span className="orderInfo">4개 / 14,000원</span>
             </div>
           </li>
-        </ul>
-        <ul className="itemList">
-          <li className="item">
-            <img className="itemImg" src="./images/ducktoy.jpg" alt="" />
-            <div>
-              <span className="itemName">침착랑 빅 리무버블 스티커</span>
-              <span className="itemDetail">디자인:백호</span>
-              <span className="orderInfo">4개 / 14,000원</span>
-            </div>
-          </li>
-        </ul>
+        </ul> */}
 
         <div className="line" />
 

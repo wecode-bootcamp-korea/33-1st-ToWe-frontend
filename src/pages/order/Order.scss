@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin: auto;
-  margin-top: 6.25rem;
+  margin-top: 10rem;
   margin-bottom: 6.25rem;
   max-width: 30rem;
 
@@ -129,6 +129,7 @@
         input {
           border: 2px solid #bcbcbc;
         }
+
         span {
           color: gray;
         }
@@ -153,6 +154,7 @@
         font-size: 0.9rem;
         margin-bottom: 0.3rem;
       }
+
       input {
         margin-bottom: 1.4rem;
         padding: 0 0.8rem;
@@ -170,6 +172,7 @@
         font-size: 0.9rem;
         margin-bottom: 0.3rem;
       }
+
       input {
         margin-bottom: 1.4rem;
         padding: 0 0.8rem;
@@ -178,6 +181,7 @@
         border-radius: 0.4rem;
       }
     }
+
     .addressBox {
       display: flex;
       flex-direction: column;
@@ -186,6 +190,7 @@
         font-size: 0.9rem;
         margin-bottom: 0.3rem;
       }
+
       input {
         margin-bottom: 1.4rem;
         padding: 0 0.8rem;
@@ -194,6 +199,7 @@
         border-radius: 0.4rem;
       }
     }
+
     .tellBox {
       display: flex;
       flex-direction: column;
@@ -250,6 +256,7 @@
         }
       }
     }
+
     .line {
       margin: 1rem 0;
     }
@@ -262,23 +269,22 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 1rem;
-        span {
-        }
       }
+
       .totalDiscount {
         display: flex;
         justify-content: space-between;
-        span {
-        }
       }
     }
     .amountPaymentBox {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       .amountPayment {
         margin: 2rem 0;
       }
+
       .amount {
         color: rgb(52, 89, 255);
         font-size: 1.3rem;
@@ -299,6 +305,7 @@
     background: black;
     font-size: 1.1rem;
     text-align: center;
+
     &:hover {
       cursor: pointer;
     }
