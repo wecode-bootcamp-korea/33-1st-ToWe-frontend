@@ -1,10 +1,10 @@
-[
-  {
+{
+  "result": {
     "product_id": 1,
-    "name": "스타워즈레고",
-    "price": "100000.00",
-    "description": "스타워즈 우주선!!!",
-    "image_url": ["1번상품1", "1번상품2", "1번상품3"],
-    "color": ["red", "null"]
+    "name": "토이스토리 장난감",
+    "price": "100000",
+    "description": "토이스토리 장난감!!!",
+    "image_url": ["/images/toy1.png", "/images/toy2.png", "/images/toy3.png"],
+    "color": ["null", "red", "blue"]
   }
-]
+}
