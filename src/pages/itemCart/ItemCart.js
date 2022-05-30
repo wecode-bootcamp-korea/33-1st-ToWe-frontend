@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItemCart = () => {
-  return <div />;
+  return <div></div>;
 };
 
 export default ItemCart;
