@@ -1,0 +1,47 @@
+@import '../../../../styles/variables.scss';
+
+.carousel {
+  .carouselWrapper {
+    .carouselImg {
+      &.hidden {
+        opacity: 0;
+        transition: opacity 800ms ease-in;
+      }
+
+      &.active {
+        opacity: 1;
+        transition: opacity 800ms ease-out;
+      }
+
+      img {
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .carouselBtns {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+
+    .btn {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin: 0 1.2rem 2rem 0rem;
+      background-color: transparent;
+      border: 3px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: white;
+    }
+  }
+}
