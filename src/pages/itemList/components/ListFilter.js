@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './ListFilter.scss';
 
 const LitsFilter = () => {
-  const [sortColor, setSortColor] = useState();
+  const [sortColor, setSortColor] = useState('');
 
   const sortColorClick = filterNum => {
     setSortColor(filterNum);
