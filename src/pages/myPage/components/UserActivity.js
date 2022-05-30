@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserActivity = ({ activity }) => {
   return (
-    <div className="breakDown">
+    <div className="BreakDown">
       <div className="componentTitle">{activity.content}</div>
       <div className="nothing">{activity.content}이 없습니다.</div>
     </div>
