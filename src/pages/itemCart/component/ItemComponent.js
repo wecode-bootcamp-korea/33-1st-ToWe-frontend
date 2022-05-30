@@ -2,8 +2,7 @@ import React from 'react';
 import './ItemComponent.scss';
 
 const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
-  const { cart_id, product_name, price, quantity, thumbnail_url, product_id } =
-    itemlist;
+  const { cart_id, product_name, price, quantity, thumbnail_url } = itemlist;
 
   // const [amount, setAmount] = useState(1);
 
@@ -23,7 +22,7 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
     <div className="deliveryGroupItemList">
       <div className="cartInfoDiv">
         <div className="product">
-          <img className="img" src={`${thumbnail_url}`}></img>
+          <img className="img" src={`${thumbnail_url}`} />
           <div className="text">
             <div className="name">{product_name}</div>
             <div
