@@ -1,5 +1,9 @@
 @import '../../styles/variables.scss';
 
+body {
+  background-color: antiquewhite;
+  height: 1500px;
+}
 .navbar.active {
   background-color: white;
   background-color: rgba(255, 255, 255, 0.8);
