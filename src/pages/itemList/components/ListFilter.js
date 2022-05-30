@@ -12,7 +12,7 @@ const LitsFilter = () => {
     <div className="listFilter">
       {SORT_MENU.map(sortMenu => {
         return (
-          <p
+          <div
             key={sortMenu.id}
             onClick={() => {
               sortColorClick(sortMenu.id);
@@ -23,7 +23,7 @@ const LitsFilter = () => {
           >
             {sortMenu.name}
             <div className="sortLine" />
-          </p>
+          </div>
         );
       })}
     </div>

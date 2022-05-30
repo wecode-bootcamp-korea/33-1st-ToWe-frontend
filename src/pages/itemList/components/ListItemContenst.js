@@ -13,6 +13,7 @@ const ListItemContenst = ({
   age,
   like,
   onLike,
+  categoryPage,
 }) => {
   const [changeImg, setChangeImg] = useState(true);
 
@@ -34,7 +35,9 @@ const ListItemContenst = ({
         className={changeImg ? `listItemsImg` : `listItemsImg2`}
         alt="Items"
         src={changeImg ? itemImg : hoverImg}
-        onClick={goToDetail}
+        onClick={() => {
+          categoryPage(name);
+        }}
       />
       {like ? (
         <FaHeart
