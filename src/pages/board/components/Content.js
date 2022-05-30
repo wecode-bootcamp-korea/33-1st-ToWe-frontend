@@ -1,15 +1,13 @@
 import React from 'react';
 
-const Content = ({ noticeData, inquiryData, reviewData }) => {
-  const { writing, date } = reviewData;
-
+const Content = ({ data }) => {
   return (
     <div className="boardContent">
       <div className="contentInformation">
-        <div className="label">Notice</div>
-        <div className="content">{writing}</div>
+        <div className="label">{data.title}</div>
+        <div className="content">{data.writing}</div>
       </div>
-      <div className="date ">{date}</div>
+      <div className="date ">{data.date}</div>
     </div>
   );
 };

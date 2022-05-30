@@ -1,45 +1,109 @@
 import React, { useState } from 'react';
-// import Nav from '../../components/nav/Nav';
-// import tabMenu from './components/tabMenu';
+import TabMenu from './components/TabMenu';
 import './Board.scss';
-import Notice from './components/Notice';
-import Inquiry from './components/Inquiry';
-import Review from './components/Review';
 
 const Board = () => {
-  const [tabNumber, setTabNumber] = useState(0);
+  const [tabTitle, setTabTitle] = useState('Notice');
 
-  const tabClick = id => {
-    setTabNumber(id);
+  const tabClick = string => {
+    setTabTitle(string);
   };
 
   return (
     <div className="board">
       <div className="tabMenu">
         <ul className="tabTitles">
-          {TAB_TITLE.map((tabTitle, idx) => {
+          {TAB_TITLE.map((tabTitle, id) => {
             return (
               <li
-                key={tabTitle + idx}
+                key={tabTitle + id}
                 className="tabTitle"
-                onClick={() => tabClick(idx + 1)}
+                onClick={() => tabClick(tabTitle)}
               >
                 {tabTitle}
               </li>
             );
           })}
         </ul>
-        <div className="tabContent">{MAPPING_OBJ[tabNumber]}</div>
+        <div className="tabContent">
+          <TabMenu boardData={DATA[tabTitle]} />
+        </div>
       </div>
       <div className="pageChange">1 2 3 4 5</div>
     </div>
   );
 };
 
-const MAPPING_OBJ = {
-  1: <Notice id={1} />,
-  2: <Inquiry id={2} />,
-  3: <Review id={3} />,
+const DATA = {
+  Notice: {
+    title: 'Notice',
+    contents: [
+      {
+        id: 0,
+        title: 'Notice',
+        writing: '당일 출고 시간 안내',
+        date: '2022-05-30',
+      },
+      {
+        id: 1,
+        title: 'Notice',
+        writing: '이벤트 안내',
+        date: '2022-05-29',
+      },
+      {
+        id: 2,
+        title: 'Notice',
+        writing: '교환/환불/반품 정책 안내',
+        date: '2022-05-28',
+      },
+    ],
+  },
+  Inquiry: {
+    title: 'Inquiry',
+    contents: [
+      {
+        id: 0,
+        title: 'Inquiry',
+        writing: '장난감이 안 움직여요',
+        date: '2022-05-31',
+      },
+      {
+        id: 1,
+        title: 'Inquiry',
+        writing: '장난감이 움직여요',
+        date: '2022-05-29',
+      },
+      {
+        id: 2,
+        title: 'Inquiry',
+        writing: '장난감이 너무 무서워요',
+        date: '2022-05-28',
+      },
+    ],
+  },
+  Review: {
+    title: 'Review',
+    contents: [
+      {
+        id: 0,
+        title: 'Review',
+        writing: '장난감이 멋있어용',
+        date: '2022-05-30',
+      },
+      {
+        id: 1,
+        title: 'Review',
+        writing: '장난감이 맜있어용',
+        date: '2022-05-29',
+      },
+      {
+        id: 2,
+        title: 'Review',
+        writing: '장난감 색상이 예뻐요',
+        date: '2022-05-28',
+      },
+    ],
+  },
 };
 
 const TAB_TITLE = ['Notice', 'Inquiry', 'Review'];
