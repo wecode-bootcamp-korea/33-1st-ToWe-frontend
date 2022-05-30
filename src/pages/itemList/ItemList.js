@@ -33,12 +33,6 @@ const ItemList = () => {
     setCategory(value);
   };
 
-  const onCategory2 = value => {
-    const lowerValue = value.toLowerCase();
-    navigate(`?category=${lowerValue}`);
-    setCategory(value);
-  };
-
   const onLike = id => {
     setListItems(
       listItems.map(listItem =>
