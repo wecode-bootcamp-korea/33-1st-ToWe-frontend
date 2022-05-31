@@ -19,44 +19,48 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
   // };
 
   return (
-    <div className="deliveryGroupItemList">
-      <div className="cartInfoDiv">
-        <div className="product">
-          <img className="img" src={`${thumbnail_url}`} />
-          <div className="text">
-            <div className="name">{product_name}</div>
-            <div
-              className="deleteBtnWrapper"
-              onClick={() => {
-                onRemove(cart_id);
-              }}
-            >
-              삭제하기
+    <div className="itemComponent">
+      <div className="deliveryGroupItemList">
+        <div className="cartInfoDiv">
+          <div className="product">
+            <img className="img" src={`${thumbnail_url}`} />
+            <div className="text">
+              <div className="name">{product_name}</div>
+              <div
+                className="deleteBtnWrapper"
+                onClick={() => {
+                  onRemove(cart_id);
+                }}
+              >
+                삭제하기
+              </div>
             </div>
           </div>
-        </div>
-        <div className="quantityDiv">
-          <div className="quatity">
-            <div
-              className="decreaseBtn"
-              onClick={() => {
-                decrease(cart_id, quantity, price);
-              }}
-            >
-              -
-            </div>
-            <div className="amountBox">{quantity}</div>
-            <div
-              className="increaseBtn"
-              onClick={() => {
-                increase(cart_id, quantity, price);
-              }}
-            >
-              +
+          <div className="quantityDiv">
+            <div className="quatity">
+              <div
+                className="decreaseBtn"
+                onClick={() => {
+                  decrease(cart_id, quantity, price);
+                }}
+              >
+                -
+              </div>
+              <div className="amountBox">{quantity}</div>
+              <div
+                className="increaseBtn"
+                onClick={() => {
+                  increase(cart_id, quantity, price);
+                }}
+              >
+                +
+              </div>
             </div>
           </div>
+          <div className="cartPrice">
+            {(price * quantity).toLocaleString()} 원
+          </div>
         </div>
-        <div className="cartPrice">{price * quantity} 원</div>
       </div>
     </div>
   );

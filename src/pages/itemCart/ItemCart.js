@@ -4,66 +4,87 @@ import ItemComponent from './component/ItemComponent';
 
 const ItemCart = () => {
   useEffect(() => {
-    fetch('/data/ItemList.json', {
+    fetch('http://10.58.7.40:8000/carts', {
       method: 'GET',
       headers: {
-        Authorization: 'token',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MjQyODAzfQ.X7nAVf0LLSNGdd0hqpTvZ0YCnaEe6UQlYcI5bQRnQYw',
       },
     })
       .then(res => res.json())
-      .then(result => setListValue(result));
+      .then(result => setListValue(result.result));
     //result.result <- 객체 안의 배열로 들어가는 어쩌구
   }, []);
   const [listValue, setListValue] = useState([]);
-  const [amount, setAmount] = useState(1);
-  const [sum, setSum] = useState(0);
+  // const [sum, setSum] = useState(0);
 
-  useEffect(() => {
-    const arr = listValue.map(list => list.price);
-    const result = 0;
-    const reduce2 = arr.reduce((a, b) => a + b, result);
-    setSum(reduce2);
-  }, [listValue]);
-
+  // useEffect(() => {
+  //   const arr = listValue.map(list => list.price);
+  //   const result = 0;
+  //   const reduce2 = arr.reduce((a, b) => a + b, result);
+  //   setSum(reduce2);
+  // }, [listValue]);
+  //total_price 총가격
   // 수량
+  const sum = listValue.reduce(
+    (acc, cur) => acc + Number(cur.price) * cur.quantity,
+    0
+  );
+
+  console.log(listValue);
   const increase = (id, quantity, price) => {
-    setAmount(
-      listValue.map(itemlist =>
-        itemlist.cart_id === id
-          ? {
-              ...itemlist,
-              quantity: itemlist.quantity++,
-            }
-          : null
-      )
+    const newList = [...listValue].map(itemlist =>
+      itemlist.cart_id === id
+        ? {
+            ...itemlist,
+            quantity: itemlist.quantity + 1,
+          }
+        : { ...itemlist }
     );
-    const a = sum + price;
-    setSum(a);
+
+    setListValue(newList);
+    // const a = sum + price;
+    // setSum(a);
   };
 
   const decrease = (id, quantity, price) => {
-    setAmount(
-      listValue.map(itemlist =>
-        itemlist.cart_id === id
-          ? {
-              ...itemlist,
-              quantity: itemlist.quantity !== 1 ? itemlist.quantity-- : null,
-            }
-          : null
-      )
+    if (quantity === 0) return alert('수량은 0개 미만으로 선택할 수 없습니다!');
+    const newList = [...listValue].map(itemlist =>
+      itemlist.cart_id === id
+        ? {
+            ...itemlist,
+            quantity: itemlist.quantity - 1,
+          }
+        : { ...itemlist }
     );
-    const a = quantity !== 1 ? sum - price : sum;
-    setSum(a);
+
+    setListValue(newList);
+    // const a = quantity !== 1 ? sum - price : sum;
+    // setSum(a);
   };
 
   //삭제기능
+  // useEffect(id => {}, []);
+
   const onRemove = id => {
     let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
     setListValue(listRemove);
+
+    fetch('http://10.58.7.40:8000/carts', {
+      method: 'DELETE',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MjQyODAzfQ.X7nAVf0LLSNGdd0hqpTvZ0YCnaEe6UQlYcI5bQRnQYw',
+      },
+      body: JSON.stringify({
+        cart_id: id,
+      }),
+    }).then(res => res.json());
   };
 
+  // console.log(listValue);
   return (
-    <div className="ItemCart">
+    <div className="itemCart">
       <div className="cartDetail">
         <div className="cartWrapper">
           <div className="cartHeader">
@@ -97,7 +118,9 @@ const ItemCart = () => {
               <div className="priceInfoDiv">
                 <div className="productPrice">
                   <div className="priceTitle">상품 합계</div>
-                  <div className="productPriceCount">{sum}원</div>
+                  <div className="productPriceCount">
+                    {sum.toLocaleString()}원
+                  </div>
                 </div>
                 <div className="shippingPrice">
                   <div className="shippingTitle">배송비</div>
