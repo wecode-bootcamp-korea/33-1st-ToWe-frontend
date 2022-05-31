@@ -57,17 +57,10 @@ const ItemCart = () => {
   };
 
   //삭제기능
-  // const deleteItems = id => {
-  //   const deleteItems = listValue.filter(listValue.cart_id !== id);
-  //   setListValue(deleteItems);
-  // };
   const onRemove = id => {
     let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
     setListValue(listRemove);
   };
-
-  //백엔드 데이터 통신
-  // console.log('test', listValue.price);
 
   return (
     <div className="ItemCart">
