@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const ItemList = () => {
   const [category, setCategory] = useState('ALL');
   const [listItems, setListItems] = useState([]);
+  const [query, setQuery] = useState(6);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,10 +28,10 @@ const ItemList = () => {
       });
   }, [location.search]);
 
-  const onCategory = value => {
-    const lowerValue = value.toLowerCase();
+  const onCategory = name => {
+    const lowerValue = name.toLowerCase();
     navigate(`?category=${lowerValue}`);
-    setCategory(value);
+    setCategory(name);
   };
 
   const onLike = id => {
@@ -41,30 +42,31 @@ const ItemList = () => {
     );
   };
 
-  //더보기 버튼 만들기
-  // const getBynIndex = buttonIndex => {
-  //   const limit = 3;
-  //   const offset = buttonIndex * limit;
-  //   const queryString = `?offset=${offset}&limit=${limit}`;
-  //   navigate(queryString);
-  // };
+  // 더보기 버튼 만들기
+  const getBynIndex = () => {
+    setQuery(query => query + 3);
+    const limit = query;
+    const offset = 0;
+    const queryString = `?offset=${offset}&limit=${limit}`;
+    navigate(queryString);
+    console.log(queryString);
+  };
 
   return (
     <div className="listContainer">
       <div className="listTitle">{category}</div>
-      <ProductCategory onCategory={onCategory} FILTER_MENU={FILTER_MENU} />
+      <ProductCategory onCategory={onCategory} />
       <LitsFilter />
       <ListItem listItems={listItems} onLike={onLike} />
+      <button
+        onClick={() => {
+          getBynIndex(3);
+        }}
+      >
+        버튼
+      </button>
     </div>
   );
 };
 
 export default ItemList;
-
-const FILTER_MENU = [
-  { id: 0, name: 'ALL' },
-  { id: 1, name: 'PUZZLE' },
-  { id: 2, name: 'DOLL' },
-  { id: 3, name: 'LEGO' },
-  { id: 4, name: 'CAR' },
-];
