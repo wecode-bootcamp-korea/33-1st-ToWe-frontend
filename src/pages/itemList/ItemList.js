@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ProductCategory from './components/ProductCategory.js';
 import ListItem from './components/ListItem.js';
 import LitsFilter from './components/ListFilter.js';
-import './ItemList.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './ItemList.scss';
 
 const ItemList = () => {
   const [category, setCategory] = useState('ALL');
