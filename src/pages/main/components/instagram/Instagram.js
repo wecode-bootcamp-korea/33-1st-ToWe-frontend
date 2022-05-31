@@ -77,10 +77,10 @@ const Instagram = () => {
           })}
         </div>
         <div className="arrowLeft" onClick={moveToPrevSlide}>
-          <FaAngleLeft />
+          <FaAngleLeft className="arrowLeftBtn" />
         </div>
         <div className="arrowRight" onClick={moveToNextSlide}>
-          <FaAngleRight />
+          <FaAngleRight className="arrowRightBtn" />
         </div>
       </div>
       <div className="space" />

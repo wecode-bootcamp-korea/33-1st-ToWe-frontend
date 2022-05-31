@@ -21,7 +21,7 @@ const BestProduct = ({ imgData, id }) => {
 
       <div className="itemDesc">
         <span> {imgData.name} </span>
-        <span> {imgData.price} 원 </span>
+        <span> {imgData.price} </span>
       </div>
     </li>
   );

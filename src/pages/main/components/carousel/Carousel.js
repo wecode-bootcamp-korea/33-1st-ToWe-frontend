@@ -26,7 +26,7 @@ const Carousel = () => {
       setCurrentImage(currentImage =>
         currentImage < imgList.length - 1 ? currentImage + 1 : 0
       );
-    }, 4000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [currentImage, imgList]);
 

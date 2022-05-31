@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaAngleRight } from 'react-icons/fa';
 import BestProduct from './BestProduct';
 import './BestProducts.scss';
 
@@ -33,7 +34,7 @@ const BestProducts = () => {
         </ul>
       </div>
       <div className="more" onClick={goToBest10}>
-        더 보러가기
+        more <FaAngleRight className="arrowRightBtn" />
       </div>
       <div className="line" />
     </section>
