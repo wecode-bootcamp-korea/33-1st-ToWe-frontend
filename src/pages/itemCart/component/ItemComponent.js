@@ -23,7 +23,7 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
       <div className="deliveryGroupItemList">
         <div className="cartInfoDiv">
           <div className="product">
-            <img className="img" src={`${thumbnail_url}`} />
+            <img className="img" src={`${thumbnail_url}`} alt="" />
             <div className="text">
               <div className="name">{product_name}</div>
               <div

@@ -4,15 +4,14 @@ import ItemComponent from './component/ItemComponent';
 
 const ItemCart = () => {
   useEffect(() => {
-    fetch('http://10.58.7.40:8000/carts', {
+    fetch('/data/itemList.json', {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MjQyODAzfQ.X7nAVf0LLSNGdd0hqpTvZ0YCnaEe6UQlYcI5bQRnQYw',
+        Authorization: 'token',
       },
     })
       .then(res => res.json())
-      .then(result => setListValue(result.result));
+      .then(result => setListValue(result));
     //result.result <- 객체 안의 배열로 들어가는 어쩌구
   }, []);
   const [listValue, setListValue] = useState([]);
@@ -69,11 +68,10 @@ const ItemCart = () => {
     let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
     setListValue(listRemove);
 
-    fetch('http://10.58.7.40:8000/carts', {
+    fetch('/data/itemList.json', {
       method: 'DELETE',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MjQyODAzfQ.X7nAVf0LLSNGdd0hqpTvZ0YCnaEe6UQlYcI5bQRnQYw',
+        Authorization: 'token',
       },
       body: JSON.stringify({
         cart_id: id,
