@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer.js';
 import Best10 from './pages/best10/Best10.js';
 import Board from './pages/board/Board.js';
 import Order from './pages/order/Order.js';
+import MyPage from './pages/myPage/MyPage.js';
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/board" element={<Board />} />
         <Route path="/order" element={<Order />} />
         <Route path="*" element={<Main />} />
+        <Route path="/mypage" element={<MyPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
