@@ -127,24 +127,3 @@ const ItemCart = () => {
 };
 
 export default ItemCart;
-
-// const ITEMLIST = [
-//   {
-//     id: 1,
-//     name: '조장랑 스마트톡',
-//     amount: 1,
-//     price: 15000,
-//   },
-//   {
-//     id: 2,
-//     name: '태극랑 에어팟3 케이스',
-//     amount: 1,
-//     price: 15000,
-//   },
-//   {
-//     id: 3,
-//     name: '태극랑 케이스',
-//     amount: 1,
-//     price: 20000,
-//   },
-// ];
