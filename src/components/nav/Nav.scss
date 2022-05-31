@@ -98,9 +98,7 @@ nav {
 
 @media screen and (max-width: 900px) {
   .navbar {
-    display: flex;
-    position: fixed;
-    justify-content: center;
+    @include flexCenter;
     flex-direction: column;
 
     .navbarMenu {

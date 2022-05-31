@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+.navbar.active {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+nav {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 2;
+}
+
+.logoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLogo {
+  width: 10rem;
+}
+
+.ligoBottom {
+  width: 10rem;
+  border: 1px solid black;
+}
+
+.navbar {
+  width: 100%;
+  margin: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 0.5rem 2rem;
+  transition: all 1s ease-in-out;
+}
+.navbar .navbarMenu {
+  display: flex;
+  margin: 0 0.5rem;
+}
+.navbar .navbarTitle {
+  font-size: 2rem;
+}
+.navbar .navbarMenuItems {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+}
+.navbar .navarIconbox {
+  transition: all 0.5s;
+}
+.navbar .navarIcon {
+  font-size: 1.2rem;
+  margin: 0 0.8rem;
+  cursor: pointer;
+}
+.navbar .navarIcon:hover {
+  opacity: 0.5;
+}
+.navbar .navbarInput {
+  line-height: 1rem;
+  font-size: 1.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  display: none;
+}
+.navbar .navbarInputOn {
+  background-color: transparent;
+  line-height: 1rem;
+  font-size: 1.1rem;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+.navbar .navbarToggleBtn {
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .navbar .navbarMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .navbar .navbarMenuItems {
+    margin-top: 1rem;
+  }
+  .navbar .navarIconbox {
+    display: none;
+  }
+  .navbar .navbarToggleBtn {
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: none;
+  }
+}/*# sourceMappingURL=Nav.css.map */
