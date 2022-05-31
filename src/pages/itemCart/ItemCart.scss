@@ -2,13 +2,13 @@
   .cartDetail {
     .cartWrapper {
       width: 100%;
-      padding: 60px 106px 70px;
+      padding: 3.75rem 6.625 4.375rem;
 
       .cartHeader {
         margin-bottom: 2.5rem;
 
         .cartTitle {
-          font-size: 40px;
+          font-size: 2.5rem;
           font-weight: bold;
         }
       }
@@ -17,11 +17,11 @@
           .tbTitle {
             display: flex;
             flex-direction: row;
-            padding: 16px 0px 15px;
+            padding: 1rem 0rem 0.938rem;
 
             .itemListHeader {
               width: 100%;
-              font-size: 14px;
+              font-size: 0.875rem;
               display: flex;
 
               .info {
@@ -43,120 +43,62 @@
               .deliveryCharge {
                 width: 20%;
                 display: inline-block;
-                font-size: 14px;
+                font-size: 0.875rem;
                 text-align: center;
               }
             }
           }
         }
         .cartListDiv {
-          border-top: 1px solid black;
-          border-bottom: 1px solid black;
-          // .deliveryGroupItemList {
-          //   width: 80%;
-          //   .cartInfoDiv {
-          //     // width: 100%;
-          //     // height: 122px;
-          //     padding: 20px 0;
-          //     display: flex;
-          //     flex-direction: row;
-
-          //     .product {
-          //       width: 53%;
-          //       display: flex;
-
-          //       .img {
-          //         width: 83px;
-          //         height: 83px;
-          //         background-color: orange;
-          //         // display: inline;
-          //       }
-
-          //       .text {
-          //         // width: 100%;
-          //         // display: inline-block;
-          //         padding-left: 5%;
-          //         display: flex;
-          //         justify-content: center;
-          //         flex-direction: column;
-          //         .name {
-          //           font-size: 14px;
-          //           line-height: 18px;
-          //           margin: 5px 0;
-          //         }
-          //         .deleteBtnWrapper {
-          //           margin-top: 12px;
-          //           font-size: 14px;
-          //           color: black;
-          //         }
-          //       }
-          //     }
-          //     .quantityDiv {
-          //       width: 25%;
-          //       // display: inline-block;
-          //       padding-left: calc(25% - 114px);
-          //       .quantity {
-          //       }
-          //     }
-
-          //     .cartPrice {
-          //       width: 20%;
-          //       font-size: 14px;
-          //       text-align: center;
-          //       vertical-align: middle;
-          //       display: flex;
-          //       align-items: center;
-          //       justify-content: center;
-          //     }
-          //   }
-          // }
+          border-top: 0.063rem solid black;
+          border-bottom: 0.063rem solid black;
         }
         .tbTotal {
           width: 50%;
           float: right;
           .priceInfoDiv {
             width: 100%;
-            border-bottom: 1px solid black;
-            padding: 20px 0;
+            border-bottom: 0.063rem solid black;
+            padding: 1.25rem 0;
             .productPrice {
               display: flex;
               .priceTitle {
-                margin-right: 15px;
-                font-size: 14px;
+                margin-right: 0.938rem;
+                font-size: 0.875rem;
                 display: inline-block;
               }
               .productPriceCount {
                 width: 40%;
                 text-align: right;
-                font-size: 14px;
+                font-size: 0.875rem;
               }
             }
             .shippingPrice {
               display: flex;
-              margin-top: 20px;
+              margin-top: 1.25rem;
               .shippingTitle {
-                margin-right: 15px;
-                font-size: 14px;
+                margin-right: 0.938rem;
+                font-size: 0.875rem;
               }
               .shippingPriceCount {
                 width: 40%;
                 text-align: right;
-                font-size: 14px;
+                font-size: 0.875rem;
               }
             }
           }
           .cartTotalDiv {
-            padding: 20px 0;
+            padding: 1.25rem 0;
             display: flex;
             .cartTotalTitle {
-              margin-right: 15px;
-              font-size: 15px;
+              margin-right: 0.938rem;
+              font-size: 0.938rem;
               font-weight: bold;
             }
             .cartTotalPrice {
               width: 40%;
               text-align: right;
-              font-size: 15px;
+              font-size: 0.938rem;
               font-weight: bold;
             }
           }
@@ -165,14 +107,14 @@
       .btnWrapper {
         width: 100%;
         display: inline-block;
-        margin-top: 40px;
+        margin-top: 2.5rem;
         text-align: right;
         .orderBtn {
-          border-radius: 50px;
-          width: 160px;
-          height: 54px;
+          border-radius: 3.125rem;
+          width: 13.75rem;
+          height: 3.375;
           background-color: transparent;
-          border: 1px solid black;
+          border: 0.063rem solid black;
 
           &:hover {
             background-color: black;
