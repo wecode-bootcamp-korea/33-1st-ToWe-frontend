@@ -7,7 +7,7 @@ function CategoryBar() {
         <span>팀소개</span>
         <div className="storeCategory">
           {CATEGORY.map(id => (
-            <div calssName="category" key={id.id}>
+            <div className="category" key={id.id}>
               {id.name}
             </div>
           ))}

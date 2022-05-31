@@ -1,0 +1,81 @@
+[
+  {
+    "id": 0,
+    "name": "TIGER",
+    "price": "40,000",
+    "categoey": "PUZZLE",
+    "itemImg": "./images/image1.jpeg",
+    "hoverImg": "./images/image2.jpeg",
+    "age": 1.5,
+    "like": true
+  },
+  {
+    "id": 1,
+    "name": "CROCS",
+    "price": "3,000",
+    "categoey": "LEGO",
+    "itemImg": "./images/image2.jpeg",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 4,
+    "like": false
+  },
+  {
+    "id": 2,
+    "name": "LION",
+    "price": "13,500",
+    "categoey": "DOLL",
+    "itemImg": "./images/image3.png",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 6,
+    "like": false
+  },
+  {
+    "id": 3,
+    "name": "TIGER NOTE",
+    "price": "4,000",
+    "categoey": "CAR",
+    "itemImg": "./images/image4.jpeg",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 13,
+    "like": false
+  },
+  {
+    "id": 4,
+    "name": "TIGER",
+    "price": "40,000",
+    "categoey": "PUZZLE",
+    "itemImg": "./images/image1.jpeg",
+    "hoverImg": "./images/image2.jpeg",
+    "age": 1.5
+  },
+  {
+    "id": 5,
+    "name": "CROCS",
+    "price": "3,000",
+    "categoey": "LEGO",
+    "itemImg": "./images/image2.jpeg",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 4,
+    "like": false
+  },
+  {
+    "id": 6,
+    "name": "LION",
+    "price": "13,500",
+    "categoey": "DOLL",
+    "itemImg": "./images/image3.png",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 6,
+    "like": false
+  },
+  {
+    "id": 7,
+    "name": "TIGER NOTE",
+    "price": "4,000",
+    "categoey": "CAR",
+    "itemImg": "./images/image4.jpeg",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 13,
+    "like": false
+  }
+]
