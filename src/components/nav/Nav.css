@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 .navbar.active {
   background-color: white;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
 nav {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   background-color: transparent;
   position: fixed;
@@ -110,4 +110,4 @@ nav {
     cursor: pointer;
     display: none;
   }
-}/*# sourceMappingURL=Nav.css.map */
+} /*# sourceMappingURL=Nav.css.map */
