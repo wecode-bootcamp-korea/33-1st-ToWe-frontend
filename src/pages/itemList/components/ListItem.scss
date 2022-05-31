@@ -1,0 +1,14 @@
+.listItem {
+  width: 90%;
+  display: grid;
+  row-gap: 2.5rem;
+  column-gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+}
+
+@media screen and (max-width: 44rem) {
+  .listItem {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
