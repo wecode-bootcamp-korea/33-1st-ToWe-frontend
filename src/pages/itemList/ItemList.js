@@ -5,6 +5,8 @@ import LitsFilter from './components/ListFilter.js';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ItemList.scss';
 
+import API from '../../config.js';
+
 const ItemList = () => {
   const [category, setCategory] = useState('ALL');
   const [listItems, setListItems] = useState([]);
@@ -13,9 +15,11 @@ const ItemList = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  console.log(API);
+
   useEffect(() => {
     fetch(
-      `http://10.58.3.254:8000/products${
+      `${API.products}${
         location.search === '?category=all' ? '' : location.search
       }`,
       {
@@ -32,6 +36,7 @@ const ItemList = () => {
     const lowerValue = name.toLowerCase();
     navigate(`?category=${lowerValue}`);
     setCategory(name);
+    setQuery(6);
   };
 
   const onLike = id => {
