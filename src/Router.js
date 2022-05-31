@@ -10,6 +10,7 @@ import SignUp from './pages/signUp/SignUp.js';
 import Nav from './components/nav/Nav.js';
 import Footer from './components/footer/Footer.js';
 import Best10 from './pages/best10/Best10.js';
+import Board from './pages/board/Board.js';
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/best10" element={<Best10 />} />
+        <Route path="/board" element={<Board />} />
       </Routes>
       <Footer />
     </BrowserRouter>
