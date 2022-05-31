@@ -10,8 +10,8 @@ const ListItem = ({ listItems, onLike, categoryPage }) => {
           name={listItem.name}
           price={listItem.price}
           categoey={listItem.category}
-          itemImg={listItem.thumbnail_url}
-          hoverImg={listItem.hover_img}
+          itemImg={listItem.itemImg}
+          hoverImg={listItem.hoverImg}
           age={listItem.age}
           like={listItem.like}
           key={listItem.id}

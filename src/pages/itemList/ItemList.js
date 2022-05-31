@@ -3,33 +3,22 @@ import ProductCategory from './components/ProductCategory.js';
 import ListItem from './components/ListItem.js';
 import LitsFilter from './components/ListFilter.js';
 import './ItemList.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 const ItemList = () => {
   const [listItems, setListItems] = useState([]);
   const [category, setCategory] = useState('ALL');
 
-  const navigate = useNavigate();
-  const location = useLocation();
-
   useEffect(() => {
-    fetch(
-      `http://10.58.3.254:8000/products${
-        location.search === '?category=all' ? '' : location.search
-      }`,
-      {
-        method: 'GET',
-      }
-    )
+    fetch('data/LIST_ITEMS.json', {
+      method: 'GET',
+    })
       .then(res => res.json())
       .then(data => {
-        setListItems(data.results);
+        setListItems(data);
       });
-  }, [location.search]);
+  }, []);
 
   const onCategory = value => {
-    const lowerValue = value.toLowerCase();
-    navigate(`?category=${lowerValue}`);
     setCategory(value);
   };
 
