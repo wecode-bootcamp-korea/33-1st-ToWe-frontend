@@ -105,4 +105,8 @@ const NOTHING_ACTIVITY = [
     id: 1,
     content: '재입고 알림 내역',
   },
+  {
+    id: 2,
+    content: '문의사항',
+  },
 ];
