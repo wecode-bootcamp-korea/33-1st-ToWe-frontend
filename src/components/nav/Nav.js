@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import NavMenu from './components/NavMenu';
-import './Nav.scss';
 import { FaSearch, FaShoppingCart, FaUserAlt, FaBars } from 'react-icons/fa';
+import './Nav.scss';
 
 const Nav = () => {
   const [navId, setNavId] = useState('');
