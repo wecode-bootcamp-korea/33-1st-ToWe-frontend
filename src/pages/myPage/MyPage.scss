@@ -8,26 +8,8 @@
     display: flex;
     padding: 3rem 0.5rem;
 
-    .components {
+    .userActivity {
       margin-right: 10rem;
-
-      .UserActivity {
-        width: 45vh;
-
-        .componentTitle {
-          margin: 5rem 0 2.5rem 0;
-          font-size: 1.3rem;
-          font-weight: bold;
-        }
-
-        .nothing {
-          height: 40vh;
-          padding: 9rem 0rem;
-          font-size: 0.9rem;
-          border-bottom: 0.163rem solid black;
-          text-align: center;
-        }
-      }
     }
 
     .profile {
@@ -75,24 +57,6 @@
 
           .contentBox {
             width: 100%;
-
-            .Input {
-              margin-bottom: 1.25rem;
-
-              .inputTitle {
-                display: block;
-                margin-bottom: 0.75rem;
-                font-size: 0.875rem;
-              }
-
-              .userInforInputBox {
-                padding: 0.625rem 1rem;
-                width: 100%;
-                height: 2.5rem;
-                border-radius: 1rem;
-                border: 0.163rem solid lightblue;
-              }
-            }
           }
 
           .agree {

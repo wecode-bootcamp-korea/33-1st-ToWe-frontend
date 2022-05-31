@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UserActivity from './components/UserActivity.js';
+import NotActivity from './components/NotActivity.js';
 import Input from './components/Input.js';
 import './MyPage.scss';
 
 const MyPage = () => {
-  const [inputValue, setInputValue] = useState();
+  const [inputData, setInputData] = useState({});
 
   const navigate = useNavigate();
   const logOut = () => {
@@ -21,15 +21,15 @@ const MyPage = () => {
       },
     })
       .then(res => res.json())
-      .then(result => setInputValue(result));
+      .then(result => setInputData(result));
   }, []);
 
   return (
     <div className="myPage">
       <div className="myPageContainer">
-        <div className="components">
-          {USER_ACTIVITY.map(activity => (
-            <UserActivity activity={activity} key={activity.id} />
+        <div className="userActivity">
+          {NOTHING_ACTIVITY.map(activity => (
+            <NotActivity activity={activity} key={activity.id} />
           ))}
         </div>
         <div className="profile">
@@ -45,12 +45,12 @@ const MyPage = () => {
           <div className="userInformation">
             <div className="userInfor">
               <div className="contentBox">
-                {inputValue &&
+                {inputData &&
                   USER_INFORMATION.map(userData => (
                     <Input
                       key={userData.id}
                       userData={userData}
-                      inputValue={inputValue}
+                      inputValue={inputData}
                     />
                   ))}
               </div>
@@ -96,21 +96,13 @@ const USER_INFORMATION = [
   },
 ];
 
-const USER_ACTIVITY = [
+const NOTHING_ACTIVITY = [
   {
     id: 0,
-    content: '주문 내역',
-  },
-  {
-    id: 1,
-    content: '내가 쓴 글',
-  },
-  {
-    id: 2,
     content: '쿠폰 내역',
   },
   {
-    id: 3,
+    id: 1,
     content: '재입고 알림 내역',
   },
 ];
