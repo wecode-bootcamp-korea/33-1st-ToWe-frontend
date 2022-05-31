@@ -11,6 +11,7 @@ import Nav from './components/nav/Nav.js';
 import Footer from './components/footer/Footer.js';
 import Best10 from './pages/best10/Best10.js';
 import Board from './pages/board/Board.js';
+import Order from './pages/order/Order.js';
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/best10" element={<Best10 />} />
         <Route path="/board" element={<Board />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
       <Footer />
     </BrowserRouter>
