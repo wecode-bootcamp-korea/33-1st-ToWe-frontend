@@ -1,51 +1,56 @@
 [
   {
     "id": 0,
-    "name": "철푸덕랑",
+    "name": "TIGER",
     "price": "40,000",
-    "categoey": "퍼즐",
+    "categoey": "PUZZLE",
     "itemImg": "./images/image1.jpeg",
     "hoverImg": "./images/image2.jpeg",
-    "age": 1.5
+    "age": 1.5,
+    "like": true
   },
   {
     "id": 1,
-    "name": "실리콘 참",
+    "name": "CROCS",
     "price": "3,000",
-    "categoey": "레고",
+    "categoey": "LEGO",
     "itemImg": "./images/image2.jpeg",
     "hoverImg": "./images/image1.jpeg",
-    "age": 4
+    "age": 4,
+    "like": false
   },
   {
     "id": 2,
-    "name": "뚱랑이",
+    "name": "LION",
     "price": "13,500",
-    "categoey": "인형",
+    "categoey": "DOLL",
     "itemImg": "./images/image3.png",
     "hoverImg": "./images/image1.jpeg",
-    "age": 6
+    "age": 6,
+    "like": false
   },
   {
     "id": 3,
-    "name": "타이커 노트",
+    "name": "TIGER NOTE",
     "price": "4,000",
-    "categoey": "자동차",
+    "categoey": "CAR",
     "itemImg": "./images/image4.jpeg",
     "hoverImg": "./images/image1.jpeg",
-    "age": 13
+    "age": 13,
+    "like": false
   },
   {
     "id": 4,
-    "name": "철푸덕랑",
+    "name": "TIGER",
     "price": "40,000",
-    "categoey": "퍼즐",
+    "categoey": "PUZZLE",
     "itemImg": "./images/image1.jpeg",
     "hoverImg": "./images/image2.jpeg",
     "age": 1.5
   },
   {
     "id": 5,
+<<<<<<< HEAD
     "name": "실리콘 참",
     "price": "3,000",
     "categoey": "레고",
@@ -70,5 +75,34 @@
     "itemImg": "./images/image4.jpeg",
     "hoverImg": "./images/image1.jpeg",
     "age": 13
+=======
+    "name": "CROCS",
+    "price": "3,000",
+    "categoey": "LEGO",
+    "itemImg": "./images/image2.jpeg",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 4,
+    "like": false
+  },
+  {
+    "id": 6,
+    "name": "LION",
+    "price": "13,500",
+    "categoey": "DOLL",
+    "itemImg": "./images/image3.png",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 6,
+    "like": false
+  },
+  {
+    "id": 7,
+    "name": "TIGER NOTE",
+    "price": "4,000",
+    "categoey": "CAR",
+    "itemImg": "./images/image4.jpeg",
+    "hoverImg": "./images/image1.jpeg",
+    "age": 13,
+    "like": false
+>>>>>>> origin
   }
 ]
