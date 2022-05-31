@@ -41,6 +41,14 @@ const ItemList = () => {
     );
   };
 
+  //더보기 버튼 만들기
+  // const getBynIndex = buttonIndex => {
+  //   const limit = 3;
+  //   const offset = buttonIndex * limit;
+  //   const queryString = `?offset=${offset}&limit=${limit}`;
+  //   navigate(queryString);
+  // };
+
   return (
     <div className="listContainer">
       <div className="listTitle">{category}</div>

@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+.listCategory {
+  margin: 0 2rem;
+  cursor: pointer;
+}
+.listCategory .filterName {
+  color: #3a3a3a;
+}
+.listCategory .filterName .filterLine {
+  border-bottom: 2px solid black;
+}
+.listCategory .filterHover:hover {
+  color: #3a3a3a;
+}
+.listCategory .filterHover:hover .filterLine {
+  border-bottom: 2px solid black;
+}
+.listCategory .filterHover:hover .filterLine {
+  -webkit-animation: 0.5s ease-in-out filterLine;
+          animation: 0.5s ease-in-out filterLine;
+}
+@-webkit-keyframes filterLine {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+}
+@keyframes filterLine {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+}
+.listCategory .filterHover:hover .filterLine to {
+  opacity: 1;
+  width: 95%;
+}
+.listCategory .filterLine {
+  margin-top: 0.5rem;
+  width: 95%;
+}/*# sourceMappingURL=ProductCategoryMap.css.map */

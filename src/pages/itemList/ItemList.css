@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+.listContainer {
+  font-family: "CookieRun-Regular";
+  text-align: center;
+  max-width: 110rem;
+  margin: auto;
+  padding-top: 6rem;
+  font-family: "Montserrat", sans-serif;
+}
+.listContainer .listTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}/*# sourceMappingURL=ItemList.css.map */

@@ -1,0 +1,26 @@
+.footer {
+  text-align: center;
+  width: 100%;
+}
+.footer .footerIcons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+.footer .footerIcons .footerIcon {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+.footer span {
+  padding: 1.25rem;
+}
+.footer .pageDetails {
+  font-size: 0.9rem;
+  padding: 1.25rem;
+}
+.footer .reserved {
+  font-weight: bold;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=Footer.css.map */

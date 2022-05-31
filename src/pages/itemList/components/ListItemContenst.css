@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+.listItems {
+  position: relative;
+}
+.listItems img {
+  width: 100%;
+  cursor: pointer;
+}
+.listItems .listItemsImg:not(hover) {
+  -webkit-animation: 0.5s ease-in-out ani;
+          animation: 0.5s ease-in-out ani;
+}
+@-webkit-keyframes ani {
+  from {
+    opacity: 0.5;
+  }
+}
+@keyframes ani {
+  from {
+    opacity: 0.5;
+  }
+}
+.listItems .listItemsImg:not(hover) to {
+  opacity: 1;
+}
+.listItems .listItemsImg2:hover {
+  -webkit-animation: 0.5s ease-in-out ani2;
+          animation: 0.5s ease-in-out ani2;
+}
+@-webkit-keyframes ani2 {
+  from {
+    opacity: 0.5;
+  }
+}
+@keyframes ani2 {
+  from {
+    opacity: 0.5;
+  }
+}
+.listItems .listItemsImg2:hover to {
+  opacity: 1;
+}
+.listItems .listItemName {
+  margin: 0.8rem 0;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.listItems .listItemPrice {
+  color: #7c7c7c;
+  cursor: pointer;
+}
+.listItems .likeIcon {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  right: 0.8rem;
+  top: 0.8rem;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+}
+.listItems .likeBack {
+  position: absolute;
+  z-index: 0;
+  right: 0.4rem;
+  top: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=ListItemContenst.css.map */

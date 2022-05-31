@@ -1,0 +1,163 @@
+.nav .navBar {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+}
+.nav .navBar .navBasic {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.nav .navBar .navBasic .title {
+  padding-right: 4.5rem;
+}
+.nav .navBar .navBasic .title .bigTitle {
+  font-size: 2rem;
+  text-align: center;
+}
+.nav .navBar .navBasic .title .smallTitle {
+  font-size: 0.65rem;
+}
+.nav .navBar .navBasic .navMenu {
+  display: flex;
+  justify-content: space-between;
+  width: 21rem;
+  font-size: 0.9rem;
+  margin-right: 20rem;
+  padding-top: 0.8rem;
+}
+.nav .navBar .navBasic .navMenu .teamInfor {
+  font-weight: bold;
+}
+.nav .navBar .navBasic .navMenu .teamInfor:hover {
+  border-bottom: 0.2rem solid black;
+  background-color: white;
+  cursor: pointer;
+}
+.nav .navBar .navBasic .navMenu .teamInfor .navDetailBar {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  width: 100vw;
+  left: 0;
+  background-color: white;
+}
+.nav .navBar .navBasic .navMenu .teamInfor .navDetailBar .storeCategory {
+  width: 15%;
+}
+.nav .navBar .navBasic .navMenu .teamInfor .navDetailBar .storeCategory div {
+  padding-bottom: 3rem;
+  text-align: center;
+}
+.nav .navBar .navBasic .navMenu .teamInfor .navDetailBar .storeSort div {
+  padding-bottom: 3rem;
+}
+.nav .navBar .navBasic .navMenu .teamInfor:hover .navDetailBar {
+  visibility: visible;
+}
+.nav .navBar .navBasic .navMenu .store {
+  font-weight: bold;
+}
+.nav .navBar .navBasic .navMenu .store:hover {
+  border-bottom: 0.2rem solid black;
+  background-color: white;
+}
+.nav .navBar .navBasic .navMenu .store .navDetailBar {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  width: 100vw;
+  left: 0;
+  background-color: white;
+}
+.nav .navBar .navBasic .navMenu .store .navDetailBar .storeCategory {
+  width: 15%;
+}
+.nav .navBar .navBasic .navMenu .store .navDetailBar .storeCategory div {
+  padding-bottom: 3rem;
+  text-align: center;
+}
+.nav .navBar .navBasic .navMenu .store .navDetailBar .storeSort div {
+  padding-bottom: 3rem;
+}
+.nav .navBar .navBasic .navMenu .store:hover .navDetailBar {
+  visibility: visible;
+}
+.nav .navBar .navBasic .navMenu .board {
+  font-weight: bold;
+}
+.nav .navBar .navBasic .navMenu .board:hover {
+  border-bottom: 0.2rem solid black;
+  background-color: white;
+}
+.nav .navBar .navBasic .navMenu .board .navDetailBar {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  width: 100vw;
+  left: 0;
+  background-color: white;
+}
+.nav .navBar .navBasic .navMenu .board .navDetailBar .storeCategory {
+  width: 15%;
+}
+.nav .navBar .navBasic .navMenu .board .navDetailBar .storeCategory div {
+  padding-bottom: 3rem;
+  text-align: center;
+}
+.nav .navBar .navBasic .navMenu .board .navDetailBar .storeSort div {
+  padding-bottom: 3rem;
+}
+.nav .navBar .navBasic .navMenu .board:hover .navDetailBar {
+  visibility: visible;
+}
+.nav .navBar .navBasic .navMenu .gallery {
+  font-weight: bold;
+}
+.nav .navBar .navBasic .navMenu .gallery:hover {
+  border-bottom: 0.2rem solid black;
+  background-color: white;
+}
+.nav .navBar .navBasic .navMenu .gallery .navDetailBar {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  width: 100vw;
+  left: 0;
+  background-color: white;
+}
+.nav .navBar .navBasic .navMenu .gallery .navDetailBar .storeCategory {
+  width: 15%;
+}
+.nav .navBar .navBasic .navMenu .gallery .navDetailBar .storeCategory div {
+  padding-bottom: 3rem;
+  text-align: center;
+}
+.nav .navBar .navBasic .navMenu .gallery .navDetailBar .storeSort div {
+  padding-bottom: 3rem;
+}
+.nav .navBar .navBasic .navMenu .gallery:hover .navDetailBar {
+  visibility: visible;
+}
+.nav .navBar .navIcons {
+  display: flex;
+  justify-content: space-around;
+  width: 10rem;
+}/*# sourceMappingURL=Nav.css.map */
