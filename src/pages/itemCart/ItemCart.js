@@ -31,7 +31,6 @@ const ItemCart = () => {
     0
   );
 
-  console.log(listValue);
   const increase = (id, quantity, price) => {
     const newList = [...listValue].map(itemlist =>
       itemlist.cart_id === id
@@ -82,7 +81,6 @@ const ItemCart = () => {
     }).then(res => res.json());
   };
 
-  // console.log(listValue);
   return (
     <div className="itemCart">
       <div className="cartDetail">
