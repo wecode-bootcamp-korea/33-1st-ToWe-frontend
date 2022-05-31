@@ -1,7 +1,16 @@
 import './Dropbox.scss';
 
-const Dropbox = ({ category }) => {
-  return <li className="dropCategory">{category}</li>;
+const Dropbox = ({ category, onCategory }) => {
+  return (
+    <li
+      className="dropCategory"
+      onClick={() => {
+        onCategory(category);
+      }}
+    >
+      {category}
+    </li>
+  );
 };
 
 export default Dropbox;

@@ -2,12 +2,22 @@ import { useState, useRef, useEffect } from 'react';
 import NavMenu from './components/NavMenu';
 import './Nav.scss';
 import { FaSearch, FaShoppingCart, FaUserAlt, FaBars } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Nav = () => {
   const [navId, setNavId] = useState('');
   const [inputToggle, setInputToggle] = useState(true);
   const [logo, setLogo] = useState(true);
   const [navbar, setNavber] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const onCategory = category => {
+    const lowerValue = category.toLowerCase();
+    navigate(`/itemList/products/${lowerValue === 'all' ? '' : lowerValue}`);
+    console.log(category);
+  };
 
   const hoverOn = idNav => {
     setNavId(idNav);
@@ -60,6 +70,7 @@ const Nav = () => {
                 navTitle={navTitle}
                 key={navTitle.id}
                 navId={navId}
+                onCategory={onCategory}
               />
             ))}
           </ul>

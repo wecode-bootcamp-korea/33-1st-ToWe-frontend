@@ -1,7 +1,7 @@
 import './NavMenu.scss';
 import Dropbox from './Dropbox.js';
 
-const NavMenu = ({ navTitle, navId, hoverOn }) => {
+const NavMenu = ({ navTitle, navId, hoverOn, onCategory }) => {
   const { id, title, category } = navTitle;
 
   return (
@@ -16,7 +16,7 @@ const NavMenu = ({ navTitle, navId, hoverOn }) => {
       <ul className="dropBoxs">
         {navId === id &&
           category.map((category, i) => (
-            <Dropbox category={category} key={i} />
+            <Dropbox category={category} key={i} onCategory={onCategory} />
           ))}
       </ul>
     </li>

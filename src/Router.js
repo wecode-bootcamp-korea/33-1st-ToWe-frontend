@@ -18,9 +18,10 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route path="/itemcart" element={<ItemCart />} />
         <Route path="/itemdetail/:id" element={<ItemDetail />} />
-        <Route path="/itemlist" element={<ItemList />} />
+        <Route path="/itemlist/" element={<ItemList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        {/* <Route path="*" element={<Main />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
