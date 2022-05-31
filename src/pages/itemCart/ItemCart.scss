@@ -1,3 +1,127 @@
-*{
-    
+.ItemCart {
+  .cartDetail {
+    .cartWrapper {
+      width: 100%;
+      padding: 3.75rem 6.625 4.375rem;
+
+      .cartHeader {
+        margin-bottom: 2.5rem;
+
+        .cartTitle {
+          font-size: 2.5rem;
+          font-weight: bold;
+        }
+      }
+      .productField {
+        .cartInfo {
+          .tbTitle {
+            display: flex;
+            flex-direction: row;
+            padding: 1rem 0rem 0.938rem;
+
+            .itemListHeader {
+              width: 100%;
+              font-size: 0.875rem;
+              display: flex;
+
+              .info {
+                width: 53%;
+                display: inline-block;
+              }
+
+              .count {
+                width: 25%;
+                // display: inline-block;
+                text-align: center;
+              }
+
+              .price {
+                width: 20%;
+                // display: inline-block;
+                text-align: center;
+              }
+              .deliveryCharge {
+                width: 20%;
+                display: inline-block;
+                font-size: 0.875rem;
+                text-align: center;
+              }
+            }
+          }
+        }
+        .cartListDiv {
+          border-top: 0.063rem solid black;
+          border-bottom: 0.063rem solid black;
+        }
+        .tbTotal {
+          width: 50%;
+          float: right;
+          .priceInfoDiv {
+            width: 100%;
+            border-bottom: 0.063rem solid black;
+            padding: 1.25rem 0;
+            .productPrice {
+              display: flex;
+              .priceTitle {
+                margin-right: 0.938rem;
+                font-size: 0.875rem;
+                display: inline-block;
+              }
+              .productPriceCount {
+                width: 40%;
+                text-align: right;
+                font-size: 0.875rem;
+              }
+            }
+            .shippingPrice {
+              display: flex;
+              margin-top: 1.25rem;
+              .shippingTitle {
+                margin-right: 0.938rem;
+                font-size: 0.875rem;
+              }
+              .shippingPriceCount {
+                width: 40%;
+                text-align: right;
+                font-size: 0.875rem;
+              }
+            }
+          }
+          .cartTotalDiv {
+            padding: 1.25rem 0;
+            display: flex;
+            .cartTotalTitle {
+              margin-right: 0.938rem;
+              font-size: 0.938rem;
+              font-weight: bold;
+            }
+            .cartTotalPrice {
+              width: 40%;
+              text-align: right;
+              font-size: 0.938rem;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .btnWrapper {
+        width: 100%;
+        display: inline-block;
+        margin-top: 2.5rem;
+        text-align: right;
+        .orderBtn {
+          border-radius: 3.125rem;
+          width: 13.75rem;
+          height: 3.375;
+          background-color: transparent;
+          border: 0.063rem solid black;
+
+          &:hover {
+            background-color: black;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
