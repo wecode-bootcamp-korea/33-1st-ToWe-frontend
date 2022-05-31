@@ -14,6 +14,14 @@ const Order = () => {
       });
   }, []);
 
+  // useEffect(() => {
+  //   fetch('/data/ORDER_LIST.json', { method: 'GET' }) // API
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setOrderList(data.result); // result 체크
+  //     });
+  // }, []);
+
   return (
     <section className="order">
       {/* 타이틀 */}

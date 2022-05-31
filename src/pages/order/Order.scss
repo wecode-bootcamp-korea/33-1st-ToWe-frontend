@@ -1,9 +1,8 @@
 @import '../../styles/variables.scss';
 
 .order {
-  display: flex;
+  @include flexCenter;
   flex-direction: column;
-  align-items: flex-start;
   margin: auto;
   margin-top: 10rem;
   margin-bottom: 6.25rem;
@@ -112,6 +111,10 @@
       margin: 0 0.5rem;
       font-size: 1.4rem;
       color: rgb(165, 165, 165);
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -247,6 +250,7 @@
           border-radius: 0.3rem;
           color: rgb(52, 89, 255);
           background-color: transparent;
+          transition: all 200ms ease-in-out;
 
           &:hover {
             color: white;
@@ -294,10 +298,7 @@
   }
 
   .payment {
-    position: fixed;
     bottom: 0.7rem;
-    left: 50%;
-    transform: translateX(-50%);
     max-width: 30rem;
     padding: 1.3rem 0;
     width: 100%;
