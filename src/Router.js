@@ -28,8 +28,8 @@ function Router() {
         <Route path="/best10" element={<Best10 />} />
         <Route path="/board" element={<Board />} />
         <Route path="/order" element={<Order />} />
-        <Route path="*" element={<Main />} />
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="*" element={<Main />} />
       </Routes>
       <Footer />
     </BrowserRouter>
