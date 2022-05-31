@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './ProductCategory.scss';
 import ProductCategoryMap from './ProductCategoryMap.js';
+import './ProductCategory.scss';
 
 const ProductCategory = ({ FILTER_MENU, onCategory }) => {
   const [filterColor, setFilterColor] = useState(0);
