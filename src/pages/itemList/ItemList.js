@@ -6,8 +6,8 @@ import './ItemList.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const ItemList = () => {
-  const [listItems, setListItems] = useState([]);
   const [category, setCategory] = useState('ALL');
+  const [listItems, setListItems] = useState([]);
 
   const navigate = useNavigate();
   const location = useLocation();
