@@ -10,8 +10,8 @@ const ListItem = ({ listItems }) => {
           name={listItem.name}
           price={listItem.price}
           categoey={listItem.category}
-          itemImg={listItem.itemImg}
-          hoverImg={listItem.hoverImg}
+          itemImg={listItem.thumbnail_url}
+          hoverImg={listItem.hover_img}
           age={listItem.age}
           key={listItem.id}
         />

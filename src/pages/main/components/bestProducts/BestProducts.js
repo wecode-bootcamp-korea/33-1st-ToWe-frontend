@@ -13,12 +13,12 @@ const BestProducts = () => {
   };
 
   useEffect(() => {
-    fetch('/data/BEST_PRODUCTS.json', {
+    fetch('http://10.58.3.254:8000/products?sort=best', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setImgList(data);
+        setImgList(data.results);
       });
   }, []);
 
