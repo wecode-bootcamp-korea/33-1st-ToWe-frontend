@@ -1,0 +1,40 @@
+@import '../components/../../../styles/variables.scss';
+
+.listCategory {
+  margin: 0 2rem;
+  cursor: pointer;
+
+  .filterName {
+    color: $darkGray;
+
+    .filterLine {
+      border-bottom: 2px solid black;
+    }
+  }
+
+  .filterHover:hover {
+    color: $darkGray;
+
+    .filterLine {
+      border-bottom: 2px solid black;
+    }
+
+    .filterLine {
+      animation: 0.5s ease-in-out filterLine;
+      @keyframes filterLine {
+        from {
+          opacity: 0;
+          width: 0;
+        }
+      }
+      to {
+        opacity: 1;
+        width: 95%;
+      }
+    }
+  }
+  .filterLine {
+    margin-top: 0.5rem;
+    width: 95%;
+  }
+}

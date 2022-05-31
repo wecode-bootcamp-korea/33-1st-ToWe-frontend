@@ -1,2 +1,6 @@
-* {
+@import '../../styles/variables.scss';
+
+.main {
+  @include flexCenter;
+  flex-direction: column;
 }
