@@ -9,6 +9,7 @@ import Main from './pages/main/Main.js';
 import SignUp from './pages/signUp/SignUp.js';
 import Nav from './components/nav/Nav.js';
 import Footer from './components/footer/Footer.js';
+import Best10 from './pages/best10/Best10.js';
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/itemlist" element={<ItemList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/best10" element={<Best10 />} />
       </Routes>
       <Footer />
     </BrowserRouter>
