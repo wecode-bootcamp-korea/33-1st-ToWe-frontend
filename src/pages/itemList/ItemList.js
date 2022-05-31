@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItemList = () => {
-  return <div></div>;
+  return <div />;
 };
 
 export default ItemList;
