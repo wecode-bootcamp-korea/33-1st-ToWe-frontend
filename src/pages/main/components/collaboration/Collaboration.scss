@@ -5,22 +5,23 @@
   flex-direction: column;
   padding: 0 3rem;
   width: 100%;
+  max-width: 1500px;
 
   .title {
     margin: 10rem 0 3rem;
     color: $darkGray;
-    font-size: calc($largeFont) * 2.5;
+    font-size: 3rem;
     font-weight: 700;
-    font-family: $boldFont;
+    font-family: $basicFont;
   }
 
   .description {
     margin-bottom: 3.7rem;
-    font-size: calc($largeFont) * 1.15;
     color: $lightGray;
+    font-size: 1.6rem;
     text-align: center;
     line-height: 2.5rem;
-    font-family: $regularFont;
+    font-family: $basicFont;
   }
 
   .itemContainer {
@@ -37,13 +38,12 @@
         display: flex;
         flex-direction: column;
         width: calc(33.3% - 2rem);
-
         margin-bottom: 3.7rem;
 
         .item {
           width: 100%;
           height: 24rem;
-          max-height: 22rem;
+          max-height: 18rem;
           object-position: center;
           object-fit: cover;
           cursor: pointer;
@@ -81,14 +81,14 @@
           span {
             &:first-child {
               margin: 1.25rem 0;
-              font-size: calc($smallFont) * 1.3;
-              font-family: 'Montserrat', sans-serif;
+              font-size: 1rem;
+              font-family: $basicFont;
             }
 
             &:last-child {
               color: $lightGray;
-              font-size: calc($smallFont) * 1.2;
-              font-family: 'Montserrat', sans-serif;
+              font-size: 1rem;
+              font-family: $basicFont;
             }
           }
         }
@@ -101,9 +101,9 @@
     color: $darkGray;
     border: 3px solid $darkGray;
     border-radius: 1.5rem;
-    font-size: $smallFont;
+    font-size: 1rem;
     transition: all 0.3s;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $basicFont;
     cursor: pointer;
 
     &:hover {

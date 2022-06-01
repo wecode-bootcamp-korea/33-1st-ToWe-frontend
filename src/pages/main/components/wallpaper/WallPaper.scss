@@ -13,17 +13,18 @@ $lightGray: #888888;
   .title {
     margin: 10rem 0 3rem;
     color: $darkGray;
-    font-size: calc($largeFont) * 2.5;
-    font-family: $boldFont;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: $basicFont;
   }
 
   .description {
     margin-bottom: 3.7rem;
     color: $lightGray;
-    font-size: calc($largeFont) * 1.15;
+    font-size: 1.6rem;
     text-align: center;
     line-height: 2.5rem;
-    font-family: $regularFont;
+    font-family: $basicFont;
   }
 
   .wallpaperImg {

@@ -11,7 +11,6 @@ const Main = () => {
   const [scrollFadeIn, setScrollFadeIn] = useState(false);
   const [scrollFadeIn2, setScrollFadeIn2] = useState(false);
   const [scrollFadeIn3, setScrollFadeIn3] = useState(false);
-  // const [target, setTarget] = useState(null);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -24,40 +23,11 @@ const Main = () => {
     window.scrollY >= 3500 ? setScrollFadeIn2(true) : setScrollFadeIn2(false);
     window.scrollY >= 5000 ? setScrollFadeIn3(true) : setScrollFadeIn3(false);
   };
-  // const 타겟? = useRef(null);
-
-  // // 옵션 정의
-  // const options = {
-  //   root: null, // 뷰포트 이용
-  //   rootMargin: '0px',
-  //   threshold: 0.3,
-  // };
-
-  // // 콜백함수 정의
-  // const callback = entries => {
-  //   entries.forEach(entry => {
-  //     if (entry.isIntersecting) {
-  //       setScrollFadeIn(true);
-  //     } else {
-  //       setScrollFadeIn(false);
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   let observer;
-  //   if (target) {
-  //     observer = new IntersectionObserver(callback, options);
-  //     observer.observe(target);
-  //     // return () => observer && observer.disconnect();
-  //   }
-  // }, [target]);
 
   return (
     <div className="main">
       <Carousel />
       <BestProducts />
-      {/* ref={target} ?? */}
       <Collaboration />
       <OurStory scrollFadeIn={scrollFadeIn} />
       <WallPaper scrollFadeIn2={scrollFadeIn2} />

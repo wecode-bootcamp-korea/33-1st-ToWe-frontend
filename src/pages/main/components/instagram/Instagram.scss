@@ -1,8 +1,5 @@
 @import '../../../../styles/variables.scss';
 
-$darkGray: #3a3a3a;
-$lightGray: #888888;
-
 .instagram {
   @include flexCenter;
   flex-direction: column;
@@ -13,18 +10,19 @@ $lightGray: #888888;
   .title {
     margin: 10rem 0 3rem;
     color: $darkGray;
-    font-size: calc($largeFont) * 2.5;
-    font-family: $boldFont;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: $basicFont;
   }
 
   .description {
     margin-bottom: 3.7rem;
     color: $lightGray;
-    font-size: calc($largeFont) * 1.15;
+    font-size: 1.6rem;
     text-align: center;
     line-height: 2.5rem;
     padding: 0 3.125rem;
-    font-family: $regularFont;
+    font-family: $basicFont;
   }
 
   .slider {
