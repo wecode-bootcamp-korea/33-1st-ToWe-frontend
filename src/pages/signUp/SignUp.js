@@ -26,16 +26,6 @@ const SignUp = () => {
   //   }
   // };
 
-  const inputAlert = (name, address, phone) => {
-    if (name === '') {
-      alert('이름을 입력해주세요.');
-    } else if (address === '') {
-      alert('주소를 입력해주세요.');
-    } else if (phone === '') {
-      alert('전화번호를 입력해주세요.');
-    }
-  };
-
   // 여기는 백엔드 통신
   const GoSignUp = () => {
     fetch('http://10.58.5.168:8000/users/signup', {
@@ -59,6 +49,16 @@ const SignUp = () => {
         navigator('/login');
         // localStorage.setItem('TOKEN', result.access_token);
       });
+  };
+
+  const alertName = () => {
+    if (
+      inputValue.name === '' ||
+      inputValue.address === '' ||
+      inputValue.phone === ''
+    ) {
+      alert('빈칸을 입력해주세요');
+    }
   };
 
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^~*+=-])(?=.*[0-9]).{8,}$/;
@@ -181,7 +181,10 @@ const SignUp = () => {
             <button
               className="signUpBtn"
               type="button"
-              onClick={(GoSignUp, inputAlert)}
+              onClick={() => {
+                GoSignUp();
+                alertName();
+              }}
               disabled={!isValid}
             >
               가입하기
