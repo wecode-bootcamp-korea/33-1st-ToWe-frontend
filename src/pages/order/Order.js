@@ -7,10 +7,15 @@ const Order = () => {
   const [orderList, setOrderList] = useState([]);
 
   useEffect(() => {
-    fetch('/data/ORDER_LIST.json', { method: 'GET' })
+    fetch(`http://10.58.0.239:8000/carts`, {
+      method: 'GET',
+      headers: {
+        Authorization: `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MTM4MDQxfQ.KmzkrPUoXfMAmeYAsSsqv9UvzCLt6I397ifRsVj0U8g`,
+      },
+    })
       .then(res => res.json())
-      .then(data => {
-        setOrderList(data);
+      .then(result => {
+        console.log(result);
       });
   }, []);
 
