@@ -13,6 +13,12 @@ $gray: #7c7c7c;
   color: white;
 }
 
+@mixin buttonSize {
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
 .itemDetail {
   width: 88%;
   margin: auto;
@@ -256,11 +262,11 @@ $gray: #7c7c7c;
     min-width: 55rem;
     // border: 1px solid $darkGray;
 
-    .prodDesc {
+    #prodDesc {
       margin: 4rem;
     }
 
-    .reviews {
+    #reviews {
       margin: 4rem auto;
       width: 50%;
 
@@ -273,6 +279,74 @@ $gray: #7c7c7c;
         .reviewText {
           font-size: 1.1rem;
           font-weight: bold;
+        }
+
+        .reviewWritingArea {
+          border: 1px solid $darkGray;
+          margin: 1rem 0;
+
+          .closeReviewWriting {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0.3rem;
+            .xButton {
+              cursor: pointer;
+            }
+          }
+          textarea {
+            width: 100%;
+            height: 15rem;
+            padding: 1rem;
+            border: none;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .reviewWritingAreaBottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+            .reviewPicUpdate {
+              margin-left: 1rem;
+              font-size: 2rem;
+              border: 1px solid $darkGray;
+              border-radius: 50%;
+              padding: 1rem;
+              cursor: pointer;
+
+              label {
+                cursor: pointer;
+              }
+              input {
+                cursor: pointer;
+                display: none;
+              }
+            }
+
+            .rateAndButton {
+              select {
+                padding: 1rem;
+              }
+
+              .reviewButton {
+                border-radius: 2rem;
+                padding: 1rem 3rem;
+                margin: 0 1rem;
+                cursor: pointer;
+
+                &:hover {
+                  @include hoverBlack();
+                }
+              }
+            }
+          }
+        }
+
+        .closed {
+          display: none;
         }
 
         .reviewBottom {
@@ -308,9 +382,11 @@ $gray: #7c7c7c;
         }
       }
 
-      .review {
-        padding: 2rem 0;
-        border-bottom: 1px solid $darkGray;
+      .reviewCommentsList {
+        .review {
+          padding: 2rem 0;
+          border-bottom: 1px solid $darkGray;
+        }
       }
 
       .reviewButtonDiv {
@@ -341,7 +417,7 @@ $gray: #7c7c7c;
       }
     }
 
-    .question {
+    #question {
       width: 50%;
       margin: 6rem 0;
 

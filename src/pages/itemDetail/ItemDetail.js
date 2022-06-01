@@ -6,43 +6,87 @@ import {
   AiOutlinePlus,
   AiOutlineClose,
   AiOutlineDown,
+  AiFillCamera,
 } from 'react-icons/ai';
 
 const ItemDetail = () => {
-  // //목데이터 가져오기
+  // 목데이터 담을 data
   const [data, setData] = useState({});
+  // 백엔드에서 받아올 후기들 담을 state
+  const [commentsData, setCommentsData] = useState([]);
 
+  // 제품개수 .... 색상 선택시 1이 들어가서 [1] 이런 형태됨
+  // [1,1,1,1] => prodCount[i]가 각 색깔별 제품개수
+  const [prodCount, setProdCount] = useState([]);
+
+  // 색상 선택하면 prodBuy 배열에 색상 넣기
+  // red 선택하면 ['red'] blue도 선택하면 ['red','blue']
+  const [prodBuy, setProdBuy] = useState([]);
+  const [select, setSelect] = useState(false);
+  const [color, setColor] = useState('선택하세요.'); // 색상 선택
+
+  const [mainImgURL, setMainImgURL] = useState('');
+
+  // 얘는 textarea에 입력되는 comment
+  const [comment, setComment] = useState('');
+
+  // 댓글모음state... 얘 map 돌려서 댓글 보이게 할 거
+  const [commentsList, setCommentsList] = useState([]);
+
+  // 제품사진, 색상 정보 목데이터 가져오기
   useEffect(() => {
+    // 'http://10.58.3.254:8000/products/1'
+    // '/data/commentData.json'
     fetch('/data/commentData.json')
       .then(res => res.json())
       .then(data => setData(data));
   }, []);
   //console.log(data);
 
-  // 제품개수 .... 색상 선택시 1이 들어가서 [1] 이런 형태됨
-  // [1,1,1,1] => prodCount[i]가 각 색깔별 제품개수
-  const [prodCount, setProdCount] = useState([]);
+  // 댓글 정보 가져오기
+  // useEffect(() => {
+  //   fetch('/data/reviewData.json')
+  //     .then(res => res.json())
+  //     .then(commentsData => setCommentsData(commentsData.result));
+  // }, []);
 
-  const [select, setSelect] = useState(false);
-  const [color, setColor] = useState('선택하세요.'); // 색상 선택
+  console.log(commentsData);
+  console.log(commentsData.length);
 
-  const [mainImgURL, setMainImgURL] = useState('');
+  // console.log(typeof commentsData);
+  // console.log(commentsData.result);
+  // console.log(commentsData.result && commentsData.result.length);
 
+  // 메인사진 초기값 설정
   useEffect(() => {
     setMainImgURL(
       Object.keys(data).length !== 0 ? data.results.image_url[0] : ''
     );
   }, [data]);
+
+  // 받아온 리뷰 정보 commentsList 에 담기
+  // const insertReviews = () => {
+  //   for (let i = 0; i < commentsData.result.length; i++) {
+  //     let copy = [...commentsList];
+  //     copy.unshift(commentsData.result[i].content);
+  //     setCommentsList(copy);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   return commentsData.result ? insertReviews() : '';
+  // });
+
   // + 기호 클릭시 제품 개수 올라감
   const upProdCount = () => {
     setProdCount(prodCount + 1);
   };
 
   // - 기호 클릭시 제품 개수 내려감
-  const downProdCount = i => {
-    if (prodCount[i] >= 2) {
+  const downProdCount = a => {
+    if (prodCount[a] >= 2) {
       let copy = [...prodCount];
-      copy[i]--;
+      copy[a]--;
       setProdCount(copy);
     }
   };
@@ -52,16 +96,25 @@ const ItemDetail = () => {
     setSelect(!select);
   };
 
-  // 색상 선택하면 prodBuy 배열에 색상 넣기
-  // red 선택하면 ['red'] blue도 선택하면 ['red','blue']
-  const [prodBuy, setProdBuy] = useState([]);
-
-  // 질문) 이거 왜 됨?
-  // 질문)이걸 return문 안에서 쓰는 건 불가능?
+  // 변수를 state 조합으로 만들수도 있네
+  // 새질문) const로 변수 선언 -> 근데 값이 왜 바뀔 수가 있지??????????????
+  // 내생각) 바뀌는 게 아니고 재렌더링 되는거임
   const totalProdNum = prodCount.reduce((acc, cur, i) => {
     if (i < prodBuy.length) return acc + cur;
     else return acc;
   }, 0);
+
+  // 최신 댓글이 위에 올라오게끔 하는 함수
+  const comeFirst = () => {
+    let copy = [...commentsData];
+    copy.unshift(comment);
+    //copy.unshift({ product_id: data.results.product_id, content: comment });
+    setCommentsData(copy);
+  };
+
+  // 후기 작성란 보이게 하는 스위치
+  const [closeReviewWritingAreaSwitch, setCloseReviewWritingAreaSwitch] =
+    useState(false);
 
   return (
     <>
@@ -120,24 +173,24 @@ const ItemDetail = () => {
                   </div>
                   <div className={select ? 'options' : 'options disappear'}>
                     {data.results &&
-                      data.results.color.map((a, i) =>
-                        a !== 'null' ? (
+                      data.results.colors.map((a, i) =>
+                        a.color !== 'null' ? (
                           <div
-                            key={i}
+                            key={a.color_id}
                             onClick={() => {
                               showSwitchClick();
                               // 색상 선택창에 보일 {color}를 a로 설정
-                              setColor(a);
+                              setColor(a.color);
                               setProdBuy(
-                                prodBuy.includes(a)
+                                prodBuy.includes(a.color)
                                   ? prodBuy
-                                  : prodBuy.concat([a])
+                                  : prodBuy.concat([a.color])
                               );
                               setProdCount(prodCount.concat([1]));
-                              // 질문)slice 쓰니까 왜 안됨?
-                              // setProdCount(prodCount.slice(0, prodBuy.length));
+                              // 질문)slice 쓰니까 왜 안됨? 답) 한번 return문 밖에 따로 빼서 해봐
+                              //setProdCount(prodCount.slice(0, prodBuy.length));
 
-                              // 질문) 아래 왜 안됨?
+                              // 질문) 아래 왜 안됨? 3항 연산자는 실행문 한개씩만
                               // prodBuy.includes(a) ?(
                               // setProdBuy(prodBuy)
                               // setProdCount(prodCount) ):
@@ -145,12 +198,12 @@ const ItemDetail = () => {
                               // setProdCount(prodCount.concat([1]))
 
                               // 질문) 왜 처음에 빈배열? 한 박자씩 느리네
-                              console.log(prodBuy);
-                              console.log(prodCount);
-                              //console.log(prodCount.slice(0, prodBuy.length));
+
+                              // console.log(prodCount);
+                              // console.log(prodCount.slice(0, prodBuy.length));
                             }}
                           >
-                            {a}
+                            {a.color}
                           </div>
                         ) : (
                           <div
@@ -171,9 +224,9 @@ const ItemDetail = () => {
               {/* 구매할 상품 개수 */}
               <div className="totalBuyNum">
                 {/* prodBuy는 <색상>란에서 선택한 색들이 들어 있는 배열 */}
-                {prodBuy.map((prodColor, i) => {
+                {prodBuy.map((prodColor, index) => {
                   return (
-                    <div key={i} className="prodBuyNum">
+                    <div key={index} className="prodBuyNum">
                       <div className="prodNameX">
                         <span>
                           {data.results.name + ' (' + prodColor + ')'}
@@ -184,10 +237,10 @@ const ItemDetail = () => {
                           // X아이콘 누르면 prodBuy 배열 바꿔서 삭제하는 기능 구현
                           onClick={() => {
                             let copy = [...prodBuy];
-                            copy.splice(i, 1);
+                            copy.splice(index, 1);
                             setProdBuy(copy);
                             let copy1 = [...prodCount];
-                            copy1.splice(i, 1);
+                            copy1.splice(index, 1);
                             setProdCount(copy1);
                           }}
                         >
@@ -202,19 +255,20 @@ const ItemDetail = () => {
                             className="minus"
                             onClick={() => {
                               // 질문) onClick{()} 안에 (i) 로 인자 전달하면 왜 안됨?
-                              // 질문) 여기 3항 연산자 못씀?
+                              // 질문) 여기 3항 연산자 못씀? 조건에 따른 실행문이 하나씩일때만 삼항연산자 쓸수있다
                               // prodCount[i] >= 2 ? (let ~ setProdCount(copy);) : setProdCount(prodCount) 쓰고 싶은데
-                              downProdCount(i);
+
+                              downProdCount(index);
                             }}
                           >
                             <AiOutlineMinus />
                           </div>
-                          <div className="number">{prodCount[i]}</div>
+                          <div className="number">{prodCount[index]}</div>
                           <div
                             className="plus"
                             onClick={() => {
                               let copy = [...prodCount];
-                              copy[i]++;
+                              copy[index]++;
                               setProdCount(copy);
                             }}
                           >
@@ -222,7 +276,8 @@ const ItemDetail = () => {
                           </div>
                         </div>
                         <div className="totalPrice">
-                          {parseInt(data.results.price) * prodCount[i] + '원'}
+                          {parseInt(data.results.price) * prodCount[index] +
+                            '원'}
                         </div>
                       </div>
                     </div>
@@ -235,6 +290,14 @@ const ItemDetail = () => {
                   <div>주문 수량</div>
                   <div>
                     {totalProdNum + '개'}
+
+                    {/* 
+                      이것도 되네... 질문) 이거 함수화 못 시키냐?
+                      {prodBuy.length == 3
+                      ? prodCount[0] + prodCount[1] + prodCount[2]
+                      : prodBuy.length == 2
+                      ? prodCount[0] + prodCount[1]
+                      : prodCount[0]} */}
                     {/* totalProdNum 넣기 */}
                   </div>
                 </div>
@@ -253,30 +316,87 @@ const ItemDetail = () => {
           {/* 여기까지가 첫페이지 */}
           {/* 중간 네브바 */}
           <div className="midNavBar">
-            <a href="/" className="상품설명">
-              상품설명
-            </a>
-            <a href="/" className="후기">
-              후기 (242)
-            </a>
-            <a href="/" className="질문">
-              질문
-            </a>
-            <a href="/" className="관련상품">
+            <a href="#prodDesc">상품설명</a>
+            <a href="#reviews">후기 (242)</a>
+            <a href="#question">질문</a>
+            {/* <a href="#" >
               관련 상품
-            </a>
+            </a> */}
           </div>
 
           <div className="prodDescReviewQuestion">
-            <div className="prodDesc">{data.results.description}</div>
-            <div className="reviews">
+            <div id="prodDesc">{data.results.description}</div>
+            <div id="reviews">
               <div className="reviewTitle">
                 <div className="reviewText">후기</div>
+
+                <div
+                  className={
+                    closeReviewWritingAreaSwitch
+                      ? 'reviewWritingArea'
+                      : 'reviewWritingArea closed'
+                  }
+                >
+                  <div className="closeReviewWriting">
+                    <AiOutlineClose
+                      className="xButton"
+                      onClick={() => {
+                        setComment('');
+                        setCloseReviewWritingAreaSwitch(
+                          !closeReviewWritingAreaSwitch
+                        );
+                      }}
+                    />
+                  </div>
+                  <textarea
+                    value={comment}
+                    onChange={event => {
+                      setComment(event.target.value);
+                    }}
+                  />
+                  <div className="reviewWritingAreaBottom">
+                    <div className="reviewPicUpdate">
+                      <label for="fileInput">
+                        <AiFillCamera />
+                      </label>
+                      <input id="fileInput" type="file" />
+                    </div>
+                    <div className="rateAndButton">
+                      <select>
+                        <option> 평점주기</option>
+                        {/* option 태그 안에 왜 리액트아이콘 안 나옴? */}
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                      </select>
+                      <button
+                        className="reviewButton"
+                        onClick={event => {
+                          // 댓글모음집 배열에 쓴 댓글 넣어주고
+                          comment !== ''
+                            ? comeFirst() // 이거 밖에서 선언한 거...
+                            : alert('댓글을 입력해주세요');
+                          // 댓글입력창 비우기
+                          setComment('');
+                          setCloseReviewWritingAreaSwitch(
+                            !closeReviewWritingAreaSwitch
+                          );
+                        }}
+                      >
+                        저장하기
+                      </button>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="reviewBottom">
                   <div className="reviewRateNumber">
                     <div className="reviewRate">4.9 / 5</div>
-                    <div className="reviewNumber"> (242개 후기)</div>
+                    <div className="reviewNumber">
+                      ({commentsData.length + '개 후기'})
+                    </div>
                   </div>
 
                   <label className="selectPictureReviewOnly">
@@ -290,32 +410,24 @@ const ItemDetail = () => {
                   </label>
                 </div>
               </div>
-              <div className="review">
-                품절이여서 오래 기다렸는데 기다린 보람이 있었습니다!! 아이애프
-                맥북 둘 다 들어가서 너무 좋았어요!!
+
+              <div className="reviewCommentsList">
+                {commentsData.map((a, i) => {
+                  return <div className="review">{a}</div>;
+                })}
               </div>
-              <div className="review">
-                품절이여서 오래 기다렸는데 기다린 보람이 있었습니다!! 아이애프
-                맥북 둘 다 들어가서 너무 좋았어요!!
-              </div>
-              <div className="review">
-                품절이여서 오래 기다렸는데 기다린 보람이 있었습니다!! 아이애프
-                맥북 둘 다 들어가서 너무 좋았어요!!
-              </div>
-              <div className="review">
-                품절이여서 오래 기다렸는데 기다린 보람이 있었습니다!! 아이애프
-                맥북 둘 다 들어가서 너무 좋았어요!!
-              </div>
-              <div className="review">
-                품절이여서 오래 기다렸는데 기다린 보람이 있었습니다!! 아이애프
-                맥북 둘 다 들어가서 너무 좋았어요!!
-              </div>
-              <div className="review">
-                품절이여서 오래 기다렸는데 기다린 보람이 있었습니다!! 아이애프
-                맥북 둘 다 들어가서 너무 좋았어요!!
-              </div>
+
               <div className="reviewButtonDiv">
-                <button className="reviewButton">후기 쓰기</button>
+                <button
+                  className="reviewButton"
+                  onClick={() => {
+                    setCloseReviewWritingAreaSwitch(
+                      !closeReviewWritingAreaSwitch
+                    );
+                  }}
+                >
+                  후기 쓰기
+                </button>
               </div>
               <div className="pageNumber">
                 <div className="pagenationNo">1</div>
@@ -327,7 +439,7 @@ const ItemDetail = () => {
               </div>
             </div>
 
-            <div className="question">
+            <div id="question">
               <div className="questionText">질문</div>
 
               <div className="questionInfo">
