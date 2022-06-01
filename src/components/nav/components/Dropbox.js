@@ -5,9 +5,12 @@ const Dropbox = ({ category }) => {
   const navigate = useNavigate();
 
   const goPages = itemList => {
-    // navigate(itemList);
     const lowerList = itemList.toLowerCase();
-    console.log(lowerList);
+    navigate(
+      lowerList === 'all'
+        ? 'itemList'
+        : `itemList/products?category=${lowerList}`
+    );
   };
   return (
     <li
