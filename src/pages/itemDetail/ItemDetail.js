@@ -47,11 +47,11 @@ const ItemDetail = () => {
   // useEffect(() => {
   //   fetch('/data/reviewData.json')
   //     .then(res => res.json())
-  //     .then(commentsData => setCommentsData(commentsData.result));
+  //     .then(data => setCommentsData(data.result));
   // }, []);
 
-  console.log(commentsData);
-  console.log(commentsData.length);
+  // console.log(commentsData);
+  // console.log(commentsData.length);
 
   // console.log(typeof commentsData);
   // console.log(commentsData.result);
@@ -106,10 +106,10 @@ const ItemDetail = () => {
 
   // 최신 댓글이 위에 올라오게끔 하는 함수
   const comeFirst = () => {
-    let copy = [...commentsData];
+    let copy = [...commentsList];
     copy.unshift(comment);
     //copy.unshift({ product_id: data.results.product_id, content: comment });
-    setCommentsData(copy);
+    setCommentsList(copy);
   };
 
   // 후기 작성란 보이게 하는 스위치
@@ -395,7 +395,7 @@ const ItemDetail = () => {
                   <div className="reviewRateNumber">
                     <div className="reviewRate">4.9 / 5</div>
                     <div className="reviewNumber">
-                      ({commentsData.length + '개 후기'})
+                      ({commentsList.length + '개 후기'})
                     </div>
                   </div>
 
@@ -412,8 +412,12 @@ const ItemDetail = () => {
               </div>
 
               <div className="reviewCommentsList">
-                {commentsData.map((a, i) => {
-                  return <div className="review">{a}</div>;
+                {commentsList.map((a, i) => {
+                  return (
+                    <div key={i} className="review">
+                      {a}
+                    </div>
+                  );
                 })}
               </div>
 
