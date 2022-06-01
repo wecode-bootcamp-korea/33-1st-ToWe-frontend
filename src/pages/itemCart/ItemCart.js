@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './ItemCart.scss';
 import ItemComponent from './component/ItemComponent.js';
+import EmptyItem from './component/EmptyItem';
 
 const ItemCart = () => {
   useEffect(() => {
-    fetch('http://10.58.0.239:8000/carts', {
+    fetch('/data/ItemList.json', {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MTM4MDQxfQ.KmzkrPUoXfMAmeYAsSsqv9UvzCLt6I397ifRsVj0U8g',
+        Authorization: 'token',
       },
     })
       .then(res => res.json())
       .then(result => {
-        result.result.shift();
-        setListValue(result.result);
+        // result.result.shift();
+        setListValue(result);
       });
     //result.result <- 객체 안의 배열로 들어가는 어쩌구
   }, []);
   const [listValue, setListValue] = useState([]);
 
+  // http://10.58.0.239:8000/carts
+  // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MTM4MDQxfQ.KmzkrPUoXfMAmeYAsSsqv9UvzCLt6I397ifRsVj0U8g
   console.log(listValue);
   const sum = listValue.reduce(
     (acc, cur) => acc + Number(cur.price) * cur.quantity,
@@ -64,11 +66,10 @@ const ItemCart = () => {
     let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
     setListValue(listRemove);
 
-    fetch('http://10.58.0.239:8000/carts', {
+    fetch('/data/ItemList.json', {
       method: 'DELETE',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MTU0NzA5fQ.9HefFmLMDhuSobdvRcdd8wzUrRrg9bicZPu1hvOHtmE',
+        Authorization: 'token',
       },
       body: JSON.stringify({
         cart_id: id,
@@ -77,7 +78,6 @@ const ItemCart = () => {
   };
 
   // 장바구니가 비어있습니다.
-  // const cartEmpty = listValue.length === 0;
 
   // const OrderInput = listValue => {
   //   fetch('http://', {
@@ -103,7 +103,23 @@ const ItemCart = () => {
   // 장바구니가 비어있으면
   // 장바구니가 비어있습니다 페이지 뜨게 하기
 
+  const itemEmpty = listValue.length === 0;
+  // const emptyCart = () => {
+  //   if (listValue.length === 0) {
+  //     <EmptyItem />;
+  //   } else {
+  //     <ItemComponent />;
+  //   }
+  // };
+
   // 장바구니 합계 가격
+  const totalPrice = sum => {
+    if (sum > 50000) {
+      return sum;
+    } else {
+      return sum + 3000;
+    }
+  };
   // 상품의 총 합이 5만원 이상이면 배송미 무료해야해
   // 근데 로직을 어떻게 짜야할까?
   // 일단 함수를 만들어.
@@ -117,54 +133,64 @@ const ItemCart = () => {
             장바구니<span className="cartAmount">({listValue.length})</span>
           </div>
         </div>
-        <div className="cartListWrapper">
-          <div className="cartListHeader">
-            <div className="cartInfoTitle">상품 정보</div>
-            <div className="cartQuantityTitle">수량</div>
-            <div className="cartPriceTitle">가격</div>
-            <div className="cartDeliveryTitle">배송비</div>
-          </div>
-          <div className="cartListBody">
-            <div className="cartListComponent">
-              {listValue.map(itemlist => (
-                <ItemComponent
-                  itemlist={itemlist}
-                  key={itemlist.cart_id}
-                  decrease={decrease}
-                  increase={increase}
-                  onRemove={onRemove}
-                />
-              ))}
-            </div>
-            <div className="cartListDeliveryInfo">
-              <div className="deliveryInfo">
-                <p>3000원</p>
-                <span>50,000원 이상 구매 시 무료</span>
+        {itemEmpty ? (
+          <EmptyItem />
+        ) : (
+          <div>
+            <div className="cartListWrapper">
+              <div className="cartListHeader">
+                <div className="cartInfoTitle">상품 정보</div>
+                <div className="cartQuantityTitle">수량</div>
+                <div className="cartPriceTitle">가격</div>
+                <div className="cartDeliveryTitle">배송비</div>
+              </div>
+              <div className="cartListBody">
+                <div className="cartListComponent">
+                  {listValue.map(itemlist => (
+                    <ItemComponent
+                      itemlist={itemlist}
+                      key={itemlist.cart_id}
+                      decrease={decrease}
+                      increase={increase}
+                      onRemove={onRemove}
+                    />
+                  ))}
+                </div>
+                <div className="cartListDeliveryInfo">
+                  <div className="deliveryInfo">
+                    <p>3000원</p>
+                    <span>50,000원 이상 구매 시 무료</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="cartPriceWrapper">
-          <div className="cartPriceInfo">
-            <div className="priceDetail">
-              <div className="productPriceTotal">
-                <div className="productPriceTitle">상품 합계</div>
-                <div className="productPrice">{sum.toLocaleString()}원</div>
-              </div>
-              <div className="deliveryPriceTotal">
-                <div className="deliveryPriceTitle">배송비</div>
-                <div className="deliveryPrice">3000원</div>
+            <div className="cartPriceWrapper">
+              <div className="cartPriceInfo">
+                <div className="priceDetail">
+                  <div className="productPriceTotal">
+                    <div className="productPriceTitle">상품 합계</div>
+                    <div className="productPrice">
+                      {sum.toLocaleString()} 원
+                    </div>
+                  </div>
+                  <div className="deliveryPriceTotal">
+                    <div className="deliveryPriceTitle">배송비</div>
+                    <div className="deliveryPrice">3000원</div>
+                  </div>
+                </div>
+                <div className="totalPriceDiv">
+                  <div className="totalPriceTitle">합계</div>
+                  <div className="totalPrice">
+                    {totalPrice(sum).toLocaleString()} 원
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="totalPriceDiv">
-              <div className="totalPriceTitle">합계</div>
-              <div className="totalPrice"></div>
+            <div className="cartBtnWrapper">
+              <button>주문하기</button>
             </div>
           </div>
-        </div>
-        <div className="cartBtnWrapper">
-          <button>주문하기</button>
-        </div>
+        )}
       </div>
     </div>
   );
