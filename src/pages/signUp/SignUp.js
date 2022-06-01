@@ -70,42 +70,42 @@ const SignUp = () => {
   const INPUT = [
     {
       id: 0,
-      title: '이메일',
+      title: 'EMAIL ADDRESS',
       type: 'text',
       name: 'email',
       value: email,
     },
     {
       id: 1,
-      title: '이름',
+      title: 'NAME',
       type: 'text',
       name: 'name',
       value: name,
     },
     {
       id: 2,
-      title: '비밀번호',
+      title: 'PASSWORD',
       type: 'password',
       name: 'pw1',
       value: pw1,
     },
     {
       id: 3,
-      title: '비밀번호 확인',
+      title: 'PASSWORD CONFIRMATION',
       type: 'password',
       name: 'pw2',
       value: pw2,
     },
     {
       id: 4,
-      title: '휴대폰번호',
+      title: 'PHONE',
       type: 'text',
       name: 'phone',
       value: phone,
     },
     {
       id: 5,
-      title: '주소',
+      title: 'ADDRESS',
       type: 'text',
       name: 'address',
       value: address,
@@ -117,7 +117,7 @@ const SignUp = () => {
       <div className="signUpWrapper">
         <div className="signUpField">
           <div className="signUpHeader">
-            <span className="signUpTitle">회원가입</span>
+            <span className="signUpTitle">Sign Up</span>
           </div>
           <div className="contentBox">
             {INPUT.map(input => (
@@ -187,7 +187,7 @@ const SignUp = () => {
               }}
               disabled={!isValid}
             >
-              가입하기
+              SIGN UP
             </button>
           </div>
         </div>
