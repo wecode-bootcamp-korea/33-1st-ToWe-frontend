@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import ProductCategory from './components/ProductCategory.js';
 import ListItem from './components/ListItem.js';
 import LitsFilter from './components/ListFilter.js';
+import API from '../../config.js';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ItemList.scss';
-
-import API from '../../config.js';
 
 const ItemList = () => {
   const [category, setCategory] = useState('ALL');
@@ -49,14 +48,17 @@ ${filterValue.sortValue ? `&sort=${filterValue.sortValue}` : ''}${
   }, [filterValue]);
 
   const onCategory = name => {
+    setFilterValue(prev => {
+      return { ...prev, sortValue: '' };
+    });
+    setFilterValue(prev => {
+      return { ...prev, offValue: `` };
+    });
     const lowerValue = name.toLowerCase();
     setFilterValue(prev => {
       return { ...prev, categoryValue: lowerValue };
     });
     setCategory(name);
-    setFilterValue(prev => {
-      return { ...prev, offValue: `&offset=0&limit=3` };
-    });
     setQuery(6);
     setSortColor('');
   };
@@ -101,11 +103,12 @@ ${filterValue.sortValue ? `&sort=${filterValue.sortValue}` : ''}${
       />
       <ListItem listItems={listItems} onLike={onLike} />
       <button
+        className="plusBtn"
         onClick={() => {
           getBynIndex(3);
         }}
       >
-        버튼
+        더보기
       </button>
     </div>
   );
