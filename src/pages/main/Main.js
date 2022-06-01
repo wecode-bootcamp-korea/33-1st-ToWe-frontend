@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import BestProducts from './components/bestProducts/BestProducts';
 import Carousel from './components/carousel/Carousel';
+import Collaboration from './components/collaboration/Collaboration';
 import Instagram from './components/instagram/Instagram';
 import OurStory from './components/ourStory/OurStory';
 import WallPaper from './components/wallpaper/WallPaper';
@@ -19,9 +20,9 @@ const Main = () => {
     };
   }, []);
   const handleScroll = () => {
-    window.scrollY >= 1400 ? setScrollFadeIn(true) : setScrollFadeIn(false);
-    window.scrollY >= 2800 ? setScrollFadeIn2(true) : setScrollFadeIn2(false);
-    window.scrollY >= 4200 ? setScrollFadeIn3(true) : setScrollFadeIn3(false);
+    window.scrollY >= 2200 ? setScrollFadeIn(true) : setScrollFadeIn(false);
+    window.scrollY >= 3500 ? setScrollFadeIn2(true) : setScrollFadeIn2(false);
+    window.scrollY >= 5000 ? setScrollFadeIn3(true) : setScrollFadeIn3(false);
   };
   // const 타겟? = useRef(null);
 
@@ -57,6 +58,7 @@ const Main = () => {
       <Carousel />
       <BestProducts />
       {/* ref={target} ?? */}
+      <Collaboration />
       <OurStory scrollFadeIn={scrollFadeIn} />
       <WallPaper scrollFadeIn2={scrollFadeIn2} />
       <Instagram scrollFadeIn3={scrollFadeIn3} />

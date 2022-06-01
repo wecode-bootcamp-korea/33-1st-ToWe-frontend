@@ -1,9 +1,7 @@
 @import '../../../../styles/variables.scss';
-$darkGray: #3a3a3a;
-$lightGray: #888888;
 
 .bestProducts {
-  margin-top: 1000px;
+  margin-top: 950px;
   @include flexCenter;
   flex-direction: column;
   padding: 0 3rem;
