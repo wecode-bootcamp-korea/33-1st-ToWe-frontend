@@ -1,0 +1,31 @@
+@import '../components/../../../styles/variables.scss';
+
+.listFilter {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 1rem 0;
+
+  .filterBtn {
+    margin: 0 0.5rem;
+    font-size: 0.5rem;
+    cursor: pointer;
+  }
+
+  .filterBtnActive {
+    margin: 0 0.5rem;
+    font-size: 0.5rem;
+    color: $darkGray;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+  }
+
+  .filterBtn:hover {
+    color: $darkGray;
+
+    .sortLine {
+      border-bottom: 1px solid black;
+    }
+  }
+}
