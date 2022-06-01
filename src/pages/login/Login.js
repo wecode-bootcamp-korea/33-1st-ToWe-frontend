@@ -50,27 +50,27 @@ const Login = () => {
       <div className="loginWrapper">
         <div className="loginField">
           <div className="loginHeader">
-            <span className="loginTitle">로그인</span>
+            <span className="loginTitle">Sign In</span>
           </div>
           <form>
             <div className="contentBox">
               <div className="row">
-                <span className="inputTitle">아이디 또는 이메일</span>
+                <span className="inputTitle">EMAIL</span>
                 <input
                   className="loginInputBox"
                   type="text"
-                  placeholder="이메일을 입력해주세요."
+                  placeholder="Email"
                   name="id"
                   value={id}
                   onChange={handleInput}
                 />
               </div>
               <div className="row">
-                <span className="inputTitle">비밀번호</span>
+                <span className="inputTitle">PASSWORD</span>
                 <input
                   className="loginInputBox"
                   type="password"
-                  placeholder="비밀번호를 입력해주세요."
+                  placeholder="Password"
                   name="pw"
                   value={pw}
                   onChange={handleInput}
@@ -78,11 +78,11 @@ const Login = () => {
               </div>
               <div className="findPw">
                 <a href="/findPassword" className="textLink1">
-                  비밀번호 찾기
+                  Forgot Your Password?
                 </a>
-                <a href="/findPassword" className="textLink2">
+                {/* <a href="/findPassword" className="textLink2">
                   비회원 주문 조회하기
-                </a>
+                </a> */}
               </div>
               <div className="btnWrapper">
                 <button
@@ -91,11 +91,11 @@ const Login = () => {
                   onClick={LoginTest}
                   disabled={!isValidLogin}
                 >
-                  로그인하기
+                  SIGN IN
                 </button>
               </div>
               <div className="btnWrapper">
-                <button className="signUpBtn">회원 가입하기</button>
+                <button className="signUpBtn">CREATE ACCOUNT</button>
               </div>
             </div>
           </form>
