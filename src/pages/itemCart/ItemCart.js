@@ -175,7 +175,9 @@ const ItemCart = () => {
                   </div>
                   <div className="deliveryPriceTotal">
                     <div className="deliveryPriceTitle">배송비</div>
-                    <div className="deliveryPrice">3000원</div>
+                    <div className="deliveryPrice">
+                      {sum > 50000 ? '0' : '3000'}원
+                    </div>
                   </div>
                 </div>
                 <div className="totalPriceDiv">
