@@ -37,7 +37,7 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
             </div>
           </div>
           <div className="quantityDiv">
-            <div className="quatity">
+            <div className="quantity">
               <div
                 className="decreaseBtn"
                 onClick={() => {

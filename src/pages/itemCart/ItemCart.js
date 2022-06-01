@@ -100,15 +100,18 @@ const ItemCart = () => {
               </div>
             </div>
             <div className="cartListDiv">
-              {listValue.map(itemlist => (
-                <ItemComponent
-                  itemlist={itemlist}
-                  key={itemlist.cart_id}
-                  decrease={decrease}
-                  increase={increase}
-                  onRemove={onRemove}
-                />
-              ))}
+              <div className="cartList">
+                {listValue.map(itemlist => (
+                  <ItemComponent
+                    itemlist={itemlist}
+                    key={itemlist.cart_id}
+                    decrease={decrease}
+                    increase={increase}
+                    onRemove={onRemove}
+                  />
+                ))}
+              </div>
+              <div className="deliveryInfoDiv">d</div>
             </div>
             <div className="tbTotal">
               <div className="priceInfoDiv">

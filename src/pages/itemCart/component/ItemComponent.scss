@@ -1,6 +1,8 @@
 .itemComponent {
   .deliveryGroupItemList {
     width: 80%;
+    border-bottom: 1px solid black;
+    background-color: aqua;
     .cartInfoDiv {
       // width: 100%;
       // height: 122px;
@@ -41,13 +43,41 @@
       .quantityDiv {
         width: 25%;
         // display: inline-block;
-        padding-left: calc(25% - 10.875rem);
+        // padding-left: calc(25% - 10.875rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 9%;
+        border: 1px solid black;
+
         .quantity {
+          width: 194px;
+          height: 37px;
+          display: flex;
           .decreaseBtn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
           .amountBox {
+            width: 40px;
+            height: 40px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
           .increaseBtn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         }
       }

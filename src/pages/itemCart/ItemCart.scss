@@ -2,7 +2,7 @@
   .cartDetail {
     .cartWrapper {
       width: 100%;
-      padding: 3.75rem 6.625 4.375rem;
+      padding: 12% 3% 14%;
 
       .cartHeader {
         margin-bottom: 2.5rem;
@@ -27,31 +27,44 @@
               .info {
                 width: 53%;
                 display: inline-block;
+                background-color: yellow;
               }
 
               .count {
                 width: 25%;
                 // display: inline-block;
                 text-align: center;
+                background-color: pink;
               }
 
               .price {
                 width: 20%;
                 // display: inline-block;
                 text-align: center;
+                background-color: skyblue;
               }
               .deliveryCharge {
                 width: 20%;
                 display: inline-block;
                 font-size: 0.875rem;
                 text-align: center;
+                background-color: yellowgreen;
               }
             }
           }
         }
         .cartListDiv {
+          background-color: coral;
           border-top: 0.063rem solid black;
           border-bottom: 0.063rem solid black;
+          .cartList {
+            width: 80%;
+            background-color: beige;
+          }
+          .deliveryInfoDiv {
+            width: 20%;
+            background-color: blue;
+          }
         }
         .tbTotal {
           width: 50%;
