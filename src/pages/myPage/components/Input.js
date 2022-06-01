@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.scss';
 
-const Input = ({ userData, inputValue }) => {
+const Input = ({ userData, inputData }) => {
   const { name, title } = userData;
   return (
     <div className="Input">
@@ -9,9 +9,9 @@ const Input = ({ userData, inputValue }) => {
       <input
         className="userInforInputBox"
         // FIXME: mockdata 사용할때
-        defaultValue={inputValue ? inputValue?.[name] : ''}
+        // defaultValue={inputData ? inputData?.[name] : ''}
         // FIXME : 백과 통신할때
-        // defaultValue={inputValue ? inputValue?.result[name] : ''}
+        defaultValue={inputData ? inputData?.result[name] : ''}
       />
     </div>
   );
