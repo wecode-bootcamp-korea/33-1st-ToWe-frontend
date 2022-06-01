@@ -1,4 +1,4 @@
-const BASE_URL = 'http://10.58.3.254:8000';
+const BASE_URL = 'http://10.58.0.181:8000';
 
 const API = {
   users: `${BASE_URL}/users`,
