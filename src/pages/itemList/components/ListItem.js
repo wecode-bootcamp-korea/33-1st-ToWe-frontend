@@ -1,7 +1,7 @@
 import './ListItem.scss';
 import ListItemContenst from './ListItemContenst.js';
 
-const ListItem = ({ listItems, onLike, categoryPage }) => {
+const ListItem = ({ listItems, onLike }) => {
   return (
     <div className="listItem">
       {listItems.map(listItem => (
@@ -10,13 +10,12 @@ const ListItem = ({ listItems, onLike, categoryPage }) => {
           name={listItem.name}
           price={listItem.price}
           categoey={listItem.category}
-          itemImg={listItem.itemImg}
-          hoverImg={listItem.hoverImg}
+          itemImg={listItem.thumbnail_url}
+          hoverImg={listItem.hover_img}
           age={listItem.age}
           like={listItem.like}
           key={listItem.id}
           onLike={onLike}
-          categoryPage={categoryPage}
         />
       ))}
     </div>

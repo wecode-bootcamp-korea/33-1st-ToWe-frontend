@@ -2,24 +2,79 @@ import React, { useEffect, useState } from 'react';
 import ProductCategory from './components/ProductCategory.js';
 import ListItem from './components/ListItem.js';
 import LitsFilter from './components/ListFilter.js';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './ItemList.scss';
 
+import API from '../../config.js';
+
 const ItemList = () => {
-  const [listItems, setListItems] = useState([]);
   const [category, setCategory] = useState('ALL');
+  const [listItems, setListItems] = useState([]);
+  const [sortColor, setSortColor] = useState('');
+  const [query, setQuery] = useState(6);
+
+  const [filterValue, setFilterValue] = useState({
+    categoryValue: '',
+    sortValue: '',
+    offValue: '',
+  });
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    fetch('data/LIST_ITEMS.json', {
+    fetch(`${API.products}${location.search}`, {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setListItems(data);
+        setListItems(data.results);
       });
-  }, []);
+  }, [location.search]);
 
-  const onCategory = value => {
-    setCategory(value);
+  useEffect(() => {
+    const queryString = `?${
+      filterValue.categoryValue
+        ? `${
+            filterValue.categoryValue === `all`
+              ? ''
+              : `category=${filterValue.categoryValue}`
+          }`
+        : ''
+    }
+${filterValue.sortValue ? `&sort=${filterValue.sortValue}` : ''}${
+      filterValue.offValue ? `${filterValue.offValue}` : ''
+    }`;
+    navigate(queryString);
+  }, [filterValue]);
+
+  const onCategory = name => {
+    const lowerValue = name.toLowerCase();
+    setFilterValue(prev => {
+      return { ...prev, categoryValue: lowerValue };
+    });
+    setCategory(name);
+    setFilterValue(prev => {
+      return { ...prev, offValue: `&offset=0&limit=3` };
+    });
+    setQuery(6);
+    setSortColor('');
+  };
+
+  const getBynIndex = () => {
+    setQuery(query => query + 3);
+    const limit = query;
+    const offset = 0;
+    const queryString = `&offset=${offset}&limit=${limit}`;
+    setFilterValue(prev => {
+      return { ...prev, offValue: queryString };
+    });
+  };
+
+  const onSort = value => {
+    setFilterValue(prev => {
+      return { ...prev, sortValue: value };
+    });
   };
 
   const onLike = id => {
@@ -30,22 +85,37 @@ const ItemList = () => {
     );
   };
 
+  const sortColorClick = id => {
+    setSortColor(id);
+  };
+
   return (
     <div className="listContainer">
       <div className="listTitle">{category}</div>
-      <ProductCategory onCategory={onCategory} FILTER_MENU={FILTER_MENU} />
-      <LitsFilter />
+      <ProductCategory onCategory={onCategory} />
+      <LitsFilter
+        onSort={onSort}
+        SORT_MENU={SORT_MENU}
+        sortColorClick={sortColorClick}
+        sortColor={sortColor}
+      />
       <ListItem listItems={listItems} onLike={onLike} />
+      <button
+        onClick={() => {
+          getBynIndex(3);
+        }}
+      >
+        버튼
+      </button>
     </div>
   );
 };
 
 export default ItemList;
 
-const FILTER_MENU = [
-  { id: 0, name: 'ALL' },
-  { id: 1, name: 'PUZZLE' },
-  { id: 2, name: 'DOLL' },
-  { id: 3, name: 'LEGO' },
-  { id: 4, name: 'CAR' },
+const SORT_MENU = [
+  { id: 0, name: 'LOW PRICE', value: 'price_low' },
+  { id: 1, name: 'HIGH PRICE', value: 'price_high' },
+  { id: 2, name: 'LOW AGE', value: 'age_low' },
+  { id: 3, name: 'HIGH AGE', value: 'age_high' },
 ];

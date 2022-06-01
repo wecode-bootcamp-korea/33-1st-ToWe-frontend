@@ -1,13 +1,6 @@
-import { useState } from 'react';
 import './ListFilter.scss';
 
-const LitsFilter = () => {
-  const [sortColor, setSortColor] = useState('');
-
-  const sortColorClick = filterNum => {
-    setSortColor(filterNum);
-  };
-
+const LitsFilter = ({ onSort, SORT_MENU, sortColorClick, sortColor }) => {
   return (
     <div className="listFilter">
       {SORT_MENU.map(sortMenu => {
@@ -16,6 +9,7 @@ const LitsFilter = () => {
             key={sortMenu.id}
             onClick={() => {
               sortColorClick(sortMenu.id);
+              onSort(sortMenu.value);
             }}
             className={
               sortColor === sortMenu.id ? `filterBtnActive` : `filterBtn`
@@ -31,10 +25,3 @@ const LitsFilter = () => {
 };
 
 export default LitsFilter;
-
-const SORT_MENU = [
-  { id: 0, name: 'LOW PRICE' },
-  { id: 1, name: 'HIGH PRICE' },
-  { id: 2, name: 'LOW AGE' },
-  { id: 3, name: 'HIGH AGE' },
-];
