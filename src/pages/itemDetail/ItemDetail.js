@@ -44,14 +44,17 @@ const ItemDetail = () => {
   //console.log(data);
 
   // 댓글 정보 가져오기
-  // useEffect(() => {
-  //   fetch('/data/reviewData.json')
-  //     .then(res => res.json())
-  //     .then(data => setCommentsData(data.result));
-  // }, []);
+  useEffect(() => {
+    // 10.58.0.209
+    // /data/reviewData.json
+    // http://10.58.0.209:8000/products/1/review
+    fetch('/data/reviewData.json')
+      .then(res => res.json())
+      .then(data => setCommentsData(data.result));
+  }, []);
 
-  // console.log(commentsData);
-  // console.log(commentsData.length);
+  console.log(commentsData);
+  console.log(commentsData.length);
 
   // console.log(typeof commentsData);
   // console.log(commentsData.result);
@@ -106,10 +109,12 @@ const ItemDetail = () => {
 
   // 최신 댓글이 위에 올라오게끔 하는 함수
   const comeFirst = () => {
-    let copy = [...commentsList];
-    copy.unshift(comment);
-    //copy.unshift({ product_id: data.results.product_id, content: comment });
-    setCommentsList(copy);
+    //let copy = [...commentsList];
+    const copy = [...commentsData];
+    //copy.unshift(comment);
+    copy.unshift({ product_id: data.results.product_id, content: comment });
+    //setCommentsList(copy);
+    setCommentsData(copy);
   };
 
   // 후기 작성란 보이게 하는 스위치
@@ -395,7 +400,8 @@ const ItemDetail = () => {
                   <div className="reviewRateNumber">
                     <div className="reviewRate">4.9 / 5</div>
                     <div className="reviewNumber">
-                      ({commentsList.length + '개 후기'})
+                      {/* ({commentsList.length + '개 후기'}) */}(
+                      {commentsData.length + '개 후기'})
                     </div>
                   </div>
 
@@ -412,10 +418,10 @@ const ItemDetail = () => {
               </div>
 
               <div className="reviewCommentsList">
-                {commentsList.map((a, i) => {
+                {commentsData.map((a, i) => {
                   return (
                     <div key={i} className="review">
-                      {a}
+                      {a.content}
                     </div>
                   );
                 })}
