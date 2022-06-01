@@ -29,7 +29,7 @@ const Login = () => {
       })
       .then(result => {
         navigator('/main');
-        localStorage.setItem('TOKEN', result.TOKEN);
+        localStorage.setItem('token', result.token);
       });
   };
 
