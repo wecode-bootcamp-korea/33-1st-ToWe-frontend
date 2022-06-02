@@ -10,6 +10,7 @@ nav {
   width: 100%;
   background-color: transparent;
   position: fixed;
+  top: 0;
   z-index: 2;
 }
 
@@ -22,6 +23,7 @@ nav {
 
 .navLogo {
   width: 10rem;
+  cursor: pointer;
 }
 
 .ligoBottom {
