@@ -21,7 +21,7 @@ const SignUp = () => {
     setInputValue({ ...inputValue, [name]: value });
   };
 
-  const GoSignUp = () => {
+  const goSignUp = () => {
     fetch('http://10.58.5.168:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
@@ -139,7 +139,7 @@ const SignUp = () => {
               className="signUpBtn"
               type="button"
               onClick={() => {
-                GoSignUp();
+                goSignUp();
                 alertName();
               }}
               disabled={!isValid}
