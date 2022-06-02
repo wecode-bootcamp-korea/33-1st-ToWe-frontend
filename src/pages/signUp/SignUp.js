@@ -1,7 +1,8 @@
 import React from 'react';
+import './SignUp.scss';
 
 const SignUp = () => {
-  return <div>good</div>;
+  return <div />;
 };
 
 export default SignUp;

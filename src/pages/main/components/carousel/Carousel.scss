@@ -9,6 +9,7 @@
       }
 
       &.active {
+        z-index: 10;
         opacity: 1;
         transition: opacity 800ms ease-out;
       }
@@ -38,6 +39,8 @@
       border: 3px solid white;
       border-radius: 50%;
       cursor: pointer;
+      transition: all 200ms ease-in-out;
+      z-index: 2;
     }
 
     .active {

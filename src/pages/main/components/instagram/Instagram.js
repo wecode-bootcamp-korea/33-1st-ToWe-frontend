@@ -3,7 +3,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import SliderImg from './SliderImg';
 import './Instagram.scss';
 
-const Instagram = () => {
+const Instagram = ({ scrollFadeIn3 }) => {
   const [imgList, setImgList] = useState([]);
   const [curIndex, setCurIndex] = useState(4);
 
@@ -67,7 +67,7 @@ const Instagram = () => {
   };
 
   return (
-    <div className="instagram">
+    <div className={`instagram ${scrollFadeIn3 === true ? 'active' : ''}`}>
       <h2 className="title">INSTAGRAM</h2>
       <div className="description">#토위 #TOWE STORY #TOWE #TOY SHOP #REGO</div>
       <div className="slider">
