@@ -110,7 +110,7 @@ const ItemList = () => {
       <button
         className="plusBtn"
         onClick={() => {
-          getBynIndex(0.2);
+          getBynIndex();
         }}
       >
         SHOW MORE
