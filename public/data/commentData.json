@@ -1,0 +1,16 @@
+{
+  "results": {
+    "product_id": 1,
+    "name": "토이스토리 장난감",
+    "price": "100000",
+    "description": "토이스토리 장난감!!!",
+    "image_url": ["/images/toy1.png", "/images/toy2.png", "/images/toy3.png"],
+    "colors": [
+      { "color_id": 1, "color": "null" },
+      { "color_id": 2, "color": "red" },
+      { "color_id": 3, "color": "blue" },
+      { "color_id": 4, "color": "white" },
+      { "color_id": 5, "color": "black" }
+    ]
+  }
+}

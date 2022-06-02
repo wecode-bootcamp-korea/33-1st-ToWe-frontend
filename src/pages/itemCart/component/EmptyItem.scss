@@ -1,0 +1,12 @@
+.emptyItem {
+  width: 100%;
+  margin-top: 20%;
+  margin-bottom: 25%;
+  display: flex;
+  justify-content: center;
+  .emptyPage {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+}

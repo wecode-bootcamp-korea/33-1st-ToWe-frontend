@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "url": "/images/Disney.jpg",
+    "name": "Disney"
+  },
+  {
+    "id": 1,
+    "url": "/images/Harry Potter.jpg",
+    "name": "Harry Potter"
+  },
+  {
+    "id": 2,
+    "url": "/images/Detective Comics.jpg",
+    "name": "Detective Comics"
+  }
+]
