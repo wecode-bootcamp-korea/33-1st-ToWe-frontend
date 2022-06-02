@@ -1,0 +1,107 @@
+@import '../../styles/variables.scss';
+
+.myPage {
+  display: flex;
+  justify-content: center;
+
+  .myPageContainer {
+    display: flex;
+    padding: 3rem 0.5rem;
+
+    .userActivity {
+      margin-right: 10rem;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profileTitle {
+        display: flex;
+        justify-content: space-between;
+        width: 45vh;
+        margin-top: 5rem;
+
+        .title {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+
+        .logOut {
+          margin-top: 5rem;
+          font-size: 0.9rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .profileImage {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        width: 40vh;
+        height: 40vh;
+        max-width: 40vh;
+        overflow: hidden;
+      }
+
+      .userInformation {
+        width: 45vh;
+        height: 50vh;
+
+        .userInfor {
+          margin-top: 3rem;
+
+          .contentBox {
+            width: 100%;
+          }
+
+          .agree {
+            padding-top: 2rem;
+
+            .checkBox {
+              padding-top: 1rem;
+
+              .email {
+                margin-right: 0.5rem;
+              }
+
+              .message {
+                margin: 0 0.5rem 0 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      .exit {
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        border: 0;
+        background-color: white;
+
+        &:hover {
+          cursor: pointer;
+          color: $hoverColor;
+        }
+      }
+
+      .save {
+        width: 15rem;
+        height: 3.375rem;
+        border: 0.063rem solid black;
+        border-radius: 3.125rem;
+        background: white;
+
+        &:hover {
+          cursor: pointer;
+          background: black;
+          color: white;
+        }
+      }
+    }
+  }
+}
