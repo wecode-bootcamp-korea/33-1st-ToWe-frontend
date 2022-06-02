@@ -15,7 +15,7 @@ const Order = () => {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
+        setOrderList(result);
       });
   }, []);
 
