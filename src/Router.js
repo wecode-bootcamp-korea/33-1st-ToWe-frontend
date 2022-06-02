@@ -17,7 +17,7 @@ import Best10 from './pages/best10/Best10.js';
 function Router() {
   return (
     <BrowserRouter>
-      {/* <Nav /> */}
+      <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/itemcart" element={<ItemCart />} />
@@ -31,7 +31,7 @@ function Router() {
         <Route path="/order" element={<Order />} />
         <Route path="/best10" element={<Best10 />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
