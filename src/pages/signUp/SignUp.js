@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './SignUp.scss';
-import SignUpComponent from './component/SignUpComponent';
 import { useNavigate } from 'react-router-dom';
+import SignUpComponent from './component/SignUpComponent';
+import './SignUp.scss';
 
-const signUp = () => {
+const SignUp = () => {
   const [inputValue, setInputValue] = useState({
     email: '',
     name: '',
@@ -14,7 +14,7 @@ const signUp = () => {
   });
 
   const { email, name, pw, pwCheck, address, phone } = inputValue;
-  const navigator = useNavigate();
+  const Navigator = useNavigate();
 
   const handleInput = e => {
     const { name, value } = e.target;
@@ -40,7 +40,7 @@ const signUp = () => {
         }
       })
       .then(result => {
-        navigator('/login');
+        Navigator('/login');
       });
   };
 
@@ -107,7 +107,7 @@ const signUp = () => {
   );
 };
 
-export default signUp;
+export default SignUp;
 
 const INPUT = [
   {

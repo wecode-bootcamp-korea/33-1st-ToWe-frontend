@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SignUpComponent = ({ input, handleInput }) => {
+const signUpComponent = ({ input, handleInput }) => {
   const { name, value } = input;
 
   return (
@@ -17,4 +17,4 @@ const SignUpComponent = ({ input, handleInput }) => {
   );
 };
 
-export default SignUpComponent;
+export default signUpComponent;
