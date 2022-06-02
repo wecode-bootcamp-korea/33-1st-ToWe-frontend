@@ -92,10 +92,10 @@ const ItemCart = () => {
           <div>
             <div className="cartListWrapper">
               <div className="cartListHeader">
-                <div className="cartInfoTitle">상품 정보</div>
-                <div className="cartQuantityTitle">수량</div>
-                <div className="cartPriceTitle">가격</div>
-                <div className="cartDeliveryTitle">배송비</div>
+                <div className="cartInfoTitle">Product Detail</div>
+                <div className="cartQuantityTitle">Quantity</div>
+                <div className="cartPriceTitle">Price</div>
+                <div className="cartDeliveryTitle">Delivery Fee</div>
               </div>
               <div className="cartListBody">
                 <div className="cartListComponent">
@@ -111,8 +111,8 @@ const ItemCart = () => {
                 </div>
                 <div className="cartListDeliveryInfo">
                   <div className="deliveryInfo">
-                    <p>3,000원</p>
-                    <span>50,000원 이상 구매 시 무료</span>
+                    <p>₩ 3,000</p>
+                    <span>Free for purchases over ₩ 50,000</span>
                   </div>
                 </div>
               </div>
@@ -122,26 +122,26 @@ const ItemCart = () => {
                 <div className="priceDetail">
                   <div className="productPriceTotal">
                     <div className="textRight">
-                      <div className="productPriceTitle">상품 합계</div>
+                      <div className="productPriceTitle">Total Price</div>
                       <div className="productPrice">
-                        {sum.toLocaleString()} 원
+                        ₩ {sum.toLocaleString()}
                       </div>
                     </div>
                   </div>
                   <div className="deliveryPriceTotal">
                     <div className="textRight">
-                      <div className="deliveryPriceTitle">배송비</div>
+                      <div className="deliveryPriceTitle">Delivery Fee</div>
                       <div className="deliveryPrice">
-                        {sum > 50000 ? '무료' : '3,000 원'}
+                        {sum > 50000 ? 'Free' : '₩ 3,000'}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="totalPriceDiv">
                   <div className="textRight">
-                    <div className="totalPriceTitle">합계</div>
+                    <div className="totalPriceTitle">Total</div>
                     <div className="totalPrice">
-                      {totalPrice(sum).toLocaleString()} 원
+                      ₩ {totalPrice(sum).toLocaleString()}
                     </div>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
                   onRemove(cart_id);
                 }}
               >
-                삭제하기
+                Delete
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
             </div>
           </div>
           <div className="itemPriceDiv">
-            {(price * quantity).toLocaleString()} 원
+            ₩ {(price * quantity).toLocaleString()}
           </div>
         </div>
       </div>

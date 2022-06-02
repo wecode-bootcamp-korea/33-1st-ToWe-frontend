@@ -1,4 +1,5 @@
 import React from 'react';
+import './EmptyItem.scss';
 
 const EmptyItem = () => {
   return (

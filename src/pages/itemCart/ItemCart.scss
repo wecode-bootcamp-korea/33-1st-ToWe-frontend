@@ -2,14 +2,18 @@
   .cartWrapper {
     width: 100%;
     padding: 12% 7% 14%;
+
     .cartHeader {
-      margin-bottom: 2.5rem;
+      // margin-top: 3%;
+      margin-bottom: 7%;
+
       .cartTitle {
         font-size: 2.5rem;
         font-weight: bold;
       }
     }
     .cartListWrapper {
+      margin-top: 5%;
       .cartListHeader {
         display: flex;
         padding: 1rem 0rem 0.938rem;
