@@ -50,32 +50,6 @@
   },
   {
     "id": 5,
-<<<<<<< HEAD
-    "name": "실리콘 참",
-    "price": "3,000",
-    "categoey": "레고",
-    "itemImg": "./images/image2.jpeg",
-    "hoverImg": "./images/image1.jpeg",
-    "age": 4
-  },
-  {
-    "id": 6,
-    "name": "뚱랑이",
-    "price": "13,500",
-    "categoey": "인형",
-    "itemImg": "./images/image3.png",
-    "hoverImg": "./images/image1.jpeg",
-    "age": 6
-  },
-  {
-    "id": 7,
-    "name": "타이커 노트",
-    "price": "4,000",
-    "categoey": "자동차",
-    "itemImg": "./images/image4.jpeg",
-    "hoverImg": "./images/image1.jpeg",
-    "age": 13
-=======
     "name": "CROCS",
     "price": "3,000",
     "categoey": "LEGO",
@@ -103,6 +77,5 @@
     "hoverImg": "./images/image1.jpeg",
     "age": 13,
     "like": false
->>>>>>> origin
   }
 ]

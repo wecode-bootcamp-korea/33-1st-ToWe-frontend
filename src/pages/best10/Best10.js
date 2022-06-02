@@ -5,16 +5,6 @@ import './Best10.scss';
 const Best10 = () => {
   const [listItems, setListItems] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('/data/LIST_ITEMS.json', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setListItems(data);
-  //     });
-  // }, []);
-
   useEffect(() => {
     fetch('http://10.58.3.254:8000/products?sort=best', {
       method: 'GET',
