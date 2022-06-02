@@ -50,6 +50,10 @@ const Nav = () => {
     localStorage.getItem('TOKEN') ? navigate(`/mypage`) : navigate(`/signup`);
   };
 
+  const goToMain = () => {
+    navigate('/');
+  };
+
   const hoverOn = idNav => {
     setNavId(idNav);
   };
@@ -90,6 +94,7 @@ const Nav = () => {
           <img
             onMouseEnter={logoToggle}
             onMouseLeave={logoToggle}
+            onClick={goToMain}
             className="navLogo"
             src={logo ? `/images/logo2.png` : `/images/logo1.png`}
             alt="logoImg"
