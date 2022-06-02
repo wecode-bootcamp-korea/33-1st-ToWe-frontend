@@ -24,7 +24,7 @@ const Login = () => {
         if (res.ok) {
           return res.json();
         } else {
-          alert('이메일과 비밀번호를 다시 한번 확인해주세요!');
+          alert('Please check your email and password again!');
         }
       })
       .then(result => {
