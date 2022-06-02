@@ -44,7 +44,7 @@ const MyPage = () => {
             </div>
           </div>
           <div className="profileImage">
-            <img src="/images/profile.jpg" alt="프로필사진" />
+            <img src="/images/profile.jpg" alt="profileimg" />
           </div>
           <div className="userInformation">
             <div className="userInfor">
@@ -92,6 +92,11 @@ const USER_INFORMATION = [
     id: 3,
     title: 'phone_number',
     name: 'phone_number',
+  },
+  {
+    id: 4,
+    title: 'point',
+    name: 'point',
   },
 ];
 
