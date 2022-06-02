@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ProductCategoryMap from './ProductCategoryMap.js';
 import './ProductCategory.scss';
 
-const ProductCategory = ({ onCategory }) => {
+const ProductCategory = ({ onCategory, title }) => {
   const [filterColor, setFilterColor] = useState(0);
 
   const filterColorClick = categoryFilter => {

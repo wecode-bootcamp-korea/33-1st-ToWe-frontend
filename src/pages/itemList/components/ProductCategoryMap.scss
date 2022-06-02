@@ -15,9 +15,9 @@
   .filterHover:hover {
     color: $darkGray;
 
-    .filterLine {
-      border-bottom: 2px solid black;
-    }
+    // .filterLine {
+    //   border-bottom: 2px solid black;
+    // }
 
     .filterLine {
       animation: 0.5s ease-in-out filterLine;

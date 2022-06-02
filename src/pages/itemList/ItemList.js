@@ -7,7 +7,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './ItemList.scss';
 
 const ItemList = () => {
-  const [category, setCategory] = useState('ALL');
   const [listItems, setListItems] = useState([]);
   const [sortColor, setSortColor] = useState('');
   const [query, setQuery] = useState(9);
@@ -30,6 +29,8 @@ const ItemList = () => {
         setListItems(data.results);
       });
   }, [location.search]);
+
+  let urlParams = new URLSearchParams(location.search);
 
   useEffect(() => {
     const queryString = `?${
@@ -63,7 +64,6 @@ const ItemList = () => {
     setFilterValue(prev => {
       return { ...prev, categoryValue: lowerValue };
     });
-    setCategory(name);
     setQuery(3);
     setSortColor('');
   };
@@ -96,9 +96,13 @@ const ItemList = () => {
     setSortColor(id);
   };
 
+  let title = urlParams.get('category');
+
   return (
     <div className="listContainer">
-      <div className="listTitle">{category}</div>
+      <div className="listTitle">{`${
+        title === null ? 'ALL' : title.toUpperCase()
+      }`}</div>
       <ProductCategory onCategory={onCategory} />
       <LitsFilter
         onSort={onSort}

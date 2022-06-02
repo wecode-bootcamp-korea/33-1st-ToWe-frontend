@@ -39,7 +39,7 @@ const ItemDetail = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${API.products}/${params.id}/review`)
+    fetch(`${API.products}/${params.id}/reviews`)
       .then(res => res.json())
       .then(data => setCommentsData(data.result));
   }, []);
