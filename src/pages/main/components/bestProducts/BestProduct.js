@@ -13,7 +13,7 @@ const BestProduct = ({ imgData, id }) => {
       <img
         alt={`${imgData.name}`}
         className="item"
-        src={isHover ? `${imgData.hoverUrl}` : `${imgData.url}`}
+        src={isHover ? `${imgData.hover_img}` : `${imgData.thumbnail_url}`}
         onClick={goToDetail}
         onMouseOver={() => setIsHover(1)}
         onMouseOut={() => setIsHover(0)}
