@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaAngleRight } from 'react-icons/fa';
 import BestProduct from './BestProduct';
 import './BestProducts.scss';
 
 const BestProducts = () => {
   const [imgList, setImgList] = useState([]);
+  const navigate = useNavigate();
+
+  const goToBest10 = () => {
+    navigate(`/best10`);
+  };
 
   useEffect(() => {
-    fetch('/data/BEST_PRODUCTS.json', {
+    fetch('http://10.58.3.254:8000/products?sort=best', {
       method: 'GET',
     })
       .then(res => res.json())
       .then(data => {
-        setImgList(data);
+        setImgList(data.results);
       });
   }, []);
 
@@ -27,7 +33,7 @@ const BestProducts = () => {
           ))}
         </ul>
       </div>
-      <div className="more">
+      <div className="more" onClick={goToBest10}>
         more <FaAngleRight className="arrowRightBtn" />
       </div>
       <div className="line" />
