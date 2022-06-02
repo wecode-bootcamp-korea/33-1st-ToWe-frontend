@@ -10,7 +10,7 @@ const Order = () => {
     fetch(`http://10.58.0.239:8000/carts`, {
       method: 'GET',
       headers: {
-        Authorization: `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MTM4MDQxfQ.KmzkrPUoXfMAmeYAsSsqv9UvzCLt6I397ifRsVj0U8g`,
+        Authorization: 'token',
       },
     })
       .then(res => res.json())
@@ -18,14 +18,6 @@ const Order = () => {
         setOrderList(result);
       });
   }, []);
-
-  // useEffect(() => {
-  //   fetch('/data/ORDER_LIST.json', { method: 'GET' }) // API
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setOrderList(data.result); // result 체크
-  //     });
-  // }, []);
 
   return (
     <section className="order">
