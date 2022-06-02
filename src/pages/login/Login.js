@@ -28,8 +28,8 @@ const Login = () => {
         }
       })
       .then(result => {
-        navigator('/main');
         localStorage.setItem('token', result.token);
+        navigator('/main');
       });
   };
 
