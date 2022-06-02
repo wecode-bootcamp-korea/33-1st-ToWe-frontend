@@ -16,7 +16,7 @@ const Best10 = () => {
   }, []);
 
   return (
-    <div className="listContainer">
+    <div className="best10">
       <div className="listTitle">Best 10</div>
       <ListItem listItems={listItems} />
     </div>
