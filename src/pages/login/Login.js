@@ -45,6 +45,10 @@ const Login = () => {
     setInputValue({ ...inputValue, [name]: value });
   };
 
+  const goToSignUp = () => {
+    navigator('/signup');
+  };
+
   return (
     <div className="login">
       <div className="loginWrapper">
@@ -92,7 +96,9 @@ const Login = () => {
                 </button>
               </div>
               <div className="btnWrapper">
-                <button className="signUpBtn">CREATE ACCOUNT</button>
+                <button className="signUpBtn" onClick={goToSignUp}>
+                  CREATE ACCOUNT
+                </button>
               </div>
             </div>
           </form>
