@@ -1,9 +1,7 @@
 @import '../../../../styles/variables.scss';
-$darkGray: #3a3a3a;
-$lightGray: #888888;
 
 .bestProducts {
-  margin-top: 1000px;
+  margin-top: 950px;
   @include flexCenter;
   flex-direction: column;
   padding: 0 3rem;
@@ -12,15 +10,15 @@ $lightGray: #888888;
   .title {
     margin: 10rem 0 3rem;
     color: $darkGray;
-    font-size: calc($largeFont) * 2.5;
+    font-size: 3rem;
     font-weight: 700;
-    font-family: $boldFont;
+    font-family: $regularFont;
   }
 
   .description {
     margin-bottom: 3.7rem;
-    font-size: calc($largeFont) * 1.15;
     color: $lightGray;
+    font-size: 1.6rem;
     text-align: center;
     line-height: 2.5rem;
     font-family: $regularFont;
@@ -81,14 +79,14 @@ $lightGray: #888888;
           span {
             &:first-child {
               margin: 1.25rem 0;
-              font-size: calc($smallFont) * 1.3;
-              font-family: 'Montserrat', sans-serif;
+              font-size: 1rem;
+              font-family: $regularFont;
             }
 
             &:last-child {
               color: $lightGray;
-              font-size: calc($smallFont) * 1.2;
-              font-family: 'Montserrat', sans-serif;
+              font-size: 1rem;
+              font-family: $regularFont;
             }
           }
         }
@@ -101,9 +99,9 @@ $lightGray: #888888;
     color: $darkGray;
     border: 3px solid $darkGray;
     border-radius: 1.5rem;
-    font-size: $smallFont;
+    font-size: 1rem;
     transition: all 0.3s;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $regularFont;
     cursor: pointer;
 
     &:hover {
@@ -117,11 +115,5 @@ $lightGray: #888888;
       right: 0.8rem;
       font-size: 1.1rem;
     }
-  }
-
-  .line {
-    margin: 5rem 0 0 0;
-    width: 100%;
-    border-bottom: 1px solid black;
   }
 }

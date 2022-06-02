@@ -1,0 +1,76 @@
+.itemComponent {
+  .mapWrapper {
+    .itemListWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      .itemInfoDiv {
+        display: flex;
+        width: 66%;
+        .img {
+          width: 5.188rem;
+          height: 5.188rem;
+          background-color: skyblue;
+        }
+        .productInfo {
+          padding-left: 5%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          .productTitle {
+          }
+          .deleteBtnDiv {
+            margin-top: 0.75rem;
+          }
+        }
+      }
+    }
+    .itemQuantityDiv {
+      width: 19%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .itemQuantity {
+        width: 12.125rem;
+        height: 2.313rem;
+        display: flex;
+        justify-content: center;
+        .decreaseBtn {
+          width: 2.5rem;
+          height: 2.5rem;
+          border: 0.063rem solid black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .amountBox {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-top: 0.063rem solid black;
+          border-bottom: 0.063rem solid black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .increaseBtn {
+          width: 2.5rem;
+          height: 2.5rem;
+          border: 0.063rem solid black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .itemPriceDiv {
+      width: 15%;
+      font-size: 0.875rem;
+      text-align: center;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

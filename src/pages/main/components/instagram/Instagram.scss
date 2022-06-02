@@ -1,25 +1,24 @@
 @import '../../../../styles/variables.scss';
 
-$darkGray: #3a3a3a;
-$lightGray: #888888;
-
 .instagram {
   @include flexCenter;
   flex-direction: column;
   padding: 0 3rem;
   max-width: 1500px;
+  transform: translateY(-3rem);
 
   .title {
     margin: 10rem 0 3rem;
     color: $darkGray;
-    font-size: calc($largeFont) * 2.5;
-    font-family: $boldFont;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: $regularFont;
   }
 
   .description {
     margin-bottom: 3.7rem;
     color: $lightGray;
-    font-size: calc($largeFont) * 1.15;
+    font-size: 1.6rem;
     text-align: center;
     line-height: 2.5rem;
     padding: 0 3.125rem;
@@ -69,5 +68,20 @@ $lightGray: #888888;
 
   .space {
     margin-bottom: 10rem;
+  }
+
+  &.active {
+    animation: fadein 2s ease-out;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-3rem);
+    }
   }
 }

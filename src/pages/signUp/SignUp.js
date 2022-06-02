@@ -3,7 +3,7 @@ import './SignUp.scss';
 import SignUpComponent from './component/SignUpComponent';
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const signUp = () => {
   const [inputValue, setInputValue] = useState({
     email: '',
     name: '',
@@ -107,7 +107,7 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default signUp;
 
 const INPUT = [
   {
