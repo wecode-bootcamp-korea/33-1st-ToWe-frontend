@@ -1,8 +1,9 @@
 import React from 'react';
+import './Review.scss';
 
 const Review = ({ contents }) => {
   const { product_name, content, created_at } = contents;
-  console.log('review-----------------');
+
   return (
     <div className="Review">
       <span className="nameContent">

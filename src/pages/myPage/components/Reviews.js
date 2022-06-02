@@ -2,10 +2,8 @@ import React from 'react';
 import Review from './Review';
 import './Reviews.scss';
 
-const Reviews = ({ userData }) => {
-  const { reviews } = userData;
-  console.log('reviews-----------------');
-  console.log(reviews);
+const Reviews = ({ user }) => {
+  const { reviews } = user;
 
   return (
     <div className="Reviews">

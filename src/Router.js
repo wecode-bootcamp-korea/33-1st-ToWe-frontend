@@ -30,6 +30,7 @@ function Router() {
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/order" element={<Order />} />
         <Route path="/best10" element={<Best10 />} />
+        <Route path="*" element={<Main />} />
       </Routes>
       <Footer />
     </BrowserRouter>

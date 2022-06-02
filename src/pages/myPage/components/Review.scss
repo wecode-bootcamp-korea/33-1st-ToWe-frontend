@@ -1,12 +1,23 @@
 .Review {
   display: flex;
   justify-content: space-between;
+  padding: 1.5rem 0 1.5rem 0;
+  border-bottom: 0.125rem solid black;
+
   .nameContent {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
     .name {
+      padding-right: 0.5rem;
+      border-right: 0.125rem solid blueviolet;
     }
     .content {
+      padding-left: 0.5rem;
     }
   }
   .data {
+    font-size: 0.8rem;
+    font-weight: bold;
   }
 }

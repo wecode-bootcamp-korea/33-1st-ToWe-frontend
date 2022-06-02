@@ -27,54 +27,46 @@ const MyPage = () => {
   }, []);
 
   return (
-    <>
-      {userData.name && (
-        <div className="MyPage">
-          <div className="myPageContainer">
-            <div className="userActivity">
-              <Reviews userData={userData} />
-              {NOTHING_ACTIVITY.map(activity => (
-                <NotActivity activity={activity} key={activity.id} />
-              ))}
-            </div>
-            <div className="profile">
-              <div className="profileTitle">
-                <div className="title">회원정보</div>
-                <div className="logOut" onClick={logOut}>
-                  로그아웃
-                </div>
-              </div>
-              <div className="profileImage">
-                <img src="/images/profile.jpg" alt="프로필사진" />
-              </div>
-              <div className="userInformation">
-                <div className="userInfor">
-                  <div className="contentBox">
-                    {userData &&
-                      USER_INFORMATION.map(data => (
-                        <Input
-                          key={data.id}
-                          userData={data}
-                          inputData={userData}
-                        />
-                      ))}
-                  </div>
-                  <div className="agree">
-                    마케팅 정보 수신 동의
-                    <div className="checkBox">
-                      <input type="checkBox" className="email" /> 이메일
-                      <input type="checkBox" className="message" /> 문자 메시지
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button className="exit">탈퇴하기</button>
-              <button className="save">변경 사항 저장하기</button>
+    <div className="MyPage">
+      <div className="myPageContainer">
+        <div className="userActivity">
+          <Reviews user={user} />
+          {NOTHING_ACTIVITY.map(activity => (
+            <NotActivity activity={activity} key={activity.id} />
+          ))}
+        </div>
+        <div className="profile">
+          <div className="profileTitle">
+            <div className="title">회원정보</div>
+            <div className="logOut" onClick={logOut}>
+              로그아웃
             </div>
           </div>
+          <div className="profileImage">
+            <img src="/images/profile.jpg" alt="프로필사진" />
+          </div>
+          <div className="userInformation">
+            <div className="userInfor">
+              <div className="contentBox">
+                {userData &&
+                  USER_INFORMATION.map(data => (
+                    <Input key={data.id} userData={data} inputData={userData} />
+                  ))}
+              </div>
+              <div className="agree">
+                마케팅 정보 수신 동의
+                <div className="checkBox">
+                  <input type="checkBox" className="email" /> 이메일
+                  <input type="checkBox" className="message" /> 문자 메시지
+                </div>
+              </div>
+            </div>
+          </div>
+          <button className="exit">탈퇴하기</button>
+          <button className="save">변경 사항 저장하기</button>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 };
 
