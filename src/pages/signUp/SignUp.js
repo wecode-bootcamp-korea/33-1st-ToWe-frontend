@@ -47,7 +47,7 @@ const SignUp = () => {
       })
       .then(result => {
         navigator('/login');
-        // localStorage.setItem('TOKEN', result.access_token);
+        // localStorage.setItem('token', result.access_token);
       });
   };
 
