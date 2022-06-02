@@ -5,7 +5,6 @@ import LitsFilter from './components/ListFilter.js';
 import API from '../../config.js';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ItemList.scss';
-import { clearConfigCache } from 'prettier';
 
 const ItemList = () => {
   const [category, setCategory] = useState('ALL');
@@ -33,36 +32,18 @@ const ItemList = () => {
   }, [location.search]);
 
   useEffect(() => {
-    const queryString1 = filterValue.categoryValue
-      ? `${
-          filterValue.categoryValue === `all`
-            ? ''
-            : `category=${filterValue.categoryValue}`
-        }`
-      : '';
-
-    const queryString2 = filterValue.sortValue
-      ? `&sort=${filterValue.sortValue}`
-      : '';
-
-    const queryString3 = filterValue.offValue ? `${filterValue.offValue}` : '';
-
-    //     `?${
-    //       filterValue.categoryValue
-    //         ? `${
-    //             filterValue.categoryValue === `all`
-    //               ? ''
-    //               : `category=${filterValue.categoryValue}`
-    //           }`
-    //         : ''
-    //     }
-    // ${filterValue.sortValue ? `&sort=${filterValue.sortValue}` : ''}${
-    //       filterValue.offValue ? `${filterValue.offValue}` : ''
-    //     }`;
-    const arr = [queryString1, queryString2, queryString3];
-    const queryArr = arr.join('&');
-    console.log(queryArr);
-    navigate(queryArr);
+    const queryString = `?${
+      filterValue.categoryValue
+        ? `${
+            filterValue.categoryValue === `all`
+              ? ''
+              : `category=${filterValue.categoryValue}`
+          }`
+        : ''
+    }${filterValue.sortValue ? `&sort=${filterValue.sortValue}` : ''}${
+      filterValue.offValue ? `${filterValue.offValue}` : ''
+    }`;
+    navigate(queryString);
   }, [filterValue]);
 
   const onCategory = name => {
@@ -85,7 +66,7 @@ const ItemList = () => {
     setQuery(query => query + 3);
     const limit = query;
     const offset = 0;
-    const queryString = `offset=${offset}&limit=${limit}`;
+    const queryString = `&offset=${offset}&limit=${limit}`;
     setFilterValue(prev => {
       return { ...prev, offValue: queryString };
     });
