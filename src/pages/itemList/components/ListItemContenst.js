@@ -30,19 +30,12 @@ const ListItemContenst = ({
   };
 
   return (
-    <div
-      className="listItems"
-      onMouseOver={mouseOver}
-      onMouseOut={mouseOut}
-      onClick={goToDetail}
-    >
+    <div className="listItems" onMouseOver={mouseOver} onMouseOut={mouseOut}>
       <img
         className={changeImg ? `listItemsImg` : `listItemsImg2`}
         alt="Items"
         src={changeImg ? itemImg : hoverImg}
-        onClick={() => {
-          categoryPage(name);
-        }}
+        onClick={goToDetail}
       />
       {like ? (
         <FaHeart onClick={() => onLike(id)} className="likeIcon" />
@@ -55,8 +48,12 @@ const ListItemContenst = ({
         />
       )}
       <div className="likeBack" />
-      <p className="listItemName">{name}</p>
-      <p className="listItemPrice">{price}₩</p>
+      <p onClick={goToDetail} className="listItemName">
+        {name}
+      </p>
+      <p onClick={goToDetail} className="listItemPrice">
+        {price}₩
+      </p>
     </div>
   );
 };

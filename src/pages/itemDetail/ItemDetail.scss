@@ -1,2 +1,521 @@
-* {
+$darkGray: #3a3a3a;
+$lightGray: #adadad;
+$gray: #7c7c7c;
+
+@mixin flexCenterSort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hoverBlack {
+  background-color: $darkGray;
+  color: white;
+}
+
+@mixin buttonSize {
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.itemDetail {
+  width: 88%;
+  margin: auto;
+  @include flexCenterSort();
+  flex-direction: column;
+
+  .topInfo {
+    margin-top: 80px; // <Nav />랑 떨어트리기 위한 margin-top
+    width: 100%;
+    display: flex;
+    // border: 11px solid black;
+    flex-flow: wrap;
+
+    .prodPic {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      margin-top: 4rem;
+
+      .mainPic {
+        cursor: pointer;
+        img {
+          width: 28.125rem;
+          height: 28.125rem;
+        }
+      }
+
+      .smallPics {
+        display: flex;
+        margin: 1rem;
+        justify-content: space-around;
+        .smallPic {
+          margin-right: 1rem;
+          cursor: pointer;
+          img {
+            width: 6.25rem;
+            height: 6.25rem;
+          }
+        }
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-top: 4rem;
+
+      h1 {
+        margin: 1rem;
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      .price {
+        margin: 2.5rem 1rem;
+        font-size: 1.4rem;
+      }
+
+      .extraInfo {
+        margin: 1rem;
+        font-size: 0.9rem;
+        display: flex;
+
+        .extraInfoTitle {
+          font-weight: bold;
+          width: 6rem;
+        }
+      }
+
+      // 추가부분
+      .colorSelect {
+        display: flex;
+        flex-direction: column;
+        margin: 3rem 1rem;
+
+        .colorText {
+          font-size: 0.9rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .colorOptions {
+          .optionShown {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid $darkGray;
+            width: 8rem;
+            font-size: 0.9rem;
+            padding: 0.75rem 0.85rem;
+            cursor: pointer;
+          }
+          .options {
+            border: 1px solid $darkGray;
+            font-size: 0.9rem;
+            width: 16rem;
+            cursor: pointer;
+
+            div {
+              padding: 1rem 0;
+              padding-left: 0.75rem;
+            }
+          }
+
+          .disappear {
+            display: none;
+          }
+        }
+      }
+
+      //여기까지
+      .totalBuyNum {
+        .prodBuyNum {
+          margin: 1rem;
+          border-top: 1px solid $darkGray;
+          display: flex;
+          flex-direction: column;
+
+          .prodNameX {
+            margin-top: 3rem;
+            margin-bottom: 0.7rem;
+            display: flex;
+            justify-content: space-between;
+
+            .xIcon {
+              cursor: pointer;
+            }
+          }
+
+          .calculator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .numButton {
+              display: flex;
+
+              .minus {
+                width: 2rem;
+                height: 2rem;
+                @include flexCenterSort();
+                border: 1px solid $darkGray;
+                border-right: 0px;
+                cursor: pointer;
+              }
+
+              .number {
+                width: 2rem;
+                height: 2rem;
+                @include flexCenterSort();
+                border: 1px solid $darkGray;
+                border-right: 0px;
+              }
+
+              .plus {
+                width: 2rem;
+                height: 2rem;
+                @include flexCenterSort();
+                border: 1px solid $darkGray;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .endOrder {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid $darkGray;
+        margin: 1rem;
+        padding-top: 3rem;
+        font-size: 0.8rem;
+        font-weight: bolder;
+
+        .orderNumberPart {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+        }
+
+        .totalAmountPart {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .buyCartButtons {
+        margin: 1rem;
+        margin-top: 2rem;
+
+        .buyButton {
+          border-radius: 2rem;
+          padding: 1rem 3rem;
+          margin-right: 1rem;
+          cursor: pointer;
+
+          &:hover {
+            @include hoverBlack();
+          }
+        }
+
+        .cartButton {
+          border-radius: 2rem;
+          padding: 1rem 2rem;
+          cursor: pointer;
+
+          &:hover {
+            @include hoverBlack();
+          }
+        }
+      }
+    }
+  }
+
+  .midNavBar {
+    @include flexCenterSort();
+    border-bottom: 1px solid $darkGray;
+    width: 40%;
+    min-width: 29.5rem;
+    margin: 5rem auto;
+    padding-bottom: 1rem;
+    text-align: center;
+    text-decoration: none;
+
+    a {
+      text-decoration: none;
+      color: $darkGray;
+      margin: 0 2rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .prodDescReviewQuestion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 55rem;
+    // border: 1px solid $darkGray;
+
+    #prodDesc {
+      margin: 4rem;
+    }
+
+    #reviews {
+      margin: 4rem auto;
+      width: 50%;
+
+      .reviewTitle {
+        padding: 2rem 0 1.5rem;
+        border-bottom: 1px solid $darkGray;
+        display: flex;
+        flex-direction: column;
+
+        .reviewText {
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+
+        .reviewWritingArea {
+          border: 1px solid $darkGray;
+          margin: 1rem 0;
+
+          .closeReviewWriting {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0.3rem;
+            .xButton {
+              cursor: pointer;
+            }
+          }
+          textarea {
+            width: 100%;
+            height: 15rem;
+            padding: 1rem;
+            border: none;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .reviewWritingAreaBottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+            .reviewPicUpdate {
+              margin-left: 1rem;
+              font-size: 2rem;
+              border: 1px solid $darkGray;
+              border-radius: 50%;
+              padding: 1rem;
+              cursor: pointer;
+
+              label {
+                cursor: pointer;
+              }
+              input {
+                cursor: pointer;
+                display: none;
+              }
+            }
+
+            .rateAndButton {
+              select {
+                padding: 1rem;
+              }
+
+              .reviewButton {
+                border-radius: 2rem;
+                padding: 1rem 3rem;
+                margin: 0 1rem;
+                cursor: pointer;
+
+                &:hover {
+                  @include hoverBlack();
+                }
+              }
+            }
+          }
+        }
+
+        .closed {
+          display: none;
+        }
+
+        .reviewBottom {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          margin-top: 0.3rem;
+
+          .reviewRateNumber {
+            display: flex;
+            align-items: flex-end;
+
+            .reviewRate {
+              font-size: 1.5rem;
+              margin-right: 0.4rem;
+            }
+
+            .reviewNumber {
+              font-weight: normal;
+              font-size: 0.8rem;
+            }
+          }
+
+          .selectPictureReviewOnly {
+            display: flex;
+            align-items: flex-end;
+            font-size: 0.7rem;
+
+            .selectPictureReviewOnlyInput {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .reviewCommentsList {
+        .review {
+          padding: 2rem 0;
+          border-bottom: 1px solid $darkGray;
+        }
+      }
+
+      .reviewButtonDiv {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: flex-end;
+
+        .reviewButton {
+          border-radius: 1.5rem;
+          border: 0.1rem solid $darkGray;
+          padding: 1rem 1.5rem;
+          cursor: pointer;
+          &:hover {
+            @include hoverBlack();
+          }
+        }
+      }
+
+      .pageNumber {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+
+        .pagenationNo {
+          margin: 0 0.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+
+    #question {
+      width: 50%;
+      margin: 6rem 0;
+
+      .questionText {
+        display: flex;
+        justify-content: flex-start;
+        font-weight: bold;
+      }
+
+      .questionInfo {
+        display: flex;
+        margin-top: 1.5rem;
+        padding: 0 0 1rem;
+        border-bottom: 1px solid $darkGray;
+
+        .questionNumber {
+          display: flex;
+          justify-content: center;
+          flex: 1;
+        }
+
+        .questionTitle {
+          display: flex;
+          justify-content: center;
+          flex: 5;
+        }
+
+        .questionWriter {
+          flex: 2;
+          display: flex;
+          justify-content: center;
+        }
+
+        .questionDate {
+          flex: 2;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .questionsList {
+        .questionInfo {
+          display: flex;
+          border-bottom: 1px solid $darkGray;
+          padding: 1rem 0;
+          .questionNumber {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+          }
+
+          .questionTitle {
+            display: flex;
+            justify-content: center;
+            flex: 5;
+          }
+
+          .questionWriter {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+          }
+
+          .questionDate {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+
+      .addQuestion {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 1rem;
+
+        button {
+          padding: 0.8rem 1.6rem;
+          border-radius: 1.4rem;
+          border: 0.1rem solid $darkGray;
+          cursor: pointer;
+          &:hover {
+            @include hoverBlack();
+          }
+        }
+      }
+
+      .pageNumber {
+        margin-top: 2rem;
+        padding-bottom: 5rem;
+        display: flex;
+        justify-content: center;
+
+        .pagenationNo {
+          margin: 0 0.5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
