@@ -19,8 +19,7 @@ const MyPage = () => {
     fetch('http://10.58.3.40:8000/users/detail', {
       method: 'GET',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNjU0NDAyMzE1fQ.zn-a-azLigTOtrzMUbExaZr8BH06KgXiYxxXDjq0W5s',
+        Authorization: 'token',
       },
     })
       .then(res => res.json())
