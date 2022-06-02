@@ -1,0 +1,20 @@
+[
+  {
+    "cart_id": 1,
+    "product_name": "조장랑 스마트톡",
+    "quantity": 1,
+    "price": 15000
+  },
+  {
+    "cart_id": 2,
+    "product_name": "태극랑 에어팟3 케이스",
+    "quantity": 1,
+    "price": 15000
+  },
+  {
+    "cart_id": 3,
+    "product_name": "태극랑 케이스",
+    "quantity": 1,
+    "price": 30000
+  }
+]
