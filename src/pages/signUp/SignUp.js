@@ -14,20 +14,13 @@ const SignUp = () => {
   });
 
   const { email, name, pw1, pw2, address, phone } = inputValue;
+  const navigator = useNavigate();
 
   const handleInput = e => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
   };
 
-  // 이메일, 비밀번호, 비밀번호 확인,
-  // const emailCheck = email => {
-  //   if (email === '') {
-  //     alert('이메일을 입력해주세요.');
-  //   }
-  // };
-
-  // 여기는 백엔드 통신
   const GoSignUp = () => {
     fetch('http://10.58.5.168:8000/users/signup', {
       method: 'POST',
