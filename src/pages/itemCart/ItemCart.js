@@ -20,9 +20,6 @@ const ItemCart = () => {
   }, []);
   const [listValue, setListValue] = useState([]);
 
-  // http://10.58.0.239:8000/carts
-  // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNjU0MTM4MDQxfQ.KmzkrPUoXfMAmeYAsSsqv9UvzCLt6I397ifRsVj0U8g
-  console.log(listValue);
   const sum = listValue.reduce(
     (acc, cur) => acc + Number(cur.price) * cur.quantity,
     0
@@ -60,8 +57,6 @@ const ItemCart = () => {
   };
 
   //삭제기능
-  // useEffect(id => {}, []);
-
   const onRemove = id => {
     let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
     setListValue(listRemove);
@@ -76,8 +71,6 @@ const ItemCart = () => {
       }),
     }).then(res => res.json());
   };
-
-  // 장바구니가 비어있습니다.
 
   // const OrderInput = listValue => {
   //   fetch('http://', {
@@ -99,17 +92,7 @@ const ItemCart = () => {
   // };
   // let token = localStorage.getItem('TOKEN') || '';
 
-  // 장바구니가 비어있으면
-  // 장바구니가 비어있습니다 페이지 뜨게 하기
-
   const itemEmpty = listValue.length === 0;
-  // const emptyCart = () => {
-  //   if (listValue.length === 0) {
-  //     <EmptyItem />;
-  //   } else {
-  //     <ItemComponent />;
-  //   }
-  // };
 
   // 장바구니 합계 가격
   const totalPrice = sum => {
@@ -119,10 +102,6 @@ const ItemCart = () => {
       return sum + 3000;
     }
   };
-  // 상품의 총 합이 5만원 이상이면 배송미 무료해야해
-  // 근데 로직을 어떻게 짜야할까?
-  // 일단 함수를 만들어.
-  // const totalPrice = () => {};
 
   return (
     <div className="itemCart">
@@ -158,7 +137,7 @@ const ItemCart = () => {
                 </div>
                 <div className="cartListDeliveryInfo">
                   <div className="deliveryInfo">
-                    <p>3000원</p>
+                    <p>3,000원</p>
                     <span>50,000원 이상 구매 시 무료</span>
                   </div>
                 </div>
@@ -168,22 +147,28 @@ const ItemCart = () => {
               <div className="cartPriceInfo">
                 <div className="priceDetail">
                   <div className="productPriceTotal">
-                    <div className="productPriceTitle">상품 합계</div>
-                    <div className="productPrice">
-                      {sum.toLocaleString()} 원
+                    <div className="textRight">
+                      <div className="productPriceTitle">상품 합계</div>
+                      <div className="productPrice">
+                        {sum.toLocaleString()} 원
+                      </div>
                     </div>
                   </div>
                   <div className="deliveryPriceTotal">
-                    <div className="deliveryPriceTitle">배송비</div>
-                    <div className="deliveryPrice">
-                      {sum > 50000 ? '0' : '3000'}원
+                    <div className="textRight">
+                      <div className="deliveryPriceTitle">배송비</div>
+                      <div className="deliveryPrice">
+                        {sum > 50000 ? '무료' : '3,000 원'}
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="totalPriceDiv">
-                  <div className="totalPriceTitle">합계</div>
-                  <div className="totalPrice">
-                    {totalPrice(sum).toLocaleString()} 원
+                  <div className="textRight">
+                    <div className="totalPriceTitle">합계</div>
+                    <div className="totalPrice">
+                      {totalPrice(sum).toLocaleString()} 원
+                    </div>
                   </div>
                 </div>
               </div>
