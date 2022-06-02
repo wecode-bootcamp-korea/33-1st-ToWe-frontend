@@ -4,8 +4,6 @@ import './Reviews.scss';
 
 const Reviews = ({ user }) => {
   const { reviews } = user;
-  console.log(reviews);
-  console.log(user);
 
   return (
     <div className="Reviews">

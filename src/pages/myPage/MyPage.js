@@ -106,7 +106,7 @@ const NOTHING_ACTIVITY = [
   },
   {
     id: 2,
-    content: '문의 사항',
+    content: 'Questions',
   },
   {
     id: 3,
