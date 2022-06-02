@@ -16,14 +16,15 @@ const MyPage = () => {
   };
 
   useEffect(() => {
-    fetch('/data/USER.json', {
+    fetch('http://10.58.3.40:8000/users/detail', {
       method: 'GET',
       headers: {
-        Authorization: 'token',
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNjU0NDAyMzE1fQ.zn-a-azLigTOtrzMUbExaZr8BH06KgXiYxxXDjq0W5s',
       },
     })
       .then(res => res.json())
-      .then(result => setUserData(result));
+      .then(result => setUserData(result.result));
   }, []);
 
   return (
@@ -37,9 +38,9 @@ const MyPage = () => {
         </div>
         <div className="profile">
           <div className="profileTitle">
-            <div className="title">회원정보</div>
+            <div className="title">User Information</div>
             <div className="logOut" onClick={logOut}>
-              로그아웃
+              Logout
             </div>
           </div>
           <div className="profileImage">
@@ -48,22 +49,21 @@ const MyPage = () => {
           <div className="userInformation">
             <div className="userInfor">
               <div className="contentBox">
-                {userData &&
-                  USER_INFORMATION.map(data => (
-                    <Input key={data.id} userData={data} inputData={userData} />
-                  ))}
+                {USER_INFORMATION.map(data => (
+                  <Input key={data.id} userData={data} inputData={userData} />
+                ))}
               </div>
               <div className="agree">
-                마케팅 정보 수신 동의
+                Agree to receive marketing information
                 <div className="checkBox">
-                  <input type="checkBox" className="email" /> 이메일
-                  <input type="checkBox" className="message" /> 문자 메시지
+                  <input type="checkBox" className="email" /> email
+                  <input type="checkBox" className="message" /> message
                 </div>
               </div>
             </div>
           </div>
-          <button className="exit">탈퇴하기</button>
-          <button className="save">변경 사항 저장하기</button>
+          <button className="exit">Account withdrawal</button>
+          <button className="save">To save your changes</button>
         </div>
       </div>
     </div>
@@ -98,11 +98,11 @@ const USER_INFORMATION = [
 const NOTHING_ACTIVITY = [
   {
     id: 0,
-    content: 'coupon',
+    content: 'coupons',
   },
   {
     id: 1,
-    content: '재입고 알림 내역',
+    content: 'Restocking Notification breakdowns',
   },
   {
     id: 2,
@@ -110,6 +110,6 @@ const NOTHING_ACTIVITY = [
   },
   {
     id: 3,
-    content: '주문 내역',
+    content: 'Order Historys',
   },
 ];

@@ -8,7 +8,7 @@ const Input = ({ userData, inputData }) => {
       <span className="inputTitle">{title}</span>
       <input
         className="userInforInputBox"
-        defaultValue={inputData ? inputData?.result[name] : ''}
+        defaultValue={inputData ? inputData?.[name] : ''}
       />
     </div>
   );

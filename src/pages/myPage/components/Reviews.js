@@ -7,7 +7,7 @@ const Reviews = ({ user }) => {
 
   return (
     <div className="Reviews">
-      <div className="myEssay">내가 쓴글</div>
+      <div className="myEssay">My reviews</div>
       <div className="reviewContents">
         {reviews &&
           reviews.map(contents => (

@@ -6,11 +6,11 @@ const Review = ({ contents }) => {
 
   return (
     <div className="Review">
-      <span className="nameContent">
-        <span className="name">{product_name}</span>
-        <span className="content">{content}</span>
-      </span>
-      <span className="date">{created_at}</span>
+      <div className="nameContent">
+        <div className="name">{product_name}</div>
+        <div className="content">{content}</div>
+      </div>
+      <div className="date">{created_at}</div>
     </div>
   );
 };
