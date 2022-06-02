@@ -6,7 +6,7 @@ const Reviews = ({ user }) => {
   const { reviews } = user;
 
   return (
-    <div className="Reviews">
+    <div className="reviews">
       <div className="myEssay">My reviews</div>
       <div className="reviewContents">
         {reviews &&

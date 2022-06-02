@@ -5,7 +5,7 @@ const Review = ({ contents }) => {
   const { product_name, content, created_at } = contents;
 
   return (
-    <div className="Review">
+    <div className="review">
       <div className="nameContent">
         <div className="name">{product_name}</div>
         <div className="content">{content}</div>

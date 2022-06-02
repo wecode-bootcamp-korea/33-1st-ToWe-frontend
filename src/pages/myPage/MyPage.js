@@ -27,7 +27,7 @@ const MyPage = () => {
   }, []);
 
   return (
-    <div className="MyPage">
+    <div className="myPage">
       <div className="myPageContainer">
         <div className="userActivity">
           <Reviews user={userData} />

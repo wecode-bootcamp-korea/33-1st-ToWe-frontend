@@ -4,7 +4,7 @@ import './Input.scss';
 const Input = ({ userData, inputData }) => {
   const { name, title } = userData;
   return (
-    <div className="Input">
+    <div className="input">
       <span className="inputTitle">{title}</span>
       <input
         className="userInforInputBox"
