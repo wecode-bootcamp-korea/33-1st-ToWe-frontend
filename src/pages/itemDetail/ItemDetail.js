@@ -23,16 +23,14 @@ const ItemDetail = () => {
   const [comment, setComment] = useState('');
   const productID = data.results && data.results.product_id;
 
-  const colorID =
-    prodBuy[0] === '기본'
-      ? 1
-      : prodBuy[0] === 'white'
-      ? 2
-      : prodBuy[0] === 'black'
-      ? 3
-      : prodBuy[0] === 'red'
-      ? 4
-      : 5;
+  const cartBag = [];
+  for (let i = 0; i < prodBuy.length; i++) {
+    cartBag.push({
+      product_id: data.results.product_id,
+      color_id: prodBuy[i],
+      quantity: prodCount[i],
+    });
+  }
 
   useEffect(() => {
     fetch(`${API.products}/${params.id}`)
@@ -52,11 +50,7 @@ const ItemDetail = () => {
       headers: {
         Authorization: localStorage.getItem('token'),
       },
-      body: JSON.stringify({
-        product_id: productID, // data.results.product_id 도 시도해보기
-        color_id: colorID,
-        quantity: totalProdNum,
-      }),
+      body: JSON.stringify(cartBag),
     })
       .then(res => res.json())
       .then(() => {
@@ -167,9 +161,9 @@ const ItemDetail = () => {
                               showSwitchClick();
                               setColor(a.color);
                               setProdBuy(
-                                prodBuy.includes(a.color)
+                                prodBuy.includes(a.color_id)
                                   ? prodBuy
-                                  : prodBuy.concat([a.color])
+                                  : prodBuy.concat([a.color_id])
                               );
                               setProdCount(prodCount.concat([1]));
                             }}
@@ -183,9 +177,9 @@ const ItemDetail = () => {
                               showSwitchClick();
                               setColor('기본');
                               setProdBuy(
-                                prodBuy.includes('기본')
+                                prodBuy.includes(a.color_id)
                                   ? prodBuy
-                                  : prodBuy.concat(['기본'])
+                                  : prodBuy.concat([a.color_id])
                               );
                               setProdCount(prodCount.concat([1]));
                             }}
@@ -199,14 +193,16 @@ const ItemDetail = () => {
               </div>
 
               <div className="totalBuyNum">
-                {prodBuy.map((prodColor, index) => {
+                {prodBuy.map((a, index) => {
                   return (
                     <div key={index} className="prodBuyNum">
                       <div className="prodNameX">
                         <span>
-                          {data.results.name + ' (' + prodColor + ')'}
+                          {data.results.name +
+                            ' (' +
+                            data.results.colors[a - 2].color +
+                            ')'}
                         </span>
-
                         <span
                           className="xIcon"
                           onClick={() => {
