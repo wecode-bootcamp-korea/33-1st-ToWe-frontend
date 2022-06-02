@@ -46,7 +46,7 @@ const Login = () => {
   };
 
   return (
-    <div className="Login">
+    <div className="login">
       <div className="loginWrapper">
         <div className="loginField">
           <div className="loginHeader">
