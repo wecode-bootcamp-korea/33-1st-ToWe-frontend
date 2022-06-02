@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaAngleRight } from 'react-icons/fa';
 import CollaboItems from './CollaboItems';
 import './Collaboration.scss';
 
