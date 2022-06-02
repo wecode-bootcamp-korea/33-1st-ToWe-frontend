@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaAngleRight } from 'react-icons/fa';
 import BestProduct from './BestProduct';
+import API from '../../../../config';
 import './BestProducts.scss';
 
 const BestProducts = () => {
@@ -13,7 +14,7 @@ const BestProducts = () => {
   };
 
   useEffect(() => {
-    fetch('http://10.58.3.254:8000/products?sort=best', {
+    fetch(`${API.products}?sort=best`, {
       method: 'GET',
     })
       .then(res => res.json())

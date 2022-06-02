@@ -1,12 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const CarouselImg = ({ imgData, currentImage }) => {
-  const navigate = useNavigate();
-  const goToDetail = () => {
-    navigate(`/itemdetail/${imgData.id}`);
-  };
-
   useEffect(() => {
     carousellRef.current.style['z-index'] = '1';
   }, []);
@@ -23,7 +17,6 @@ const CarouselImg = ({ imgData, currentImage }) => {
         src={`${imgData.url}`}
         alt="mainToyImg"
         className="active"
-        onClick={goToDetail}
         ref={carousellRef}
       />
     </div>

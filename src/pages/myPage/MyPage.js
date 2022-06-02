@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import NotActivity from './components/NotActivity.js';
 import Input from './components/Input.js';
 import Reviews from './components/Reviews.js';
+import API from '../../config.js';
 import './MyPage.scss';
 
 const MyPage = () => {
@@ -16,10 +17,10 @@ const MyPage = () => {
   };
 
   useEffect(() => {
-    fetch('http://10.58.3.40:8000/users/detail', {
+    fetch(`${API.users}/detail`, {
       method: 'GET',
       headers: {
-        Authorization: 'token',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then(res => res.json())

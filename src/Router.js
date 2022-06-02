@@ -20,14 +20,13 @@ function Router() {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/itemcart" element={<ItemCart />} />
+        <Route path="/carts" element={<ItemCart />} />
         <Route path="/itemdetail/:id" element={<ItemDetail />} />
         <Route path="/itemlist" element={<ItemList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/board" element={<Board />} />
-        <Route path="/mypage" element={<MyPage />} />
         <Route path="/order" element={<Order />} />
         <Route path="/best10" element={<Best10 />} />
         <Route path="*" element={<Main />} />

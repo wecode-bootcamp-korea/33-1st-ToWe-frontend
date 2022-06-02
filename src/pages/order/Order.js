@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa';
-import './Order.scss';
 import OrderList from './OrderList';
+import API from '../../config';
+import './Order.scss';
 
 const Order = () => {
   const [orderList, setOrderList] = useState([]);
 
   useEffect(() => {
-    fetch(`http://10.58.0.239:8000/carts`, {
+    fetch(`${API.carts}`, {
       method: 'GET',
       headers: {
-        Authorization: 'token',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then(res => res.json())

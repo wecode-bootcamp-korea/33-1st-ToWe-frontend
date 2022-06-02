@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../components/nav/Nav';
+import API from '../../config';
+import { useParams } from 'react-router-dom';
 import './ItemDetail.scss';
 import {
   AiOutlineMinus,
@@ -10,6 +12,7 @@ import {
 } from 'react-icons/ai';
 
 const ItemDetail = () => {
+  const params = useParams();
   const [data, setData] = useState({});
   const [commentsData, setCommentsData] = useState([]);
   const [prodCount, setProdCount] = useState([]);
@@ -18,28 +21,40 @@ const ItemDetail = () => {
   const [color, setColor] = useState('선택하세요.');
   const [mainImgURL, setMainImgURL] = useState('');
   const [comment, setComment] = useState('');
+  const productID = data.results && data.results.product_id;
+
+  const colorID =
+    prodBuy[0] === '기본'
+      ? 1
+      : prodBuy[0] === 'white'
+      ? 2
+      : prodBuy[0] === 'black'
+      ? 3
+      : prodBuy[0] === 'red'
+      ? 4
+      : 5;
+
   useEffect(() => {
-    fetch('/data/commentData.json')
+    fetch(`${API.products}/${params.id}`)
       .then(res => res.json())
       .then(data => setData(data));
   }, []);
 
   useEffect(() => {
-    fetch('/data/reviewData.json')
+    fetch(`${API.products}/${params.id}/review`)
       .then(res => res.json())
       .then(data => setCommentsData(data.result));
   }, []);
 
   const postHandler = () => {
-    fetch('http://10.58.3.40:8000/carts', {
+    fetch(`${API.carts}`, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OSwiZXhwIjoxNjU0NDAyNTY3fQ.z2-kwQdoKaEJsR9JPfNriQcOmUX66gDyC9v7SzUb9dk',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
-        product_id: 1, //productID, // data.results.product_id 도 시도해보기
-        color_id: 1, // colorID,
+        product_id: productID, // data.results.product_id 도 시도해보기
+        color_id: colorID,
         quantity: totalProdNum,
       }),
     })
@@ -48,14 +63,13 @@ const ItemDetail = () => {
   };
 
   const reviewPost = () => {
-    fetch('http://10.58.3.40:8000/products/1/review', {
+    fetch(`${API.products}/${params.id}/review`, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OSwiZXhwIjoxNjU0NDAyNTY3fQ.z2-kwQdoKaEJsR9JPfNriQcOmUX66gDyC9v7SzUb9dk',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
-        product_id: 1,
+        product_id: productID,
         content: comment,
       }),
     })

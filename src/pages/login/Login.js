@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import API from '../../config';
 import './Login.scss';
 import '../../styles/variables.scss';
-import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [inputValue, setInputValue] = useState({
@@ -13,7 +14,7 @@ const Login = () => {
   const navigator = useNavigate();
 
   const LoginTest = () => {
-    fetch('http://10.58.5.168:8000/users/login', {
+    fetch(`${API.users}/login`, {
       method: 'POST',
       body: JSON.stringify({
         email: id,
@@ -28,7 +29,7 @@ const Login = () => {
         }
       })
       .then(result => {
-        localStorage.setItem('token', result.token);
+        localStorage.setItem('token', result.TOKEN);
         navigator('/main');
       });
   };

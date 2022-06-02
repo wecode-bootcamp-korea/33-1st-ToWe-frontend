@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import './ItemCart.scss';
 import ItemComponent from './component/ItemComponent.js';
 import EmptyItem from './component/EmptyItem';
+import API from '../../config.js';
+import './ItemCart.scss';
 
 const ItemCart = () => {
   useEffect(() => {
-    fetch('/data/ItemList.json', {
+    fetch(`${API.carts}`, {
       method: 'GET',
       headers: {
-        Authorization: 'token',
+        Authorization: localStorage.getItem('token'),
       },
     })
       .then(res => res.json())
       .then(result => {
         // result.result.shift();
-        setListValue(result);
+        setListValue(result.result);
       });
     //result.result <- 객체 안의 배열로 들어가는 어쩌구
   }, []);
@@ -56,10 +57,10 @@ const ItemCart = () => {
     let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
     setListValue(listRemove);
 
-    fetch('/data/ItemList.json', {
+    fetch(`${API.carts}`, {
       method: 'DELETE',
       headers: {
-        Authorization: 'token',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         cart_id: id,

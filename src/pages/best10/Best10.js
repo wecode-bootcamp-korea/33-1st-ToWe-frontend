@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ListItem from './components/ListItem.js';
+import API from '../../config.js';
 import './Best10.scss';
 
 const Best10 = () => {
   const [listItems, setListItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.3.254:8000/products?sort=best', {
+    fetch(`${API.products}?sort=best`, {
       method: 'GET',
     })
       .then(res => res.json())

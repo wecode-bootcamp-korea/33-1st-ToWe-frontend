@@ -57,7 +57,7 @@ const Nav = () => {
             }
           })
           .then(() => {
-            navigate(`/cart`);
+            navigate(`/carts`);
           })
       : navigate(`/login`);
   };
@@ -156,8 +156,8 @@ const NAV_TITLES = [
   {
     id: 1,
     title: 'STORE',
-    category: ['CAR', 'LOGO', 'DOLL', 'PUZZLE', 'ALL', 'BEST\n10'],
+    category: ['CAR', 'LEGO', 'DOLL', 'PUZZLE', 'ALL', 'BEST\n10'],
   },
-  { id: 2, title: 'BOARD', category: ['Q&A', 'NOTICE'] },
+  { id: 2, title: 'BOARD', category: ['Q&A', 'BOARD'] },
   { id: 3, title: 'GALLERY', category: ['GALLERY'] },
 ];

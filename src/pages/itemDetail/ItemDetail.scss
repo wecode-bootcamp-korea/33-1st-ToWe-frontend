@@ -44,10 +44,12 @@ $gray: #7c7c7c;
         img {
           width: 28.125rem;
           height: 28.125rem;
+          object-fit: cover;
         }
       }
 
       .smallPics {
+        object-fit: cover;
         display: flex;
         margin: 1rem;
         justify-content: space-around;
