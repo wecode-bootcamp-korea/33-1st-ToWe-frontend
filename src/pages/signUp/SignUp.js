@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SignUp.scss';
 import SignUpComponent from './component/SignUpComponent';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [inputValue, setInputValue] = useState({
@@ -46,8 +47,7 @@ const SignUp = () => {
         }
       })
       .then(result => {
-        navigator('/login');
-        // localStorage.setItem('token', result.access_token);
+        navigate('/login');
       });
   };
 

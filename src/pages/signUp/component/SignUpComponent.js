@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SignUpComponent = ({ input, handleInput }) => {
-  // const { id, title } = input;
   const { name, value } = input;
 
   return (
