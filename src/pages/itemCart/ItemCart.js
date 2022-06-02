@@ -97,8 +97,7 @@ const ItemCart = () => {
   //       localStorage.setItem('TOKEN', result.access_token);
   //     });
   // };
-
-  let token = localStorage.getItem('TOKEN') || '';
+  // let token = localStorage.getItem('TOKEN') || '';
 
   // 장바구니가 비어있으면
   // 장바구니가 비어있습니다 페이지 뜨게 하기
@@ -130,7 +129,8 @@ const ItemCart = () => {
       <div className="cartWrapper">
         <div className="cartHeader">
           <div className="cartTitle">
-            장바구니<span className="cartAmount">({listValue.length})</span>
+            Shopping cart
+            <span className="cartAmount">({listValue.length})</span>
           </div>
         </div>
         {itemEmpty ? (

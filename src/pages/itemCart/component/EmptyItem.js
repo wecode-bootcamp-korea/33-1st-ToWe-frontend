@@ -4,7 +4,9 @@ const EmptyItem = () => {
   return (
     <div className="emptyItem">
       <div className="emptyPage"></div>
-      장바구니가 비어있습니다.
+      <span>Shopping cart is empty</span>
+      <span>You have no items in your shopping cart.</span>
+      <span>Click here to continue shopping.</span>
     </div>
   );
 };
