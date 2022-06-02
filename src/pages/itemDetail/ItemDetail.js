@@ -18,36 +18,17 @@ const ItemDetail = () => {
   const [color, setColor] = useState('선택하세요.');
   const [mainImgURL, setMainImgURL] = useState('');
   const [comment, setComment] = useState('');
-
-  const [questionList, setQuestionList] = useState([
-    { title: '문의드립니다', author: '**', day: '2022.05.20' },
-    { title: '문의드려요', author: '**', day: '2022.05.20' },
-    { title: '문의드립니다!', author: '**', day: '2022.05.20' },
-  ]);
-
   useEffect(() => {
     fetch('/data/commentData.json')
       .then(res => res.json())
       .then(data => setData(data));
   }, []);
 
-  const productID = data.results && data.results.product_id;
   useEffect(() => {
     fetch('/data/reviewData.json')
       .then(res => res.json())
       .then(data => setCommentsData(data.result));
   }, []);
-
-  const colorID =
-    prodBuy[0] === 'null'
-      ? 1
-      : prodBuy[0] === 'red'
-      ? 2
-      : prodBuy[0] === 'blue'
-      ? 3
-      : prodBuy[0] === 'white'
-      ? 4
-      : 5;
 
   const postHandler = () => {
     fetch('http://10.58.3.40:8000/carts', {
