@@ -61,51 +61,6 @@ const SignUp = () => {
 
   const isValid = passwordCondition && emailCondition;
 
-  const INPUT = [
-    {
-      id: 0,
-      title: 'EMAIL ADDRESS',
-      type: 'text',
-      name: 'email',
-      value: email,
-    },
-    {
-      id: 1,
-      title: 'NAME',
-      type: 'text',
-      name: 'name',
-      value: name,
-    },
-    {
-      id: 2,
-      title: 'PASSWORD',
-      type: 'password',
-      name: 'pw',
-      value: pw,
-    },
-    {
-      id: 3,
-      title: 'PASSWORD CONFIRMATION',
-      type: 'password',
-      name: 'pwCheck',
-      value: pwCheck,
-    },
-    {
-      id: 4,
-      title: 'PHONE',
-      type: 'text',
-      name: 'phone',
-      value: phone,
-    },
-    {
-      id: 5,
-      title: 'ADDRESS',
-      type: 'text',
-      name: 'address',
-      value: address,
-    },
-  ];
-
   return (
     <div className="SignUp">
       <div className="signUpWrapper">
@@ -154,3 +109,48 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+const INPUT = [
+  {
+    id: 0,
+    title: 'EMAIL ADDRESS',
+    type: 'text',
+    name: 'email',
+    value: email,
+  },
+  {
+    id: 1,
+    title: 'NAME',
+    type: 'text',
+    name: 'name',
+    value: name,
+  },
+  {
+    id: 2,
+    title: 'PASSWORD',
+    type: 'password',
+    name: 'pw',
+    value: pw,
+  },
+  {
+    id: 3,
+    title: 'PASSWORD CONFIRMATION',
+    type: 'password',
+    name: 'pwCheck',
+    value: pwCheck,
+  },
+  {
+    id: 4,
+    title: 'PHONE',
+    type: 'text',
+    name: 'phone',
+    value: phone,
+  },
+  {
+    id: 5,
+    title: 'ADDRESS',
+    type: 'text',
+    name: 'address',
+    value: address,
+  },
+];
