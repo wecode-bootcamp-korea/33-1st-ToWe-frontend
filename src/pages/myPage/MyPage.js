@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import NotActivity from './components/NotActivity.js';
 import Input from './components/Input.js';
 import Reviews from './components/Reviews.js';
+// import Orders from './components/Orders.js';
 import API from '../../config.js';
 import './MyPage.scss';
 
 const MyPage = () => {
   const [userData, setUserData] = useState({});
+  const [reviewData, setReviewData] = useState([]);
+  // const [orderData, setOrderData] = useState([]);
 
   const navigate = useNavigate();
 
@@ -17,7 +20,7 @@ const MyPage = () => {
   };
 
   useEffect(() => {
-    fetch(`${API.users}/detail`, {
+    fetch(`${API.users}/info`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -27,11 +30,34 @@ const MyPage = () => {
       .then(result => setUserData(result.result));
   }, []);
 
+  useEffect(() => {
+    fetch(`${API.users}/reviews`, {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(result => setReviewData(result.result));
+  }, []);
+
+  // useEffect(() => {
+  //   fetch(`${API.users}/orders`, {
+  //     method: 'GET',
+  //     headers: {
+  //       Authorization: localStorage.getItem('token'),
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(result => setOrderData(result.result));
+  // }, []);
+
   return (
     <div className="myPage">
       <div className="myPageContainer">
         <div className="userActivity">
-          <Reviews user={userData} />
+          {/* <Orders order={orderData} /> */}
+          <Reviews user={reviewData} />
           {NOTHING_ACTIVITY.map(activity => (
             <NotActivity activity={activity} key={activity.id} />
           ))}
@@ -112,9 +138,5 @@ const NOTHING_ACTIVITY = [
   {
     id: 2,
     content: 'Questions',
-  },
-  {
-    id: 3,
-    content: 'Order Historys',
   },
 ];

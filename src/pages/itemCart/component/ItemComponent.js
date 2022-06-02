@@ -2,7 +2,8 @@ import React from 'react';
 import './ItemComponent.scss';
 
 const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
-  const { cart_id, product_name, price, quantity, thumbnail_url } = itemlist;
+  const { cart_id, product_name, color_name, price, quantity, thumbnail_url } =
+    itemlist;
   return (
     <div className="itemComponent">
       <div className="mapWrapper">
@@ -11,6 +12,7 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
             <img className="img" src={`${thumbnail_url}`} alt="" />
             <div className="productInfo">
               <div className="productTitle">{product_name}</div>
+              <div className="productColor">color: {color_name}</div>
               <div
                 className="deleteBtnDiv"
                 onClick={() => {

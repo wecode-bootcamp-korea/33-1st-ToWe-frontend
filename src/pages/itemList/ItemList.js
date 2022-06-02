@@ -10,7 +10,7 @@ const ItemList = () => {
   const [category, setCategory] = useState('ALL');
   const [listItems, setListItems] = useState([]);
   const [sortColor, setSortColor] = useState('');
-  const [query, setQuery] = useState(6);
+  const [query, setQuery] = useState(9);
 
   const [filterValue, setFilterValue] = useState({
     categoryValue: '',
@@ -43,7 +43,13 @@ const ItemList = () => {
     }${filterValue.sortValue ? `&sort=${filterValue.sortValue}` : ''}${
       filterValue.offValue ? `${filterValue.offValue}` : ''
     }`;
-    navigate(queryString);
+    if (
+      filterValue.categoryValue ||
+      filterValue.sortValue ||
+      filterValue.offValue
+    ) {
+      navigate(queryString);
+    }
   }, [filterValue]);
 
   const onCategory = name => {
@@ -58,7 +64,7 @@ const ItemList = () => {
       return { ...prev, categoryValue: lowerValue };
     });
     setCategory(name);
-    setQuery(6);
+    setQuery(3);
     setSortColor('');
   };
 
@@ -104,10 +110,10 @@ const ItemList = () => {
       <button
         className="plusBtn"
         onClick={() => {
-          getBynIndex(3);
+          getBynIndex(0.2);
         }}
       >
-        더보기
+        SHOW MORE
       </button>
     </div>
   );

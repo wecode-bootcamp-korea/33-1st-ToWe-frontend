@@ -57,8 +57,8 @@ const Login = () => {
           <div className="loginHeader">
             <span className="loginTitle">Sign In</span>
           </div>
-          <form>
-            <div className="contentBox">
+          <div className="contentBox">
+            <form>
               <div className="row">
                 <span className="inputTitle">EMAIL</span>
                 <input
@@ -81,28 +81,28 @@ const Login = () => {
                   onChange={handleInput}
                 />
               </div>
-              <div className="findPw">
-                <a href="/findPassword" className="textLink1">
-                  Forgot Your Password?
-                </a>
-              </div>
-              <div className="btnWrapper">
-                <button
-                  className="loginBtn"
-                  type="button"
-                  onClick={LoginTest}
-                  disabled={!isValidLogin}
-                >
-                  SIGN IN
-                </button>
-              </div>
-              <div className="btnWrapper">
-                <button className="signUpBtn" onClick={goToSignUp}>
-                  CREATE ACCOUNT
-                </button>
-              </div>
+            </form>
+            <div className="findPw">
+              <a href="/findPassword" className="textLink1">
+                Forgot Your Password?
+              </a>
             </div>
-          </form>
+            <div className="btnWrapper">
+              <button
+                className="loginBtn"
+                type="button"
+                onClick={LoginTest}
+                disabled={!isValidLogin}
+              >
+                SIGN IN
+              </button>
+            </div>
+            <div className="btnWrapper">
+              <button className="signUpBtn" onClick={goToSignUp}>
+                CREATE ACCOUNT
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

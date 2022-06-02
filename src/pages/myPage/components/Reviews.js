@@ -3,14 +3,12 @@ import Review from './Review';
 import './Reviews.scss';
 
 const Reviews = ({ user }) => {
-  const { reviews } = user;
-
   return (
     <div className="reviews">
       <div className="myEssay">My reviews</div>
       <div className="reviewContents">
-        {reviews &&
-          reviews.map(contents => (
+        {user.length !== 0 &&
+          user.map(contents => (
             <Review contents={contents} key={contents.review_id} />
           ))}
       </div>

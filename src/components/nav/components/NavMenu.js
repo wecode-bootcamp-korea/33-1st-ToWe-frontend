@@ -2,7 +2,7 @@ import Dropbox from './Dropbox.js';
 import './NavMenu.scss';
 
 const NavMenu = ({ navTitle, navId, hoverOn }) => {
-  const { id, title, category } = navTitle;
+  const { id, title, category, link } = navTitle;
 
   return (
     <li

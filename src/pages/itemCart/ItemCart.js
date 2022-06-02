@@ -149,7 +149,7 @@ const ItemCart = () => {
               </div>
             </div>
             <div className="cartBtnWrapper">
-              <button>주문하기</button>
+              <button>CHECK OUT</button>
             </div>
           </div>
         )}

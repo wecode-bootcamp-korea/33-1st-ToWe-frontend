@@ -59,11 +59,13 @@ const ItemDetail = () => {
       }),
     })
       .then(res => res.json())
-      .then(result => {});
+      .then(() => {
+        alert('장바구니 담기 완료!');
+      });
   };
 
   const reviewPost = () => {
-    fetch(`${API.products}/${params.id}/review`, {
+    fetch(`${API.products}/${params.id}/reviews`, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -253,19 +255,19 @@ const ItemDetail = () => {
 
               <div className="endOrder">
                 <div className="orderNumberPart">
-                  <div>주문 수량</div>
+                  <div>Quantity</div>
                   <div>{totalProdNum + '개'}</div>
                 </div>
                 <div className="totalAmountPart">
-                  <div>총 상품 금액</div>
+                  <div>Total price</div>
                   <div>{totalProdNum * data.results.price + '원'}</div>
                 </div>
               </div>
 
               <div className="buyCartButtons">
-                <button className="buyButton">구매하기</button>
+                <button className="buyButton">BUY NOW</button>
                 <button className="cartButton" onClick={postHandler}>
-                  장바구니에 담기
+                  ADD TO CART
                 </button>
               </div>
             </div>

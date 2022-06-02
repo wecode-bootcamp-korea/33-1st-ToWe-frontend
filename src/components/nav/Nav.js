@@ -10,17 +10,12 @@ const Nav = () => {
   const [inputToggle, setInputToggle] = useState(true);
   const [logo, setLogo] = useState(true);
   const [navbar, setNavber] = useState(false);
-  const [search, setSearch] = useState('');
   const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate(search);
-  }, [search]);
 
   const searchBtn = e => {
     e.preventDefault();
-    const string = `/itemList/products?category=&search=${e.target.search.value}`;
-    setSearch(string);
+    const string = `/itemList?category=&search=${e.target.search.value}`;
+    navigate(string);
     e.target.search.value = '';
   };
 
@@ -123,7 +118,12 @@ const Nav = () => {
           </ul>
         </div>
         <form className="navarIconbox" onSubmit={searchBtn}>
-          <FaSearch className="navarIcon" onClick={toggle} />
+          <FaSearch
+            className="navarIcon"
+            onClick={() => {
+              toggle();
+            }}
+          />
           <input
             type="text"
             ref={inputRef}
@@ -152,7 +152,11 @@ const Nav = () => {
 export default Nav;
 
 const NAV_TITLES = [
-  { id: 0, title: 'TOWE STORY', category: ['BRAND', 'CHARICTOR', 'OURSTORY'] },
+  {
+    id: 0,
+    title: 'TOWE STORY',
+    category: ['BRAND', 'CHARACTER', 'OURSTORY'],
+  },
   {
     id: 1,
     title: 'STORE',

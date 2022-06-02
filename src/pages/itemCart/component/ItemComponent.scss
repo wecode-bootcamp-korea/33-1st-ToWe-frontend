@@ -19,6 +19,10 @@
           justify-content: center;
           flex-direction: column;
           .productTitle {
+            font-weight: bold;
+          }
+          .productColor {
+            margin-top: 0.7rem;
           }
           .deleteBtnDiv {
             margin-top: 0.75rem;
