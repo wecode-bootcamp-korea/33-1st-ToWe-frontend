@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import NavMenu from './components/NavMenu';
+import API from '../../../src/config.js';
 import { FaSearch, FaShoppingCart, FaUserAlt, FaBars } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './Nav.scss';
@@ -25,7 +26,7 @@ const Nav = () => {
 
   const goTomypage = () => {
     localStorage.getItem('token')
-      ? fetch('http://10.58.0.181:8000/users', {
+      ? fetch(`${API.users}`, {
           method: 'GET',
           headers: {
             Authorization: localStorage.getItem('token'),
@@ -44,7 +45,7 @@ const Nav = () => {
 
   const goTocart = () => {
     localStorage.getItem('token')
-      ? fetch('http://10.58.0.181:8000/cart', {
+      ? fetch(`${API.carts}`, {
           method: 'GET',
           headers: {
             Authorization: localStorage.getItem('token'),
