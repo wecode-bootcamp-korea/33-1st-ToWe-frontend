@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ProductCategoryMap from './ProductCategoryMap.js';
 import './ProductCategory.scss';
 
-const ProductCategory = ({ FILTER_MENU, onCategory }) => {
+const ProductCategory = ({ onCategory }) => {
   const [filterColor, setFilterColor] = useState(0);
 
   const filterColorClick = categoryFilter => {
@@ -27,3 +27,11 @@ const ProductCategory = ({ FILTER_MENU, onCategory }) => {
 };
 
 export default ProductCategory;
+
+const FILTER_MENU = [
+  { id: 0, name: 'ALL' },
+  { id: 1, name: 'PUZZLE' },
+  { id: 2, name: 'DOLL' },
+  { id: 3, name: 'LEGO' },
+  { id: 4, name: 'CAR' },
+];

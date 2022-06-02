@@ -1,3 +1,112 @@
-*{
-    
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loginWrapper {
+    width: 25rem;
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+    .loginField {
+      width: 100%;
+
+      .loginHeader {
+        margin-bottom: 2.5rem;
+
+        .loginTitle {
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+      }
+
+      .contentBox {
+        .row {
+          margin-bottom: 1.25rem;
+
+          .inputTitle {
+            display: block;
+            font-size: 0.875rem;
+            margin-bottom: 3%;
+          }
+
+          .loginInputBox {
+            width: 100%;
+            height: 2.813rem;
+            padding: 0.625rem 0.938rem;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+
+        .findPw {
+          display: flex;
+          justify-content: center;
+          margin: 1.25rem 0 1.875rem;
+
+          .textLink1 {
+            text-decoration: none;
+            color: black;
+            font-size: 0.875rem;
+          }
+
+          .textLink2 {
+            text-decoration: none;
+            color: black;
+            font-size: 0.875rem;
+            margin-left: 1.25rem;
+          }
+        }
+
+        .btnWrapper {
+          margin-top: 1.25rem;
+          display: flex;
+          justify-content: center;
+
+          .loginBtn {
+            width: 15rem;
+            height: 3.375rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 3.125rem;
+            background: white;
+            border: 0.063rem solid black;
+            color: black;
+
+            &:hover {
+              background: black;
+              color: white;
+            }
+
+            &:disabled {
+              width: 15rem;
+              height: 3.375rem;
+              padding: 0.75rem 1.25rem;
+              border-radius: 3.125rem;
+              background: white;
+              border: 0.063rem solid gray;
+              color: gray;
+            }
+          }
+
+          .signUpBtn {
+            width: 15rem;
+            height: 3.375rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 3.125rem;
+            border: 0.063rem solid #919191;
+            background: white;
+            color: #919191;
+
+            &:hover {
+              background: #919191;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
 }
