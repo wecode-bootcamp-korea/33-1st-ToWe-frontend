@@ -36,8 +36,6 @@ const ItemCart = () => {
     );
 
     setListValue(newList);
-    // const a = sum + price;
-    // setSum(a);
   };
 
   const decrease = (id, quantity, price) => {
@@ -52,11 +50,8 @@ const ItemCart = () => {
     );
 
     setListValue(newList);
-    // const a = quantity !== 1 ? sum - price : sum;
-    // setSum(a);
   };
 
-  //삭제기능
   const onRemove = id => {
     let listRemove = listValue.filter(listValue => listValue.cart_id !== id);
     setListValue(listRemove);
@@ -72,29 +67,8 @@ const ItemCart = () => {
     }).then(res => res.json());
   };
 
-  // const OrderInput = listValue => {
-  //   fetch('http://', {
-  //     method: 'POST',
-  //     headers: {
-  //       Authorization: 'token',
-  //     },
-  //     body: JSON.stringify(listValue),
-  //   })
-  //     .then(res => {
-  //       if (res.ok) {
-  //         return res.json();
-  //       }
-  //     })
-  //     .then(result => {
-  //       navigator('/order');
-  //       localStorage.setItem('TOKEN', result.access_token);
-  //     });
-  // };
-  // let token = localStorage.getItem('TOKEN') || '';
-
   const itemEmpty = listValue.length === 0;
 
-  // 장바구니 합계 가격
   const totalPrice = sum => {
     if (sum > 50000) {
       return sum;

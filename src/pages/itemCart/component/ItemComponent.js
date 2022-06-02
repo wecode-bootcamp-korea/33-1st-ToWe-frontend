@@ -8,7 +8,7 @@ const ItemComponent = ({ itemlist, decrease, increase, onRemove }) => {
       <div className="mapWrapper">
         <div className="itemListWrapper">
           <div className="itemInfoDiv">
-            <img className="img" src={`${thumbnail_url}`} alt="sdf" />
+            <img className="img" src={`${thumbnail_url}`} alt="" />
             <div className="productInfo">
               <div className="productTitle">{product_name}</div>
               <div
