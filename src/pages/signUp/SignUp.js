@@ -7,8 +7,8 @@ const SignUp = () => {
   const [inputValue, setInputValue] = useState({
     email: '',
     name: '',
-    pw1: '',
-    pw2: '',
+    pw: '',
+    pwCheck: '',
     address: '',
     phone: '',
   });
@@ -55,8 +55,7 @@ const SignUp = () => {
   };
 
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^~*+=-])(?=.*[0-9]).{8,}$/;
-  const passwordCondition =
-    passwordRegex.test(inputValue.pw1) && pw === pwCheck;
+  const passwordCondition = passwordRegex.test(inputValue.pw) && pw === pwCheck;
   const emailCondition = email.includes('@') && email.includes('.');
 
   const isValid = passwordCondition && emailCondition;
