@@ -47,7 +47,7 @@ const SignUp = () => {
         }
       })
       .then(result => {
-        navigate('/login');
+        navigator('/login');
       });
   };
 
@@ -135,46 +135,9 @@ const SignUp = () => {
               <input type="checkbox" />
             </div>
             <div className="agreeBox">
-              <span className="agreeText">모두 동의합니다.</span>
-            </div>
-          </div>
-          <div className="checkboxWrapper">
-            <div className="checkbox">
-              <input type="checkbox" />
-            </div>
-            <div className="agreeBox">
               <span className="agreeText">
-                (필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.
+                Subscribe To Our Email Newsletter
               </span>
-            </div>
-          </div>
-          <div className="checkboxWrapper">
-            <div className="checkbox">
-              <input type="checkbox" />
-            </div>
-            <div className="agreeBox">
-              <label className="agreeText">
-                (필수) 만 14세 이상입니다.
-                <br />
-                <span className="agreeSubText">
-                  만 19세 미만의 미성년자가 결제 시 법정대리인이 거래를 취소할
-                  수 있습니다.
-                </span>
-              </label>
-            </div>
-          </div>
-          <div className="checkboxWrapper">
-            <div className="checkbox">
-              <input type="checkbox" />
-            </div>
-            <div className="agreeBox">
-              <label className="agreeText">
-                (선택) 이메일 및 SMS 마케팅 정보 수신에 동의합니다.
-                <br />
-                <span className="agreeSubText">
-                  회원은 언제든지 회원 정보에서 수신 거부로 변경할 수 있습니다.
-                </span>
-              </label>
             </div>
           </div>
           <div className="btnWrapper">
