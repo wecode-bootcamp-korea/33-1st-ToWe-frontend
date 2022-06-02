@@ -10,26 +10,7 @@ const Nav = () => {
   const [logo, setLogo] = useState(true);
   const [navbar, setNavber] = useState(false);
   const [search, setSearch] = useState('');
-
   const navigate = useNavigate();
-
-  //로그인, 장바구니 토큰 받기
-  // useEffect(() => {
-  //   fetch('http://10.58.0.181:8000/users', {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: localStorage.getItem('TOKEN') || '',
-  //     },
-  //   })
-  //     .then(res => res.json())
-  //     .then(result => {
-  //       if (result.access_token) {
-  //         navigate(`/mypage`);
-  //       } else {
-  //         navigate(`/signup`);
-  //       }
-  //     });
-  // }, []);
 
   useEffect(() => {
     navigate(search);
@@ -37,17 +18,47 @@ const Nav = () => {
 
   const searchBtn = e => {
     e.preventDefault();
-    const string = `/products?category=&search=${e.target.search.value}`;
+    const string = `/itemList/products?category=&search=${e.target.search.value}`;
     setSearch(string);
     e.target.search.value = '';
   };
 
   const goTomypage = () => {
-    localStorage.getItem('TOKEN') ? navigate(`/mypage`) : navigate(`/signup`);
+    localStorage.getItem('token')
+      ? fetch('http://10.58.0.181:8000/users', {
+          method: 'GET',
+          headers: {
+            Authorization: localStorage.getItem('token'),
+          },
+        })
+          .then(res => {
+            if (res.ok) {
+              return res.json();
+            }
+          })
+          .then(() => {
+            navigate(`/mypage`);
+          })
+      : navigate(`/login`);
   };
 
   const goTocart = () => {
-    localStorage.getItem('TOKEN') ? navigate(`/mypage`) : navigate(`/signup`);
+    localStorage.getItem('token')
+      ? fetch('http://10.58.0.181:8000/cart', {
+          method: 'GET',
+          headers: {
+            Authorization: localStorage.getItem('token'),
+          },
+        })
+          .then(res => {
+            if (res.ok) {
+              return res.json();
+            }
+          })
+          .then(() => {
+            navigate(`/cart`);
+          })
+      : navigate(`/login`);
   };
 
   const goToMain = () => {
@@ -119,7 +130,7 @@ const Nav = () => {
             className={inputToggle ? `navbarInput` : `navbarInputOn`}
           />
           <FaUserAlt
-            onSubmit={() => {
+            onClick={() => {
               goTomypage();
             }}
             className="navarIcon"
@@ -144,7 +155,7 @@ const NAV_TITLES = [
   {
     id: 1,
     title: 'STORE',
-    category: ['CAR', 'LOGO', 'DOLL', 'PUZZLE', 'ALL', `BEST\n10`],
+    category: ['CAR', 'LOGO', 'DOLL', 'PUZZLE', 'ALL', 'BEST\n10'],
   },
   { id: 2, title: 'BOARD', category: ['Q&A', 'NOTICE'] },
   { id: 3, title: 'GALLERY', category: ['GALLERY'] },
