@@ -3,5 +3,28 @@
   "email": "wecode@gmail.com",
   "name": "위코드",
   "address": "서울시 강남구 논현동 25-11",
-  "phone_number": "010-1234-5678"
+  "phone_number": "010-1234-5678",
+  "reviews": [
+    {
+      "review_id": "0",
+      "user_name": "김코드",
+      "product_name": "Lego",
+      "content": "toy is good",
+      "created_at": "2022-05-20"
+    },
+    {
+      "review_id": "1",
+      "user_name": "김코드",
+      "product_name": "Doll",
+      "content": "toy is bad",
+      "created_at": "2022-05-25"
+    },
+    {
+      "review_id": "2",
+      "user_name": "김코드",
+      "product_name": "Puzzle",
+      "content": "toy is amazing",
+      "created_at": "2022-05-28"
+    }
+  ]
 }

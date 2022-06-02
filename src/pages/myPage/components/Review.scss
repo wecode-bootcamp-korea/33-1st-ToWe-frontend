@@ -1,0 +1,22 @@
+.review {
+  padding: 1.5rem 0 1.5rem 0;
+  border-bottom: 0.125rem dashed black;
+
+  .nameContent {
+    font-size: 1.2rem;
+
+    .name {
+      font-weight: bold;
+      padding: 0 0.5rem 0.3rem 0;
+    }
+
+    .content {
+      padding: 0.3rem 0 0.5rem;
+    }
+  }
+
+  .date {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+}

@@ -2,69 +2,67 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NotActivity from './components/NotActivity.js';
 import Input from './components/Input.js';
+import Reviews from './components/Reviews.js';
 import './MyPage.scss';
 
 const MyPage = () => {
-  const [inputData, setInputData] = useState({});
+  const [userData, setUserData] = useState({});
 
   const navigate = useNavigate();
+
   const logOut = () => {
     navigate('/');
     localStorage.clear();
   };
 
   useEffect(() => {
-    fetch('/data/user.json', {
+    fetch('http://10.58.3.40:8000/users/detail', {
       method: 'GET',
       headers: {
         Authorization: 'token',
       },
     })
       .then(res => res.json())
-      .then(result => setInputData(result));
+      .then(result => setUserData(result.result));
   }, []);
 
   return (
     <div className="myPage">
       <div className="myPageContainer">
         <div className="userActivity">
+          <Reviews user={userData} />
           {NOTHING_ACTIVITY.map(activity => (
             <NotActivity activity={activity} key={activity.id} />
           ))}
         </div>
         <div className="profile">
           <div className="profileTitle">
-            <div className="title">회원정보</div>
+            <div className="title">User Information</div>
             <div className="logOut" onClick={logOut}>
-              로그아웃
+              Logout
             </div>
           </div>
           <div className="profileImage">
-            <img src="/images/profile.jpg" alt="프로필사진" />
+            <img src="/images/profile.jpg" alt="profileimg" />
           </div>
           <div className="userInformation">
             <div className="userInfor">
               <div className="contentBox">
-                {inputData &&
-                  USER_INFORMATION.map(userData => (
-                    <Input
-                      key={userData.id}
-                      userData={userData}
-                      inputValue={inputData}
-                    />
-                  ))}
+                {USER_INFORMATION.map(data => (
+                  <Input key={data.id} userData={data} inputData={userData} />
+                ))}
               </div>
               <div className="agree">
-                마케팅 정보 수신 동의
+                Agree to receive marketing information
                 <div className="checkBox">
-                  <input type="checkBox" className="email" /> 이메일
-                  <input type="checkBox" className="message" /> 문자 메시지
+                  <input type="checkBox" className="email" /> email
+                  <input type="checkBox" className="message" /> message
                 </div>
               </div>
             </div>
           </div>
-          <button className="exit">탈퇴하기</button>
-          <button className="save">변경 사항 저장하기</button>
+          <button className="exit">Account withdrawal</button>
+          <button className="save">To save your changes</button>
         </div>
       </div>
     </div>
@@ -76,37 +74,46 @@ export default MyPage;
 const USER_INFORMATION = [
   {
     id: 0,
-    title: '이메일',
+    title: 'email',
     name: 'email',
   },
   {
     id: 1,
-    title: '이름',
+    title: 'name',
     name: 'name',
   },
   {
     id: 2,
-    title: '주소',
+    title: 'address',
     name: 'address',
   },
   {
     id: 3,
-    title: '휴대폰',
+    title: 'phone_number',
     name: 'phone_number',
+  },
+  {
+    id: 4,
+    title: 'point',
+    name: 'point',
   },
 ];
 
 const NOTHING_ACTIVITY = [
   {
     id: 0,
-    content: '쿠폰 내역',
+    content: 'coupons',
   },
   {
     id: 1,
-    content: '재입고 알림 내역',
+    content: 'Restocking Notification breakdowns',
   },
   {
     id: 2,
-    content: '문의사항',
+    content: 'Questions',
+  },
+  {
+    id: 3,
+    content: 'Order Historys',
   },
 ];

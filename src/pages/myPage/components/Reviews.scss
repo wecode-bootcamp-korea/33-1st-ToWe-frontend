@@ -1,17 +1,13 @@
-.userActivity {
+.reviews {
   width: 45vh;
 
-  .componentTitle {
+  .myEssay {
     margin: 5rem 0 2.5rem 0;
     font-size: 1.3rem;
     font-weight: bold;
   }
-
-  .nothing {
+  .reviewContents {
     height: 40vh;
-    padding: 9rem 0rem;
-    font-size: 0.9rem;
     border-bottom: 0.163rem solid black;
-    text-align: center;
   }
 }
