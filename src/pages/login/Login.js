@@ -24,7 +24,7 @@ const Login = () => {
         if (res.ok) {
           return res.json();
         } else {
-          alert('이메일과 비밀번호를 다시 한번 확인해주세요!');
+          alert('Please check your email and password again!');
         }
       })
       .then(result => {
@@ -43,6 +43,10 @@ const Login = () => {
   const handleInput = e => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
+  };
+
+  const goToSignUp = () => {
+    navigator('/signup');
   };
 
   return (
@@ -92,7 +96,9 @@ const Login = () => {
                 </button>
               </div>
               <div className="btnWrapper">
-                <button className="signUpBtn">CREATE ACCOUNT</button>
+                <button className="signUpBtn" onClick={goToSignUp}>
+                  CREATE ACCOUNT
+                </button>
               </div>
             </div>
           </form>
