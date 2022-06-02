@@ -14,7 +14,7 @@ const MyPage = () => {
   };
 
   useEffect(() => {
-    fetch('/data/USER.json', {
+    fetch('/data/user.json', {
       method: 'GET',
       headers: {
         Authorization: 'token',
@@ -103,14 +103,10 @@ const NOTHING_ACTIVITY = [
   },
   {
     id: 1,
-    content: '주문 내역',
-  },
-  {
-    id: 2,
     content: '재입고 알림 내역',
   },
   {
-    id: 3,
-    content: '문의 사항',
+    id: 2,
+    content: '문의사항',
   },
 ];
