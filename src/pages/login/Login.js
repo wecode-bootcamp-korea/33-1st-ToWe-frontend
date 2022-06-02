@@ -80,9 +80,6 @@ const Login = () => {
                 <a href="/findPassword" className="textLink1">
                   Forgot Your Password?
                 </a>
-                {/* <a href="/findPassword" className="textLink2">
-                  비회원 주문 조회하기
-                </a> */}
               </div>
               <div className="btnWrapper">
                 <button
