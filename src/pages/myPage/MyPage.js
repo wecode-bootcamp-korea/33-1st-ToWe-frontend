@@ -30,7 +30,7 @@ const MyPage = () => {
     <div className="MyPage">
       <div className="myPageContainer">
         <div className="userActivity">
-          <Reviews user={user} />
+          <Reviews user={userData} />
           {NOTHING_ACTIVITY.map(activity => (
             <NotActivity activity={activity} key={activity.id} />
           ))}
@@ -75,22 +75,22 @@ export default MyPage;
 const USER_INFORMATION = [
   {
     id: 0,
-    title: '이메일',
+    title: 'email',
     name: 'email',
   },
   {
     id: 1,
-    title: '이름',
+    title: 'name',
     name: 'name',
   },
   {
     id: 2,
-    title: '주소',
+    title: 'address',
     name: 'address',
   },
   {
     id: 3,
-    title: '휴대폰',
+    title: 'phone_number',
     name: 'phone_number',
   },
 ];
@@ -98,7 +98,7 @@ const USER_INFORMATION = [
 const NOTHING_ACTIVITY = [
   {
     id: 0,
-    content: '쿠폰 내역',
+    content: 'coupon',
   },
   {
     id: 1,
@@ -113,34 +113,3 @@ const NOTHING_ACTIVITY = [
     content: '주문 내역',
   },
 ];
-
-const user = {
-  id: 0,
-  email: 'wecode@gmail.com',
-  name: '위코드',
-  address: '서울시 강남구 논현동 25-11',
-  phone_number: '010-1234-5678',
-  reviews: [
-    {
-      review_id: '0',
-      user_name: '김코드',
-      product_name: 'Lego',
-      content: 'toy is good',
-      created_at: '2022-05-20',
-    },
-    {
-      review_id: '1',
-      user_name: '김코드',
-      product_name: 'Doll',
-      content: 'toy is bad',
-      created_at: '2022-05-25',
-    },
-    {
-      review_id: '2',
-      user_name: '김코드',
-      product_name: 'Puzzle',
-      content: 'toy is amazing',
-      created_at: '2022-05-28',
-    },
-  ],
-};

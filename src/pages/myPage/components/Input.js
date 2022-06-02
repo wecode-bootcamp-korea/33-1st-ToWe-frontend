@@ -8,10 +8,7 @@ const Input = ({ userData, inputData }) => {
       <span className="inputTitle">{title}</span>
       <input
         className="userInforInputBox"
-        // FIXME: mockdata 사용할때
-        defaultValue={inputData ? inputData?.[name] : ''}
-        // FIXME : 백과 통신할때
-        // defaultValue={inputData ? inputData?.result[name] : ''}
+        defaultValue={inputData ? inputData?.result[name] : ''}
       />
     </div>
   );
