@@ -1,0 +1,65 @@
+@import '../components/../../../styles/variables.scss';
+
+.listItems {
+  position: relative;
+  img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .listItemsImg:not(hover) {
+    animation: 0.5s ease-in-out ani;
+    @keyframes ani {
+      from {
+        opacity: 0.5;
+      }
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .listItemsImg2:hover {
+    animation: 0.5s ease-in-out ani2;
+    @keyframes ani2 {
+      from {
+        opacity: 0.5;
+      }
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .listItemName {
+    margin: 0.8rem 0;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .listItemPrice {
+    color: $gray;
+    cursor: pointer;
+  }
+
+  .likeIcon {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    right: 0.8rem;
+    top: 0.8rem;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+  }
+
+  .likeBack {
+    position: absolute;
+    z-index: 0;
+    right: 0.4rem;
+    top: 0.4rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

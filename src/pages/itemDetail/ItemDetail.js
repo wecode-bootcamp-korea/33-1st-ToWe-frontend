@@ -313,7 +313,7 @@ const ItemDetail = () => {
                   />
                   <div className="reviewWritingAreaBottom">
                     <div className="reviewPicUpdate">
-                      <label for="fileInput">
+                      <label htmlFor="fileInput">
                         <AiFillCamera />
                       </label>
                       <input id="fileInput" type="file" />

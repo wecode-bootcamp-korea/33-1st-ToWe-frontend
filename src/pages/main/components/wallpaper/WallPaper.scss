@@ -1,0 +1,41 @@
+@import '../../../../styles/variables.scss';
+
+$darkGray: #3a3a3a;
+$lightGray: #888888;
+
+.wallPaper {
+  @include flexCenter;
+  flex-direction: column;
+  padding: 0 3rem;
+  max-width: 1500px;
+
+  .title {
+    margin: 10rem 0 3rem;
+    color: $darkGray;
+    font-size: calc($largeFont) * 2.5;
+    font-family: $boldFont;
+  }
+
+  .description {
+    margin-bottom: 3.7rem;
+    color: $lightGray;
+    font-size: calc($largeFont) * 1.15;
+    text-align: center;
+    line-height: 2.5rem;
+    font-family: $regularFont;
+  }
+
+  .wallpaperImg {
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .line {
+    margin: 5rem 0 0 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+}
