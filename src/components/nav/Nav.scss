@@ -1,202 +1,125 @@
-.nav {
-  .navBar {
+@import '../../styles/variables.scss';
+
+.navbar.active {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+nav {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 2;
+}
+
+.logoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLogo {
+  width: 10rem;
+}
+
+.ligoBottom {
+  width: 10rem;
+  border: 1px solid black;
+}
+
+.navbar {
+  width: 100%;
+  margin: auto;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 0.5rem 2rem;
+  transition: all 1s ease-in-out;
+
+  .navbarMenu {
     display: flex;
-    position: fixed;
+    margin: 0 0.5rem;
+  }
+
+  .navbarTitle {
+    font-size: 2rem;
+  }
+
+  .navbarMenuItems {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+  }
+
+  .navarIconbox {
+    transition: all 0.5s;
+  }
+
+  .navarIcon {
+    font-size: 1.2rem;
+    margin: 0 0.8rem;
+    cursor: pointer;
+  }
+
+  .navarIcon:hover {
+    opacity: 0.5;
+  }
+
+  .navbarInput {
+    line-height: 1rem;
+    font-size: 1.1rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    display: none;
+  }
+
+  .navbarInputOn {
+    background-color: transparent;
+    line-height: 1rem;
+    font-size: 1.1rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+  }
+
+  .navbarToggleBtn {
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    @include flexCenter;
     flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-    height: 5rem;
-    background-color: white;
-    z-index: 1;
 
-    .navBasic {
+    .navbarMenu {
       display: flex;
-      justify-content: space-around;
-      padding-top: 2rem;
-      padding-bottom: 1rem;
-
-      .title {
-        padding-right: 4.5rem;
-
-        .bigTitle {
-          font-size: 2rem;
-          text-align: center;
-        }
-
-        .smallTitle {
-          font-size: 0.65rem;
-        }
-      }
-
-      .navMenu {
-        display: flex;
-        justify-content: space-between;
-        width: 21rem;
-        font-size: 0.9rem;
-        margin-right: 20rem;
-        padding-top: 0.8rem;
-
-        .teamInfor {
-          font-weight: bold;
-
-          &:hover {
-            border-bottom: 0.2rem solid black;
-            background-color: white;
-            cursor: pointer;
-          }
-
-          .navDetailBar {
-            visibility: hidden;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            width: 100vw;
-            left: 0;
-            background-color: white;
-
-            .storeCategory {
-              width: 15%;
-              div {
-                padding-bottom: 3rem;
-                text-align: center;
-              }
-            }
-
-            .storeSort {
-              div {
-                padding-bottom: 3rem;
-              }
-            }
-          }
-
-          &:hover .navDetailBar {
-            visibility: visible;
-          }
-        }
-        .store {
-          font-weight: bold;
-
-          &:hover {
-            border-bottom: 0.2rem solid black;
-            background-color: white;
-          }
-
-          .navDetailBar {
-            visibility: hidden;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            width: 100vw;
-            left: 0;
-            background-color: white;
-
-            .storeCategory {
-              width: 15%;
-              div {
-                padding-bottom: 3rem;
-                text-align: center;
-              }
-            }
-
-            .storeSort {
-              div {
-                padding-bottom: 3rem;
-              }
-            }
-          }
-
-          &:hover .navDetailBar {
-            visibility: visible;
-          }
-        }
-
-        .board {
-          font-weight: bold;
-
-          &:hover {
-            border-bottom: 0.2rem solid black;
-            background-color: white;
-          }
-
-          .navDetailBar {
-            visibility: hidden;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            width: 100vw;
-            left: 0;
-            background-color: white;
-
-            .storeCategory {
-              width: 15%;
-              div {
-                padding-bottom: 3rem;
-                text-align: center;
-              }
-            }
-
-            .storeSort {
-              div {
-                padding-bottom: 3rem;
-              }
-            }
-          }
-
-          &:hover .navDetailBar {
-            visibility: visible;
-          }
-        }
-
-        .gallery {
-          font-weight: bold;
-
-          &:hover {
-            border-bottom: 0.2rem solid black;
-            background-color: white;
-          }
-
-          .navDetailBar {
-            visibility: hidden;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            width: 100vw;
-            left: 0;
-            background-color: white;
-
-            .storeCategory {
-              width: 15%;
-              div {
-                padding-bottom: 3rem;
-                text-align: center;
-              }
-            }
-
-            .storeSort {
-              div {
-                padding-bottom: 3rem;
-              }
-            }
-          }
-
-          &:hover .navDetailBar {
-            visibility: visible;
-          }
-        }
-      }
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
-    .navIcons {
-      display: flex;
-      justify-content: space-around;
-      width: 10rem;
+
+    .navbarMenuItems {
+      margin-top: 1rem;
+    }
+
+    .navarIconbox {
+      display: none;
+    }
+
+    .navbarToggleBtn {
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: none;
     }
   }
 }
