@@ -13,7 +13,7 @@ const SignUp = () => {
     phone: '',
   });
 
-  const { email, name, pw1, pw2, address, phone } = inputValue;
+  const { email, name, pw, pwCheck, address, phone } = inputValue;
   const navigator = useNavigate();
 
   const handleInput = e => {
@@ -27,7 +27,7 @@ const SignUp = () => {
       body: JSON.stringify({
         email: email,
         name: name,
-        password: pw1,
+        password: pw,
         address: address,
         phone_number: phone,
       }),
@@ -36,7 +36,7 @@ const SignUp = () => {
         if (res.ok) {
           return res.json();
         } else {
-          alert('이메일과 비밀번호를 다시 한번 확인해주세요!');
+          alert('Please check your email and password again!');
         }
       })
       .then(result => {
@@ -50,12 +50,13 @@ const SignUp = () => {
       inputValue.address === '' ||
       inputValue.phone === ''
     ) {
-      alert('빈칸을 입력해주세요');
+      alert('Must not be blank');
     }
   };
 
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^~*+=-])(?=.*[0-9]).{8,}$/;
-  const passwordCondition = passwordRegex.test(inputValue.pw1) && pw1 === pw2;
+  const passwordCondition =
+    passwordRegex.test(inputValue.pw1) && pw === pwCheck;
   const emailCondition = email.includes('@') && email.includes('.');
 
   const isValid = passwordCondition && emailCondition;
@@ -79,15 +80,15 @@ const SignUp = () => {
       id: 2,
       title: 'PASSWORD',
       type: 'password',
-      name: 'pw1',
-      value: pw1,
+      name: 'pw',
+      value: pw,
     },
     {
       id: 3,
       title: 'PASSWORD CONFIRMATION',
       type: 'password',
-      name: 'pw2',
-      value: pw2,
+      name: 'pwCheck',
+      value: pwCheck,
     },
     {
       id: 4,
