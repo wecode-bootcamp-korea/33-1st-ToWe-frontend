@@ -3,6 +3,6 @@ const API = {
   users: `${BASE_URL}/users`,
   products: `${BASE_URL}/products`,
   carts: `${BASE_URL}/carts`,
-  oders: `${BASE_URL}/oders`,
+  orders: `${BASE_URL}/orders`,
 };
 export default API;
