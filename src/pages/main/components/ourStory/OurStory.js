@@ -1,15 +1,15 @@
 import React from 'react';
 import './OurStory.scss';
 
-const OurStory = () => {
+const OurStory = ({ scrollFadeIn }) => {
   return (
-    <div className="ourStory">
+    <div className={`ourStory ${scrollFadeIn === true ? 'active' : ''}`}>
       <h2 className="title">TOWE STORY</h2>
       <div className="description">
-        [무직 ; unemployed] 직장을 벗어나 원하는 일을 하는 자유로운 삶을
-        지향합니다. <br />
-        자의든 타의든 이 시대의 모든 무직을 응원합니다. 우리는 무직이고,
-        뮤직이고 또 무적이니까요.
+        다양한 장난감으로 만드는 우리들의 이야기
+        <br />
+        'TOWE STORY TEAM' 입니다 :)
+        <br />
       </div>
       <img alt="toy" className="ourStoryImg" src="/images/ourStory_toy.jpg" />
       <div className="line" />

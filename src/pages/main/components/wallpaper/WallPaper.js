@@ -1,9 +1,9 @@
 import React from 'react';
 import './WallPaper.scss';
 
-const WallPaper = () => {
+const WallPaper = ({ scrollFadeIn2 }) => {
   return (
-    <div className="wallPaper">
+    <div className={`wallPaper ${scrollFadeIn2 === true ? 'active' : ''}`}>
       <h2 className="title">WALLPAPER</h2>
       <div className="description">
         일주일마다 선물처럼 배경화면이 공개됩니다. <br /> 아래 이미지 클릭시,
