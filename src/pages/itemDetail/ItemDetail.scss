@@ -50,7 +50,7 @@ $gray: #7c7c7c;
       .smallPics {
         display: flex;
         margin: 1rem;
-
+        justify-content: space-around;
         .smallPic {
           margin-right: 1rem;
           cursor: pointer;
@@ -458,32 +458,34 @@ $gray: #7c7c7c;
         }
       }
 
-      .questionList {
-        display: flex;
-        border-bottom: 1px solid $darkGray;
-        padding: 1rem 0;
-        .questionNumber {
+      .questionsList {
+        .questionInfo {
           display: flex;
-          justify-content: center;
-          flex: 1;
-        }
+          border-bottom: 1px solid $darkGray;
+          padding: 1rem 0;
+          .questionNumber {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+          }
 
-        .questionTitle {
-          display: flex;
-          justify-content: center;
-          flex: 5;
-        }
+          .questionTitle {
+            display: flex;
+            justify-content: center;
+            flex: 5;
+          }
 
-        .questionWriter {
-          flex: 2;
-          display: flex;
-          justify-content: center;
-        }
+          .questionWriter {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+          }
 
-        .questionDate {
-          flex: 2;
-          display: flex;
-          justify-content: center;
+          .questionDate {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+          }
         }
       }
 
