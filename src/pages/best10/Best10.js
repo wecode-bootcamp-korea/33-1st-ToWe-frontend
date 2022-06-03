@@ -7,7 +7,7 @@ const Best10 = () => {
   const [listItems, setListItems] = useState([]);
 
   useEffect(() => {
-    fetch(`${API.products}?sort=best`, {
+    fetch(`${API.products}?sort=best&limit=10`, {
       method: 'GET',
     })
       .then(res => res.json())

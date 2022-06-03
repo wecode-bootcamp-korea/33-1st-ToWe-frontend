@@ -120,6 +120,7 @@
 
   // 배송지
   .addressContainer {
+    width: 100%;
     .addressCheckbox {
       display: flex;
       align-items: center;
@@ -212,12 +213,12 @@
         margin-bottom: 0.3rem;
       }
       input {
+        width: 100%;
         margin-bottom: 1.4rem;
         padding: 0 0.8rem;
         height: 2.5rem;
         border: 1px solid lightgray;
         border-radius: 0.4rem;
-        width: 31.2%;
       }
     }
   }

@@ -64,7 +64,7 @@ const ItemList = () => {
     setFilterValue(prev => {
       return { ...prev, categoryValue: lowerValue };
     });
-    setQuery(3);
+    setQuery(9);
     setSortColor('');
   };
 

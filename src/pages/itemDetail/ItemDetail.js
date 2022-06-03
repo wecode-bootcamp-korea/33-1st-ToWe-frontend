@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../components/nav/Nav';
 import API from '../../config';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './ItemDetail.scss';
 import {
   AiOutlineMinus,
@@ -22,7 +22,7 @@ const ItemDetail = () => {
   const [mainImgURL, setMainImgURL] = useState('');
   const [comment, setComment] = useState('');
   const productID = data.results && data.results.product_id;
-
+  const navigate = useNavigate();
   const cartBag = [];
   for (let i = 0; i < prodBuy.length; i++) {
     cartBag.push({
@@ -56,6 +56,21 @@ const ItemDetail = () => {
       .then(() => {
         alert('장바구니 담기 완료!');
       });
+  };
+
+  const buyHandler = () => {
+    cartBag.length !== 0 &&
+      fetch(`${API.carts}`, {
+        method: 'POST',
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        },
+        body: JSON.stringify(cartBag),
+      })
+        .then(res => res.json())
+        .then(() => {
+          navigate('/order');
+        });
   };
 
   const reviewPost = () => {
@@ -136,7 +151,6 @@ const ItemDetail = () => {
               {data.results && (
                 <span className="price">{data.results.price}원</span>
               )}
-
               <div className="extraInfo">
                 <span className="extraInfoTitle">적립금</span>
                 <span>7%</span>
@@ -198,10 +212,12 @@ const ItemDetail = () => {
                     <div key={index} className="prodBuyNum">
                       <div className="prodNameX">
                         <span>
-                          {data.results.name +
-                            ' (' +
-                            data.results.colors[a - 2].color +
-                            ')'}
+                          {data.results.colors[a - 2] !== undefined
+                            ? data.results.name +
+                              ' (' +
+                              data.results.colors[a - 2].color +
+                              ')'
+                            : data.results.name + ' (기본)'}
                         </span>
                         <span
                           className="xIcon"
@@ -248,7 +264,6 @@ const ItemDetail = () => {
                   );
                 })}
               </div>
-
               <div className="endOrder">
                 <div className="orderNumberPart">
                   <div>Quantity</div>
@@ -259,9 +274,15 @@ const ItemDetail = () => {
                   <div>{totalProdNum * data.results.price + '원'}</div>
                 </div>
               </div>
-
               <div className="buyCartButtons">
-                <button className="buyButton">BUY NOW</button>
+                <button
+                  className="buyButton"
+                  onClick={() => {
+                    prodBuy.length !== 0 ? buyHandler() : alert('cant');
+                  }}
+                >
+                  BUY NOW
+                </button>
                 <button className="cartButton" onClick={postHandler}>
                   ADD TO CART
                 </button>

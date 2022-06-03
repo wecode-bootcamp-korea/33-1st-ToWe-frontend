@@ -1,13 +1,20 @@
 import React from 'react';
 
 const OrderList = ({ orderData }) => {
+  console.log(orderData);
   return (
     <li className="item">
-      <img className="itemImg" src={`${orderData.url}`} alt={orderData.name} />
+      <img
+        className="itemImg"
+        src={`${orderData.thumbnail_url}`}
+        alt={orderData.product}
+      />
       <div>
-        <span className="itemName">{orderData.name}</span>
-        <span className="itemDetail">색상:_</span>
-        <span className="orderInfo">_개 / {orderData.price} 원</span>
+        <span className="itemName">{orderData.product}</span>
+        <span className="itemDetail">색상: {orderData.color_name}</span>
+        <span className="orderInfo">
+          {orderData.quantity}개 / {orderData.price} 원
+        </span>
       </div>
     </li>
   );

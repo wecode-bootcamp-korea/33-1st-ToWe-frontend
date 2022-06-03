@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import NotActivity from './components/NotActivity.js';
 import Input from './components/Input.js';
 import Reviews from './components/Reviews.js';
-// import Orders from './components/Orders.js';
+import Orders from './components/Orders.js';
 import API from '../../config.js';
 import './MyPage.scss';
 
 const MyPage = () => {
   const [userData, setUserData] = useState({});
   const [reviewData, setReviewData] = useState([]);
-  // const [orderData, setOrderData] = useState([]);
+  const [orderData, setOrderData] = useState([]);
 
   const navigate = useNavigate();
 
@@ -41,22 +41,22 @@ const MyPage = () => {
       .then(result => setReviewData(result.result));
   }, []);
 
-  // useEffect(() => {
-  //   fetch(`${API.users}/orders`, {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: localStorage.getItem('token'),
-  //     },
-  //   })
-  //     .then(res => res.json())
-  //     .then(result => setOrderData(result.result));
-  // }, []);
+  useEffect(() => {
+    fetch(`${API.orders}`, {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(result => setOrderData(result.result));
+  }, []);
 
   return (
     <div className="myPage">
       <div className="myPageContainer">
         <div className="userActivity">
-          {/* <Orders order={orderData} /> */}
+          <Orders order={orderData} />
           <Reviews user={reviewData} />
           {NOTHING_ACTIVITY.map(activity => (
             <NotActivity activity={activity} key={activity.id} />

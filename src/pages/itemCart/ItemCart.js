@@ -3,8 +3,11 @@ import ItemComponent from './component/ItemComponent.js';
 import EmptyItem from './component/EmptyItem';
 import API from '../../config.js';
 import './ItemCart.scss';
+import { useNavigate } from 'react-router-dom';
 
 const ItemCart = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetch(`${API.carts}`, {
       method: 'GET',
@@ -149,7 +152,13 @@ const ItemCart = () => {
               </div>
             </div>
             <div className="cartBtnWrapper">
-              <button>CHECK OUT</button>
+              <button
+                onClick={() => {
+                  navigate('/order');
+                }}
+              >
+                CHECK OUT
+              </button>
             </div>
           </div>
         )}

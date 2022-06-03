@@ -3,10 +3,16 @@ import { FaAngleDown } from 'react-icons/fa';
 import OrderList from './OrderList';
 import API from '../../config';
 import './Order.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Order = () => {
   const [orderList, setOrderList] = useState([]);
+  const [sum, setSum] = useState('');
+  const [users, setUsers] = useState('');
+  console.log(users);
+  const navigate = useNavigate();
 
+  // 상품 데이터 받아오는 API
   useEffect(() => {
     fetch(`${API.carts}`, {
       method: 'GET',
@@ -16,9 +22,44 @@ const Order = () => {
     })
       .then(res => res.json())
       .then(result => {
-        setOrderList(result);
+        setOrderList(result.result);
+        setSum(result.sum);
       });
   }, []);
+
+  // 유저 데이터 받아오는 API
+  useEffect(() => {
+    fetch(`${API.users}/info`, {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(result => {
+        setUsers(result.result);
+      });
+  }, []);
+
+  // POST
+
+  const buyNow = () => {
+    fetch(`${API.orders}`, {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify(orderList),
+    })
+      .then(res => res.json())
+      .then(() => {
+        alert('주문이 완료되었습니다.');
+      });
+  };
+
+  const payment = e => {
+    e.preventDefault();
+  };
 
   return (
     <section className="order">
@@ -39,7 +80,7 @@ const Order = () => {
 
         <div className="totalPrice">
           <div>상품 합계</div>
-          <span className="price">66,500원</span>
+          <span className="price">{sum}원</span>
         </div>
       </div>
 
@@ -49,7 +90,7 @@ const Order = () => {
         <div className="ordererBox">
           <div className="title">주문자</div>
           <div>
-            <span className="orderer">토위</span>
+            <span className="orderer">{users.name}</span>
             <FaAngleDown className="more" />
           </div>
         </div>
@@ -72,7 +113,7 @@ const Order = () => {
         </div>
         <div className="nameBox">
           <span>이름</span>
-          <input type="text" />
+          <input type="text" value={`${users.name}`} />
         </div>
         <div className="postBox">
           <span>우편번호</span>
@@ -80,13 +121,12 @@ const Order = () => {
         </div>
         <div className="addressBox">
           <span>주소</span>
-          <input type="text" />
+          <input type="text" value={`${users.address}`} />
         </div>
         <div className="tellBox">
           <span>연락처</span>
           <div>
-            <input type="text" /> - <input type="text" /> -{' '}
-            <input type="text" />
+            <input type="text" value={`${users.phone_number}`} />
           </div>
         </div>
       </div>
@@ -97,9 +137,9 @@ const Order = () => {
       <div className="payContainer">
         <div className="title">결제 정보</div>
         <div className="pointBox">
-          <span>적립금 (보유 적립금 3,000원)</span>
-          <form className="pointForm">
-            <input type="text" />
+          <span>포인트 (보유 포인트 {users.point}원)</span>
+          <form className="pointForm" onClick={payment}>
+            <input type="text" value={`${users.point}`} />
             <button>전액 사용</button>
           </form>
         </div>
@@ -109,11 +149,11 @@ const Order = () => {
         <div className="totalBox">
           <div className="totalProduct">
             <span>상품 합계</span>
-            <span>66,500원</span>
+            <span>{sum}원</span>
           </div>
           <div className="totalDiscount">
             <span>총 할인 금액</span>
-            <span> 0원 </span>
+            <span> {sum - users.point < 0 ? sum : users.point}</span>
           </div>
         </div>
 
@@ -121,12 +161,20 @@ const Order = () => {
 
         <div className="amountPaymentBox">
           <div className="amountPayment">결제 금액</div>
-          <div className="amount"> 66,500원</div>
+          <div className="amount"> {sum}원</div>
         </div>
       </div>
 
       {/* 결제하기 */}
-      <div className="payment">66,500원 결제하기</div>
+      <div
+        className="payment"
+        onClick={() => {
+          buyNow();
+          navigate('/');
+        }}
+      >
+        {sum}원 결제하기
+      </div>
     </section>
   );
 };

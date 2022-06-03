@@ -34,7 +34,7 @@ const ListItemContenst = ({
         onClick={goToDetail}
       />
       <p className="listItemName">{name}</p>
-      <p className="listItemPrice">{price}원</p>
+      <p className="listItemPrice">₩{price}</p>
     </div>
   );
 };

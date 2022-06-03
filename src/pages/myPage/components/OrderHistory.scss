@@ -1,0 +1,45 @@
+.orderHistory {
+  padding-bottom: 2rem;
+  margin: 3rem 0 3.5rem 0;
+  border-bottom: 0.125rem dashed black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .orderList {
+    display: flex;
+    width: 100%;
+
+    .imgName {
+      display: flex;
+
+      .productimg {
+        height: 10vh;
+        max-width: 10vh;
+        overflow: hidden;
+      }
+    }
+
+    .amountPrice {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+
+      .productName {
+        font-weight: bold;
+        font-size: 1rem;
+        padding-left: 1rem;
+      }
+
+      .amount {
+        text-align: center;
+      }
+
+      .status {
+        color: red;
+      }
+    }
+  }
+}
