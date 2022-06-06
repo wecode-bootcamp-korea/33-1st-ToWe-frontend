@@ -163,6 +163,7 @@
 • 상수데이터를 만든 후 map method를 사용하여 Navigation bar 정리
 • 조건부 렌더링을 사용하여 token을 받았을 때와 받지 못했을 때 마이페이지 및 장바구니 클릭 시 로그인 페이지 이동
 • 각 항목에 맞는 quary parameter를 설정하여 클릭시 상품에 맞는 query parameter인 상품리스트 페이지 이동
+• 검색기능 구현
 ```
 
 <br>
