@@ -120,7 +120,17 @@ id, pw 유효성 검사
 ### 5. 제품 상세 페이지
 
 ```
+• 작은 이미지 클릭시 큰 이미지로 변환
+![](https://velog.velcdn.com/images/jjkim0104/post/24039a00-2503-4039-94cc-3a2bb4fdb417/image.gif)
+ 
+• 색상별 장바구니 담기 기능
+![](https://velog.velcdn.com/images/jjkim0104/post/cfbba714-59ec-4d2f-99d6-3a386e95998a/image.gif)
 
+• 후기작성
+![](https://velog.velcdn.com/images/jjkim0104/post/6ec56498-6a36-4e8b-a8e5-6036aa65efe7/image.gif)
+
+• 질문작성
+![](https://velog.velcdn.com/images/jjkim0104/post/a475618d-d410-483f-9daf-7aebd36c1cf4/image.gif)
 ```
 
 ### 6. 제품 상세 페이지
