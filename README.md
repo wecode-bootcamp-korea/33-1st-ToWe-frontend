@@ -121,16 +121,19 @@ id, pw 유효성 검사
 
 ```
 • 작은 이미지 클릭시 큰 이미지로 변환
-![](https://velog.velcdn.com/images/jjkim0104/post/24039a00-2503-4039-94cc-3a2bb4fdb417/image.gif)
- 
+![이미지변환기능](https://user-images.githubusercontent.com/102506443/172135726-42d23b01-6274-4bd0-b1c1-1724b4e61829.gif)
+
 • 색상별 장바구니 담기 기능
-![](https://velog.velcdn.com/images/jjkim0104/post/cfbba714-59ec-4d2f-99d6-3a386e95998a/image.gif)
+ ![색상별담기](https://user-images.githubusercontent.com/102506443/172135794-929a15be-c318-4346-9a2e-6676e4f24358.gif)
+
 
 • 후기작성
-![](https://velog.velcdn.com/images/jjkim0104/post/6ec56498-6a36-4e8b-a8e5-6036aa65efe7/image.gif)
+ ![후기작성](https://user-images.githubusercontent.com/102506443/172135806-dd36185a-b810-4b50-bec1-a1ea6b94e910.gif)
+
 
 • 질문작성
-![](https://velog.velcdn.com/images/jjkim0104/post/a475618d-d410-483f-9daf-7aebd36c1cf4/image.gif)
+ ![질문작성](https://user-images.githubusercontent.com/102506443/172135813-afdb063e-b58c-4d0d-bc1f-b6e17dcf6bd1.gif)
+
 ```
 
 ### 6. 제품 상세 페이지
