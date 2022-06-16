@@ -186,3 +186,68 @@ id, pw 유효성 검사
 <br>
 
 ## 7. Back-end 기능 구현
+
+### 1. ERD
+
+![ERD_3](https://user-images.githubusercontent.com/101810494/173720423-84cabf61-5c94-4de1-a835-ab61df9c0bd3.jpg)
+
+### 2. 회원가입 및 로그인 API
+
+#### ID, Password 암호화 및 유효성 검사
+```
+• bcrypt 활용한 Password 암호화 적용
+• JWT 활용한 로그인 기능 구현
+• 정규표현식 활용한 유효성 검사
+• 유효성 검사 모듈화(validator)
+• 로그인 데코레이터 기능 구현
+```
+
+### 3. 유저정보 확인 API
+
+#### 사용자 관점에서 해당 유저정보 요청시 개인정보 확인 기능 구현
+```
+• 로그인 데코레이터를 통한 유저정보 식별
+• 해당유저의 개인정보 / 리뷰정보 / 구매정보 확인 기능 구현
+```
+
+### 4. 제품 리스트 API
+
+- 작성중
+
+### 5. 제품 상세 API
+
+- 작성중
+
+### 6. 좋아요 기능 API
+
+- 작성중
+
+### 7. 리뷰 기능 API
+
+#### RESTful 방식으로 제품 ID를 식별, 해당 제품에 대한 리뷰 작성 및 확인 기능
+```
+• 제품ID 및 유저ID(Token)을 통해 제품과 유저를 식별
+• POST, GET 메서드를 활용하여 리뷰작성 및 리뷰확인 기능 구현
+```
+    
+### 8. 장바구니 기능 API
+
+```
+• 장바구니 담기(post), 확인(get), 삭제(delete) 기능 구현
+• transaction 활용 입력데이터 무결성 확보 구현
+```
+
+### 9. 주문관리 기능 API
+
+```
+• 결제시스템을 모방하여 포인트를 사용하여 주문하기 기능 구현
+  (토큰, Proudct_Option_id, Quantity 값을 입력받아 '주문' 테이블에 삽입)
+• 데이터 삽입시 transaction 활용, 데이터 무결성 확보
+• 유저의 '주문확인' 기능 구현
+```
+
+## 시연영상
+
+[![Video Label](http://img.youtube.com/vi/wX-WB_yCXtg/0.jpg)](https://youtu.be/wX-WB_yCXtg)
+
+https://www.youtube.com/watch?v=wX-WB_yCXtg
